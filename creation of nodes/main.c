@@ -5,6 +5,7 @@ struct whynode{  //global declaration of structure and its member can be accesse
     int datapart;
     struct whynode *linkpart; 
 };
+void linkfunction(struct whynode*);
 void main()
 {
     struct whynode *head,*second,*third,*fourth;
@@ -20,9 +21,14 @@ void main()
     third->datapart=30;
     fourth->datapart=40;
     fourth->linkpart=NULL;
+    linkfunction(head);
+}
+void linkfunction(struct whynode *ptr)
+{
+    while(ptr!=NULL)
     {
-        /* code */
+        printf("element: %d\n",ptr->datapart);
+        ptr=ptr->linkpart;
+
     }
-    
-    printf();
 }
