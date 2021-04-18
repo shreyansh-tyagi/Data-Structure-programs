@@ -82,7 +82,7 @@ struct node * insertatend(struct node *root)
         root=root->link;
     }
     root->link=temp;
-    printf("\n\nafter insertion at end: ");
+    printf("\n\nafter insertion at end:\n\n");
     while(p->link!=NULL)
     {
         printf("%d  ",p->data);
