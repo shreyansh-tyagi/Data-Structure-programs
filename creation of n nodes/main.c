@@ -6,6 +6,7 @@ struct node{
     struct node *link;
 };
 void displaylink(struct node *root);
+void insertatbeg(struct node *root);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL; //initially the value of all these variable is null
@@ -35,9 +36,27 @@ void main()
 
   }
   displaylink(root);
+  insertatbeg(root);
 }
 void displaylink(struct node *root)
 {
+    while(root->link!=NULL)
+    {
+        printf("%d  ",root->data);
+        root=root->link;
+    }
+    printf("%d",root->data);
+
+}
+void insertatbeg(struct node *root)
+{
+    struct node *temp;
+    temp=(struct node*)malloc(sizeof(struct node));
+    printf("enter the new element that you want to insert at the beginning of node: ");
+    scanf("%d",&temp->data);
+    temp->link=root;
+    root=temp;
+    printf("after insertion: \n\n");
     while(root->link!=NULL)
     {
         printf("%d  ",root->data);
