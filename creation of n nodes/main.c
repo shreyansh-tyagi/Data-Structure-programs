@@ -6,10 +6,13 @@ struct node{
     struct node *link;
 };
 void displaylink(struct node *root);
-void insertatbeg(struct node *root);
+struct node * insertatbeg(struct node *root);
+struct node * insertatend(struct node *root);
 void main()
 {
-  struct node *temp=NULL,*root=NULL,*p=NULL; //initially the value of all these variable is null
+  struct node *temp=NULL,*root=NULL,*p=NULL; 
+  struct node *insertend;
+  //initially the value of all these variable is null
   int n,i;
   printf("enter the number of nodes: ");
   scanf("%d",&n);  
@@ -36,7 +39,8 @@ void main()
 
   }
   displaylink(root);
-  insertatbeg(root);
+  root=insertatbeg(root);
+  insertend=insertatend(root);
 }
 void displaylink(struct node *root)
 {
@@ -48,7 +52,7 @@ void displaylink(struct node *root)
     printf("%d",root->data);
 
 }
-void insertatbeg(struct node *root)
+struct node * insertatbeg(struct node *root)
 {
     struct node *temp;
     temp=(struct node*)malloc(sizeof(struct node));
@@ -56,12 +60,36 @@ void insertatbeg(struct node *root)
     scanf("%d",&temp->data);
     temp->link=root;
     root=temp;
-    printf("after insertion: \n\n");
+    printf("after insertion at begining: \n\n");
     while(root->link!=NULL)
     {
         printf("%d  ",root->data);
         root=root->link;
     }
     printf("%d",root->data);
+    return temp;
+
+}
+struct node * insertatend(struct node *root)
+{
+    struct node *temp,*p;
+    p=root;
+    temp=(struct node *)malloc(sizeof(struct node));
+    printf("\n\nenter the element that you want to insert at the end of node: ");
+    scanf("%d",&temp->data);
+    temp->link=NULL;
+    while(root->link!=NULL){
+        root=root->link;
+    }
+    root->link=temp;
+    printf("\n\nafter insertion at end: ");
+    while(p->link!=NULL)
+    {
+        printf("%d  ",p->data);
+        p=p->link;
+    }
+    printf("%d",p->data);
+
+return temp;
 
 }
