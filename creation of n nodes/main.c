@@ -8,13 +8,13 @@ struct node{
 void displaylink(struct node *root);
 void main()
 {
-  struct node *temp,*root,*p; //initially the value of all these variable is null
+  struct node *temp=NULL,*root=NULL,*p=NULL; //initially the value of all these variable is null
   int n,i;
   printf("enter the number of nodes: ");
-  scanf("%d",&n);
-  temp=(struct node*)malloc(sizeof(struct node ));  
+  scanf("%d",&n);  
   for(i=1;i<=n;i++)
   {
+      temp=(struct node*)malloc(sizeof(struct node ));
       printf("enter the %d element into the node: ",i);
       scanf("%d",&temp->data);
       temp->link=NULL;
@@ -43,5 +43,6 @@ void displaylink(struct node *root)
         printf("%d  ",root->data);
         root=root->link;
     }
+    printf("%d",root->data);
 
 }
