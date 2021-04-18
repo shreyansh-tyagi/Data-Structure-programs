@@ -52,7 +52,7 @@ void insertatbeg(struct node *root)
 {
     struct node *temp;
     temp=(struct node*)malloc(sizeof(struct node));
-    printf("enter the new element that you want to insert at the beginning of node: ");
+    printf("\n\nenter the new element that you want to insert at the beginning of node: ");
     scanf("%d",&temp->data);
     temp->link=root;
     root=temp;
