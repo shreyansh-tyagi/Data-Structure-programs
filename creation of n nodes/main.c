@@ -5,6 +5,7 @@ struct node{
     int data;
     struct node *link;
 };
+void displaylink(struct node *root);
 void main()
 {
   struct node *temp,*root,*p; //initially the value of all these variable is null
@@ -33,4 +34,14 @@ void main()
       }
 
   }
+  displaylink(root);
+}
+void displaylink(struct node *root)
+{
+    while(root->link!=NULL)
+    {
+        printf("%d  ",root->data);
+        root=root->link;
+    }
+
 }
