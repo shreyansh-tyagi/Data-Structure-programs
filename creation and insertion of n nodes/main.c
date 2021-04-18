@@ -148,7 +148,22 @@ struct node * insertanywhere(struct node *root,int m)
     }
     else if((n==m+2)&&(n>m+2))
     {
-        
+         temp->link=NULL;
+    while(root->link!=NULL){
+        root=root->link;
+    }
+    root->link=temp;
+    printf("\n\nafter insertion:\n\n");
+    while(p->link!=NULL)
+    {
+        printf("%d  ",p->data);
+        p=p->link;
+    }
+    printf("%d",p->data);
+
+return temp;
+
+
     }
     
 }
