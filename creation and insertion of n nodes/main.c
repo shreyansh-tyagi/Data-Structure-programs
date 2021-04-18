@@ -8,6 +8,7 @@ struct node{
 void displaylink(struct node *root);
 struct node * insertatbeg(struct node *root);
 struct node * insertatend(struct node *root);
+void insertanywhere(struct node *root,int);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL; 
@@ -41,6 +42,7 @@ void main()
   displaylink(root);
   root=insertatbeg(root);
   insertend=insertatend(root);
+  insertanywhere(root,n);
 }
 void displaylink(struct node *root)
 {
@@ -92,4 +94,46 @@ struct node * insertatend(struct node *root)
 
 return temp;
 
+}
+void insertanywhere(struct node *root,int m)
+{
+    int n,i;
+    struct node *temp,*p,*print;
+    p=root;
+    print=root;
+    temp=(struct node *)malloc(sizeof(struct node));
+    printf("\n\nenter the position from at which you want to insert: ");
+    scanf("%d",&n);
+    printf("enter the new element that you want to insert at %d position: ",n);
+    scanf("%d",&temp->data);
+    if((n>1) &&(n<=m+2))
+    {
+    for(i=1;i<n;i++)
+    {
+        root=root->link;
+    }
+    temp->link=root;
+    for(i=1;i<n;i++)
+    {
+        if(p->link==temp->link)
+        {
+            p->link=temp;
+        }
+        p=p->link;
+
+    }
+    printf("\n\nafter insertion:\n\n");
+    while(print->link!=NULL)
+    {
+        printf("%d  ",print->data);
+        print=print->link;
+    }
+    printf("%d",print->data);
+
+    }
+    if(n==1)
+    {
+
+    }
+    
 }
