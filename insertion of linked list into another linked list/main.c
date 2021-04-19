@@ -44,8 +44,9 @@ void main()
 }
 struct node * insert(struct node *root,int n)
 {
-    struct node *temp=NULL,*p=NULL,*ptr=NULL,*linknode=NULL;
-    int m,i;
+    struct node *temp=NULL,*p=NULL,*ptr=NULL,*linknode=NULL,*temp1=NULL,*root1=NULL;
+    root1=root;
+    int m,i,pos;
     printf("\n\nenter the size of new node: ");
     scanf("%d",&m);
     for(i=1;i<=m;i++)
@@ -76,6 +77,26 @@ struct node * insert(struct node *root,int n)
         linknode=linknode->link;
     }
     printf("%d",linknode->data);
+    printf("\nenter the position from where you want to insert the new node to existing node: ");
+    scanf("%d",&pos);
+    for(i=1;i<pos;i++)
+    {
+        root=root->link;
+    }
+    temp1=root->link;
+    root->link=p;
+    while(p->link!=NULL)
+    {
+        p=p->link;
+    }
+    p=temp1;
+    printf("\n\nafter insertion:\n\n");
+    while(root1->link!=NULL)
+    {
+        printf("%d  ",root1->data);
+        root1=root1->link;
+    }
+    printf("%d",root1->data);
    
 
 }
