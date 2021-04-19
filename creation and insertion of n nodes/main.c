@@ -8,7 +8,7 @@ struct node{
 void displaylink(struct node *root);
 struct node * insertatbeg(struct node *root);
 struct node * insertatend(struct node *root);
-struct node * insertanywhere(struct node *root,int);
+struct node * insertanywhere(struct node *root,struct node *,int);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL; 
@@ -42,7 +42,7 @@ void main()
   displaylink(root);
   root=insertatbeg(root);
   insertend=insertatend(root);
-  root=insertanywhere(root,n);
+  root=insertanywhere(root,insertend,n);
 }
 void displaylink(struct node *root)
 {
@@ -95,7 +95,7 @@ struct node * insertatend(struct node *root)
 return temp;
 
 }
-struct node * insertanywhere(struct node *root,int m)
+struct node * insertanywhere(struct node *root,struct node *insertend,int m)
 {
     int n,i;
     struct node *temp,*p,*print,*toreturn;
@@ -167,16 +167,17 @@ return temp;
     }
     else if(n==m+2)
     {
-        while(root->link!=NULL)
-        {
-            root=root->link;
-        }
-        temp->link=root;
-        while(p->link!=NULL)
+       while(root->link!=NULL){
+           root=root->link;
+       }
+       temp->link=root;
+        
+        for(i=1;i<=m+2;i++)
         {
             if(p->link==temp->link)
             {
                 p->link=temp;
+                break;
 
             }
             p=p->link;
@@ -188,8 +189,4 @@ return temp;
         }
         printf("%d",print->data);
     }
-    else{
-        exit(1);
-    }
-    
 }
