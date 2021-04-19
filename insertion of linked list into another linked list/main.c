@@ -12,9 +12,10 @@ void main()
   int n,i;
   printf("\nenter the number of nodes: ");  
   scanf("%d",&n);
-  temp=(struct temp*)malloc(sizeof(struct node));
+  
   for(i=1;i<=n;i++)
   {
+      temp=(struct node *)malloc(sizeof(struct node));
       printf("enter the data into %d node: ",i);
       scanf("%d",&temp->data);
       temp->link=NULL;
