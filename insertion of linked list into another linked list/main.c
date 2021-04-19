@@ -11,7 +11,7 @@ void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL;
   int n,i;
-  printf("\nenter the number of nodes: ");  
+  printf("\nenter the size of nodes: ");  
   scanf("%d",&n);
   
   for(i=1;i<=n;i++)
@@ -43,5 +43,10 @@ void main()
 }
 struct node * insert(struct node *root,int n)
 {
-    
+    struct node *temp;
+    int m,i;
+    printf("enter the size of new node: ");
+    scanf("%d",&m);
+    temp=(struct node*)malloc(sizeof(struct node));
+
 }
