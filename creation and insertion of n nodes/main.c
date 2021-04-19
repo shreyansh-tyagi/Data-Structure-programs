@@ -188,5 +188,8 @@ return temp;
         }
         printf("%d",print->data);
     }
+    else{
+        exit(1);
+    }
     
 }
