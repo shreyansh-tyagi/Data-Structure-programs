@@ -103,7 +103,7 @@ struct node * insertanywhere(struct node *root,int m)
     print=root;
     toreturn=root;
     temp=(struct node *)malloc(sizeof(struct node));
-    printf("\n\nenter the position from at which you want to insert: ");
+    printf("\n\nenter the position at which you want to insert: ");
     scanf("%d",&n);
     printf("enter the new element that you want to insert at %d position: ",n);
     scanf("%d",&temp->data);
@@ -146,7 +146,7 @@ struct node * insertanywhere(struct node *root,int m)
     return temp;
 
     }
-    else if((n==m+2)&&(n>m+2))
+    else if(n>m+2)
     {
          temp->link=NULL;
     while(root->link!=NULL){
@@ -164,6 +164,29 @@ struct node * insertanywhere(struct node *root,int m)
 return temp;
 
 
+    }
+    else if(n==m+2)
+    {
+        while(root->link!=NULL)
+        {
+            root=root->link;
+        }
+        temp->link=root;
+        while(p->link!=NULL)
+        {
+            if(p->link==temp->link)
+            {
+                p->link=temp;
+
+            }
+            p=p->link;
+        }
+        while(print->link!=NULL)
+        {
+            printf("%d  ",print->data);
+            print=print->link;
+        }
+        printf("%d",print->data);
     }
     
 }
