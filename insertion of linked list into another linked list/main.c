@@ -46,12 +46,12 @@ struct node * insert(struct node *root,int n)
 {
     struct node *temp=NULL,*p=NULL,*ptr=NULL,*linknode=NULL;
     int m,i;
-    printf("enter the size of new node: ");
+    printf("\n\nenter the size of new node: ");
     scanf("%d",&m);
     for(i=1;i<=m;i++)
     {
     temp=(struct node*)malloc(sizeof(struct node));
-    printf("enter the data into %d node of new linked list: ",i);
+    printf("\nenter the data into %d node of new linked list: ",i);
     scanf("%d",&temp->data);
     temp->link=NULL;
     if(p==NULL)
@@ -68,14 +68,13 @@ struct node * insert(struct node *root,int n)
         ptr->link=temp;
 
     }
-    printf("\n\nsecond node:\n\n");
-    while(linknode->link!=NULL)
+    }
+    printf("\n\nsecond node: \n\n");
+     while(linknode->link!=NULL)
     {
         printf("%d  ",linknode->data);
     }
     printf("%d",linknode->data);
-
-
-    }
+   
 
 }
