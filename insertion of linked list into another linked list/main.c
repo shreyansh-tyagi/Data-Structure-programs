@@ -6,6 +6,7 @@ struct node {
     struct node *link;
     
 };
+struct node* insert(struct node*,int);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL;
@@ -38,4 +39,9 @@ void main()
       root=root->link;
   }
   printf("%d",root->data);
+  root=insert(root,n);
+}
+struct node * insert(struct node *root,int n)
+{
+    
 }
