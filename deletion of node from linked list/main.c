@@ -5,6 +5,7 @@ struct node {
     int data;
     struct node *link;
 };
+struct node * delete(struct node *,int);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL,*q=NULL,*temp1=NULL;
@@ -38,12 +39,21 @@ void main()
   }
   printf("%d",q->data);
   free(q);
+  temp1=delete(root,n);
+}
+struct node * delete(struct node *root,int n)
+{
+    struct node *temp=NULL,*q=NULL;
   printf("\n\nafter deletion from first position:\n\n");
-  temp1=root->link;
-  while(temp1->link!=NULL){
-      printf("%d  ",temp1->data);
-      temp1=temp1->link;
+  temp=root;
+  q=temp->link;
+  temp=q;
+  while(q->link!=NULL){
+      printf("%d  ",q->data);
+      q=q->link;
   }
-  printf("%d",temp1->data);
+  printf("%d",q->data);
   free(root);
+  free(q);
+  return temp;
 }
