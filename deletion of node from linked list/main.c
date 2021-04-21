@@ -7,16 +7,34 @@ struct node {
 };
 void main()
 {
-  struct node *temp=NULL,*root=NULL;
+  struct node *temp=NULL,*root=NULL,*p=NULL,*q=NULL;
   int n,i;
   printf("\nenter the size of linked list: ");
   scanf("%d",&n);
   for(i=1;i<=n;i++)
   {
-      printf("enter the %d element into linked list: ");
-      scanf("%d",&temp->link);
+      temp=(struct node*)malloc(sizeof(struct node));
+      printf("enter the %d data into linked list: ");
+      scanf("%d",&temp->data);
+      temp->link=NULL;
+      if(root==NULL)
+      {
+          root=temp;
+          q=temp;
+      }
+      else{
+          p=root;
+          while(p->link!=NULL)
+          {
+              p=p->link;
+          }
+          p->link=temp;
+      }
   }
-
-
-    printf();
+  while(q->link!=NULL)
+  {
+      printf("%d  ",q->data);
+      q=q->link;
+  }
+  printf("%d",q->data);
 }
