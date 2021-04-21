@@ -9,6 +9,7 @@ void display(struct node *);
 struct node * delete(struct node *,int);
 void displaybegindelete(struct node *);
 void lastdelete(struct node *);
+void firstlastdelete(struct node*);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL,*temp1=NULL;
@@ -38,6 +39,7 @@ void main()
   lastdelete(root);
   temp1=delete(root,n);
   displaybegindelete(temp1);
+  firstlastdelete(temp1);
   
 }
 void display(struct node *root)
@@ -72,6 +74,15 @@ void displaybegindelete(struct node *root)
 void lastdelete(struct node *root)
 {
     printf("\n\nafter deletion from last position\n\n");
+    while(root->link!=NULL)
+    {
+        printf("%d  ",root->data);
+        root=root->link;
+    }
+}
+void firstlastdelete(struct node *root)
+{
+    printf("\n\nafter deletion from first and last position: ");
     while(root->link!=NULL)
     {
         printf("%d  ",root->data);
