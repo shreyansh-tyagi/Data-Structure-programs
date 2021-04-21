@@ -24,6 +24,7 @@ void main()
       if(root==NULL)
       {
           root=temp;
+          q=temp;
       }
       else{
           p=root;
@@ -36,7 +37,7 @@ void main()
   }
   display(root);
   lastdelete(root);
-  temp1=delete(root,n);
+  temp1=delete(q,n);
   displaybegindelete(temp1);
   
 }
@@ -77,5 +78,5 @@ void lastdelete(struct node *root)
         printf("%d  ",root->data);
         root=root->link;
     }
-    //free(root);
+    free(root);
 }
