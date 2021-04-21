@@ -45,7 +45,7 @@ void main()
 }
 struct node * insert(struct node *root,int n)
 {
-    struct node *temp=NULL,*p=NULL,*ptr=NULL,*linknode=NULL,*temp1=NULL,*root1=NULL,*ptr=NULL;
+    struct node *temp=NULL,*p=NULL,*ptr=NULL,*linknode=NULL,*temp1=NULL,*root1=NULL,*pt=NULL;
     root1=root;
     int m,i,pos;
     printf("\n\nenter the size of new node: ");
@@ -60,7 +60,7 @@ struct node * insert(struct node *root,int n)
     {
         p=temp;
         linknode=temp;
-        ptr=temp;
+        pt=temp;
     }
     else{
         ptr=p;
@@ -110,11 +110,12 @@ struct node * insert(struct node *root,int n)
             p=p->link;
         }
         p->link=root1;
-        while(ptr->link!=NULL)
+        while(pt->link!=NULL)
         {
-            printf("%d  ",ptr->data);
-            ptr=ptr->link;
+            printf("%d  ",pt->data);
+            pt=pt->link;
         }
+        printf("%d",pt->data);
         
     }
    
