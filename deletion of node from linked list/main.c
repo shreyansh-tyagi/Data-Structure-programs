@@ -8,7 +8,7 @@ struct node {
 struct node * delete(struct node *,int);
 void main()
 {
-  struct node *temp=NULL,*root=NULL,*p=NULL,*q=NULL,*temp1=NULL;
+  struct node *temp=NULL,*root=NULL,*p=NULL,*q=NULL;
   int n,i;
   printf("\nenter the size of linked list: ");
   scanf("%d",&n);
@@ -22,6 +22,7 @@ void main()
       {
           root=temp;
           q=temp;
+          printf("\n%d",root);
       }
       else{
           p=root;
@@ -39,21 +40,23 @@ void main()
   }
   printf("%d",q->data);
   free(q);
-  temp1=delete(root,n);
+  printf("\n%d",root);
+  root=delete(root,n);
+  printf("\n%d",root);
+  /* while(root->link!=NULL)
+  {
+      printf("%d  ",root->data);
+      root=root->link;
+  }
+  printf("%d",root->data); */
 }
 struct node * delete(struct node *root,int n)
 {
-    struct node *temp=NULL,*q=NULL;
+    struct node *temp=NULL;
   printf("\n\nafter deletion from first position:\n\n");
   temp=root;
-  q=temp->link;
-  temp=q;
-  while(q->link!=NULL){
-      printf("%d  ",q->data);
-      q=q->link;
-  }
-  printf("%d",q->data);
-  free(root);
-  free(q);
-  return temp;
+  root=temp->link;
+  printf("\n\nfirst node deleted");
+  free(temp);
+  return root;
 }
