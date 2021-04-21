@@ -44,6 +44,7 @@ void main()
 }
 void display(struct node *root)
 {
+    printf("\n\noriginal linked list:\n\n");
     while(root->link!=NULL)
     {
         printf("%d  ",root->data);
@@ -82,7 +83,7 @@ void lastdelete(struct node *root)
 }
 void firstlastdelete(struct node *root)
 {
-    printf("\n\nafter deletion from first and last position: ");
+    printf("\n\nafter deletion from first and last position:\n\n");
     while(root->link!=NULL)
     {
         printf("%d  ",root->data);
