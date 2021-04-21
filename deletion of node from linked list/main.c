@@ -14,7 +14,7 @@ void main()
   for(i=1;i<=n;i++)
   {
       temp=(struct node*)malloc(sizeof(struct node));
-      printf("enter the %d data into linked list: ");
+      printf("enter the %d data into linked list: ",i);
       scanf("%d",&temp->data);
       temp->link=NULL;
       if(root==NULL)
@@ -37,4 +37,12 @@ void main()
       q=q->link;
   }
   printf("%d",q->data);
+  free(q);
+  printf("\n\nafter deletion from first position: ");
+  root=root->link;
+  while(root->link!=NULL){
+      printf("%d  ",root->data);
+      root=root->link;
+  }
+  printf("%d",root->data);
 }
