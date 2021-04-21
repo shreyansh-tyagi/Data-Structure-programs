@@ -81,7 +81,7 @@ struct node * insert(struct node *root,int n)
     printf("%d",linknode->data);
     printf("\nenter the position from where you want to insert the new node to existing node: ");
     scanf("%d",&pos);
-    if(pos>1)
+    if((pos>1)&&(pos<n))
     {
     pos=pos-1;
     for(i=1;i<pos;i++)
@@ -117,6 +117,20 @@ struct node * insert(struct node *root,int n)
         }
         printf("%d",pt->data);
         
+    }
+    else if(pos>n)
+    {
+        while(root1->link!=NULL)
+        {
+            root1=root1->link;
+        }
+        root1->link=p;
+        while(root->link!=NULL)
+        {
+            printf("%d  ",root->data);
+            root=root->link;
+        }
+        printf("%d",root->data);
     }
    
 
