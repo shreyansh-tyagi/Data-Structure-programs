@@ -5,7 +5,9 @@ struct node {
     int data;
     struct node *link;
 };
+void display(struct node *);
 struct node * delete(struct node *,int);
+void displaydelete(struct node *);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL,*q=NULL;
@@ -21,7 +23,6 @@ void main()
       if(root==NULL)
       {
           root=temp;
-          q=temp;
       }
       else{
           p=root;
@@ -32,35 +33,36 @@ void main()
           p->link=temp;
       }
   }
-  while(q->link!=NULL)
-  {
-      printf("%d  ",q->data);
-      q=q->link;
-  }
-  printf("%d",q->data);
-  free(q);
+  display(root);
   root=delete(root,n);
-  
-  for(i=1;i<n-1;i++)
-  {
-      if(root->link!=NULL)
-      {
-      printf("%d  ",root->data);
-      root=root->link;
-      }
-      else
-      {
-          printf("%d  ",root->data);
-      }
-  }
+  displaydelete(root);
 }
+void display(struct node *root)
+{
+    while(root->link!=NULL)
+    {
+        printf("%d  ",root->data);
+        root=root->link;
+    }
+    printf("%d",root->data);
+
+}
+ 
 struct node * delete(struct node *root,int n)
 {
     struct node *temp=NULL;
   printf("\n\nafter deletion from first position:\n\n");
   temp=root;
   root=temp->link;
-  printf("\n\nfirst node deleted\n\n");
   free(temp);
   return root;
+}
+void displaydelete(struct node *root)
+{
+    while(root->link!=NULL)
+    {
+        printf("%d  ",root->data);
+        root=root->link;
+    }
+    printf("%d",root->data);
 }
