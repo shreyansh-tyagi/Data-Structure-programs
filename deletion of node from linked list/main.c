@@ -7,10 +7,11 @@ struct node {
 };
 void display(struct node *);
 struct node * delete(struct node *,int);
-void displaydelete(struct node *);
+void displaybegindelete(struct node *);
+void lastdelete(struct node *);
 void main()
 {
-  struct node *temp=NULL,*root=NULL,*p=NULL,*q=NULL;
+  struct node *temp=NULL,*root=NULL,*p=NULL,*q=NULL,*temp1=NULL;
   int n,i;
   printf("\nenter the size of linked list: ");
   scanf("%d",&n);
@@ -34,8 +35,9 @@ void main()
       }
   }
   display(root);
-  root=delete(root,n);
-  displaydelete(root);
+  temp1=delete(root,n);
+  displaybegindelete(temp1);
+  lastdelete(root);
 }
 void display(struct node *root)
 {
@@ -57,7 +59,7 @@ struct node * delete(struct node *root,int n)
   free(temp);
   return root;
 }
-void displaydelete(struct node *root)
+void displaybegindelete(struct node *root)
 {
     while(root->link!=NULL)
     {
@@ -65,4 +67,13 @@ void displaydelete(struct node *root)
         root=root->link;
     }
     printf("%d",root->data);
+}
+void lastdelete(struct node *root)
+{
+    while(root->link!=NULL)
+    {
+        printf("%d  ",root->data);
+        root=root->link;
+    }
+    free(root);
 }
