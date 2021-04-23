@@ -16,9 +16,18 @@ void main()
         printf("enter the %d element into linked list: ",i);
         scanf("%d",&temp->data);
         temp->link=NULL;
-        if(root->link==NULL)
-        {
-            
+        if(root==NULL)
+        { 
+            root=temp;
+
+        }
+        else{
+            p=root;
+            while(p->link!=NULL)
+            {
+                printf("%d  ",p->data);
+                p=p->link;
+            }
         }
     }
 }
