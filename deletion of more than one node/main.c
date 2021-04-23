@@ -4,6 +4,7 @@ struct node {
     int data;
     struct node *link;
 };
+struct node * display(struct node*);
 void main()
 {
     struct node *temp=NULL,*root=NULL,*ptr=NULL;
@@ -25,9 +26,15 @@ void main()
             ptr=root;
             while(ptr->link!=NULL)
             {
-                printf("%d  ",ptr->data);
                 ptr=ptr->link;
             }
+            ptr->link=temp;
         }
     }
+    display(root);
+
+}
+struct node * display(struct node *root)
+{
+    
 }
