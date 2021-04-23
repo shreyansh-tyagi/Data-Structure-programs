@@ -52,17 +52,17 @@ struct node * display(struct node *root)
 }
 struct node * onedelete(struct node *root,int n)
 {
-    int pos,i,m;
+    int pos,i,m,loc;
     struct node *temp=NULL,*p=NULL,*q=NULL;
     temp=root;
     p=root;
     q=root;
-    printf("\n\enter the position from where you want to delete the node: ");
+    printf("\n\nenter the position from where you want to delete the node: ");
     scanf("%d",&pos);
     if(pos>1){
     m=pos;
-    pos=pos-1;
-    for(i=1;i<pos;i++)
+    loc=pos-1;
+    for(i=1;i<loc;i++)
     {
         p=p->link;
     }
@@ -71,7 +71,7 @@ struct node * onedelete(struct node *root,int n)
         q=q->link;
     }
     p->link=q;
-    printf("after deletion from %d position",pos);
+    printf("\n\nafter deletion from %d position:\n\n",pos);
     while(temp!=NULL)
     {
         printf("%d  ",temp->data);
@@ -83,7 +83,7 @@ struct node * onedelete(struct node *root,int n)
     else if(pos==1)
     {
         temp=temp->link;
-        printf("after deletion from %d position",pos);
+        printf("\n\nafter deletion from %d position:\n\n",pos);
         while(temp!=NULL)
         {
            printf("%d  ",temp->data);
@@ -92,6 +92,4 @@ struct node * onedelete(struct node *root,int n)
         printf("%d",temp->data);
 
     }
-
-
 }
