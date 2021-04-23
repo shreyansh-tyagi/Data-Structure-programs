@@ -6,7 +6,7 @@ struct node {
 };
 void main()
 {
-    struct node *temp=NULL,*root=NULL,*P=NULL;
+    struct node *temp=NULL,*root=NULL,*ptr=NULL;
     int n,i;
     printf("enter the size of linked list: ");
     scanf("%d",&n);
@@ -22,11 +22,11 @@ void main()
 
         }
         else{
-            p=root;
-            while(p->link!=NULL)
+            ptr=root;
+            while(ptr->link!=NULL)
             {
-                printf("%d  ",p->data);
-                p=p->link;
+                printf("%d  ",ptr->data);
+                ptr=ptr->link;
             }
         }
     }
