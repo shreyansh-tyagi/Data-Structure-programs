@@ -36,5 +36,14 @@ void main()
 }
 struct node * display(struct node *root)
 {
-    
+    struct node *temp=NULL;
+    temp=root;
+    while(temp->link!=NULL)
+    {
+        printf("%d  ",temp->data);
+        temp=temp->link;
+    }
+    printf("%d",temp->data);
+    return root;
+
 }
