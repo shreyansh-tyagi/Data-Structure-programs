@@ -4,8 +4,9 @@ struct node {
     int data;
     struct node *link;
 };
-struct node * display(struct node*);
+struct node * display(struct node*,int);
 struct node * onedelete(struct node*,int);
+struct node * moredelete(struct node*,int);
 void main()
 {
     struct node *temp=NULL,*root=NULL,*ptr=NULL;
@@ -32,13 +33,12 @@ void main()
             ptr->link=temp;
         }
     }
-   root=display(root);
-   onedelete(root,n);
-
+   root=display(root,n);
 }
-struct node * display(struct node *root)
+struct node * display(struct node *root,int n)
 {
     struct node *temp=NULL;
+    int a;
     temp=root;
     printf("\n\noriginal linked list:\n");
     while(temp->link!=NULL)
@@ -47,8 +47,28 @@ struct node * display(struct node *root)
         temp=temp->link;
     }
     printf("%d",temp->data);
-    return root;
+    printf("\n\nchoose from the menu:\n1.Do you want to delete one element press '1'\n2.Do you want to delete more than one elemnt press '2'\nelse press '0' to exit: ");
+    scanf("%d",a);
+    switch(a)
+    {
+        case 1:
+        {
+            root=onedelete(root,n);
+            break;
+        }
+        case 2:
+        {
+            moredelete(root,n);
+            break;
+        }
+        case 0:
+        {
+            printf("thanks for giving your time...goodbye");
+            exit(1);
+        }
 
+    }
+    return root;
 }
 struct node * onedelete(struct node *root,int n)
 {
@@ -92,4 +112,9 @@ struct node * onedelete(struct node *root,int n)
         printf("%d",temp->data);
 
     }
+}
+struct node * moredelete(struct node *root,int n)
+{
+    int pos,val,i;
+    printf("\n\nenter the position from where you want to delete the ");
 }
