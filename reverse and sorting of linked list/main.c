@@ -76,13 +76,14 @@ void reverse(struct node *root,int n)
 {
     struct node *temp=NULL,*p=NULL,*q=NULL;
     int i,j,temp1,temp2,m;
+    printf("\nafter reversing the linked list is:\n\n");
     m=n;
     q=root;
     for(i=1;i<=n;i++)
     {
         temp=root;
          p=root;
-        for(j=1;j<=m;j++)
+        for(j=1;j<m;j++)
         {
             temp1=temp->data;
             p=p->link;
@@ -100,8 +101,8 @@ void reverse(struct node *root,int n)
         q=q->link;
     }
     printf("%d",q->data);
-    
-
-
-
+}
+void sort(struct node *root,int n)
+{
+    printf("hllo");
 }
