@@ -106,7 +106,7 @@ void sort(struct node *root,int n)
 {
     struct node *temp=NULL,*p=NULL,*q=NULL;
     int i,j,temp1,temp2,m,a;
-    printf("\n\nChoose from the menu:\n1. Ascending order sort, press '1'\n2. Descending order sort, press '2'\n3. To exit, press '0'");
+    printf("\n\nChoose from the menu:\n1. Ascending order sort, press '1'\n2. Descending order sort, press '2'\n3. To exit, press '0': ");
     scanf("%d",&a);
     q=root;
     m=n;
