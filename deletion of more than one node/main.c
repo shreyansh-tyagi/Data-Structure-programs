@@ -116,5 +116,11 @@ struct node * onedelete(struct node *root,int n)
 struct node * moredelete(struct node *root,int n)
 {
     int pos,val,i;
-    printf("\n\nenter the position from where you want to delete the ");
+    struct node *temp=NULL;
+    printf("\n\nenter the position from where you want to delete the node: ");
+    scanf("%d",&pos);
+    printf("\n\nenter the number of node you want to delete: ");
+    scanf("%d",&val);
+    
+    
 }
