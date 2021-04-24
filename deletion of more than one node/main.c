@@ -123,6 +123,10 @@ struct node * moredelete(struct node *root,int n)
     scanf("%d",&pos);
     printf("\n\nenter the number of node you want to delete: ");
     scanf("%d",&val);
+    if(val>n){
+        printf("please enter valid number of node ----total node availabe are %d",n);
+        exit(1);
+    }
     if(pos>1)
     {   
     loc=pos-1;
