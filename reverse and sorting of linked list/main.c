@@ -37,11 +37,38 @@ void main()
 void display(struct node *root,int n)
 {
     struct node *temp=NULL;
+    int a;
     temp=root;
+    printf("\noriginal list:\n");
     while(temp->link!=NULL)
     {
         printf("%d  ",temp->data);
         temp=temp->link;
     }
     printf("%d",temp->data);
+    printf("\n\nChoose from the menu:\n1. Do you want to reverse the linked list, press '1'\n2. Do you want to sort the linked list, press '2'\n3. press '0' to exit:  ");
+    scanf("%d",&a);
+    switch (a)
+    {
+        case 1:
+        {
+            reverse(root,n);
+            break;
+        }
+        case 2:
+        {
+            sort(root,n);
+            break;
+        }
+        case 0:
+        {
+            printf("\n\nthanks for giving you time...goodbye!");
+            exit(1);
+        }
+        default:
+        {
+            printf("\nplease enter the valid number from the menu");
+            exit(1);
+        }
+    }
 }

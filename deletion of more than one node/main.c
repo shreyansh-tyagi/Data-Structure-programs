@@ -66,6 +66,11 @@ struct node * display(struct node *root,int n)
             printf("thanks for giving your time...goodbye");
             exit(1);
         }
+        default:
+        {
+            printf("\nplease enter the valid number from the menu");
+            exit(1);
+        }
 
     }
     return root;
