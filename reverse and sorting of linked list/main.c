@@ -105,10 +105,45 @@ void reverse(struct node *root,int n)
 void sort(struct node *root,int n)
 {
     struct node *temp=NULL,*p=NULL,*q=NULL;
-    int i,j,temp1,temp2,m;
+    int i,j,temp1,temp2,m,a;
+    printf("\n\nChoose from the menu:\n1. Ascending order sort, press '1'\n2. Descending order sort, press '2'\n3. To exit, press '0'");
+    scanf("%d",&a);
     q=root;
     m=n;
-    printf("\n\nafter sorting:\n\n");
+    switch(a)
+    {
+        case 1:
+        {
+        printf("\n\nAfter sorting in Ascending order:\n\n");
+        for(i=1;i<=n;i++)
+        {
+        temp=root;
+        p=root;
+        for(j=1;j<m;j++)
+        {
+            temp1=temp->data;
+            p=temp->link;
+            temp2=p->data; 
+            if(temp1>temp2)
+            {
+                temp->data=temp2;
+                p->data=temp1;
+            }
+            temp=temp->link;
+        }
+    }
+    while(q->link!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->link;
+    }
+    printf("%d",q->data);
+
+        }
+
+    case 2:
+    {
+        printf("\n\nAfter sorting in Descending order:\n\n");
     for(i=1;i<=n;i++)
     {
         temp=root;
@@ -117,15 +152,13 @@ void sort(struct node *root,int n)
         {
             temp1=temp->data;
             p=temp->link;
-            temp2=p->link;
+            temp2=p->data; 
             if(temp1>temp2)
             {
                 temp->data=temp2;
                 p->data=temp1;
             }
             temp=temp->link;
-            p=p->link;
-
         }
     }
     while(q->link!=NULL)
@@ -133,5 +166,8 @@ void sort(struct node *root,int n)
         printf("%d  ",q->data);
         q=q->link;
     }
-    printf("%d",q->link);
+    printf("%d",q->data);
+    }    
+    }
+    
 }
