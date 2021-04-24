@@ -67,7 +67,7 @@ void display(struct node *root,int n)
         }
         default:
         {
-            printf("\nplease enter the valid number from the menu");
+            printf("\nplease enter the valid number from the menu...");
             exit(1);
         }
     }
@@ -138,6 +138,7 @@ void sort(struct node *root,int n)
         q=q->link;
     }
     printf("%d",q->data);
+    break;
 
         }
 
@@ -153,7 +154,7 @@ void sort(struct node *root,int n)
             temp1=temp->data;
             p=temp->link;
             temp2=p->data; 
-            if(temp1>temp2)
+            if(temp1<temp2)
             {
                 temp->data=temp2;
                 p->data=temp1;
@@ -167,7 +168,19 @@ void sort(struct node *root,int n)
         q=q->link;
     }
     printf("%d",q->data);
-    }    
+    break;
+    }  
+    case 0:
+    {
+        printf("\n\nthanks for giving your time ...goodbye!");
+        exit(1);
+    }
+    default:
+    {
+        printf("\n\nplease enter the valid number from the menu...");
+    }
+
+
     }
     
 }
