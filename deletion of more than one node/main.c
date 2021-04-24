@@ -147,7 +147,20 @@ struct node * moredelete(struct node *root,int n)
         q=q->link;
     }
     printf("%d",q->data);
-
+    if(pos==1)
+    {
+        for(i=1;i<=val;i++)
+        {
+            temp=temp->link;
+        }
+        q=temp;
+        while(q->link!=NULL)
+        {
+            printf("%d  ",q->data);
+            q=q->link;
+        }
+        printf("%d",q->data);
+    }
 
     }
     
