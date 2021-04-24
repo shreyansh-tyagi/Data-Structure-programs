@@ -104,5 +104,34 @@ void reverse(struct node *root,int n)
 }
 void sort(struct node *root,int n)
 {
-    printf("hllo");
+    struct node *temp=NULL,*p=NULL,*q=NULL;
+    int i,j,temp1,temp2,m;
+    q=root;
+    m=n;
+    printf("\n\nafter sorting:\n\n");
+    for(i=1;i<=n;i++)
+    {
+        temp=root;
+        p=root;
+        for(j=1;j<m;j++)
+        {
+            temp1=temp->data;
+            p=temp->link;
+            temp2=p->link;
+            if(temp1>temp2)
+            {
+                temp->data=temp2;
+                p->data=temp1;
+            }
+            temp=temp->link;
+            p=p->link;
+
+        }
+    }
+    while(q->link!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->link;
+    }
+    printf("%d",q->link);
 }
