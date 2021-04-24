@@ -47,8 +47,8 @@ struct node * display(struct node *root,int n)
         temp=temp->link;
     }
     printf("%d",temp->data);
-    printf("\n\nchoose from the menu:\n1.Do you want to delete one element press '1'\n2.Do you want to delete more than one elemnt press '2'\nelse press '0' to exit: ");
-    scanf("%d",a);
+    printf("\n\nchoose from the menu:\n1.Do you want to delete one element press '1'\n2.Do you want to delete more than one elemnt press '2'\n3. press '0' to exit: ");
+    scanf("%d",&a);
     switch(a)
     {
         case 1:
