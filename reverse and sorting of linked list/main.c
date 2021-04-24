@@ -72,3 +72,36 @@ void display(struct node *root,int n)
         }
     }
 }
+void reverse(struct node *root,int n)
+{
+    struct node *temp=NULL,*p=NULL,*q=NULL;
+    int i,j,temp1,temp2,m;
+    m=n;
+    q=root;
+    for(i=1;i<=n;i++)
+    {
+        temp=root;
+         p=root;
+        for(j=1;j<=m;j++)
+        {
+            temp1=temp->data;
+            p=p->link;
+            temp2=p->data;
+            temp->data=temp2;
+            p->data=temp1;
+            temp=temp->link;
+
+        }
+        m--;
+    }
+    while (q->link!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->link;
+    }
+    printf("%d",q->data);
+    
+
+
+
+}
