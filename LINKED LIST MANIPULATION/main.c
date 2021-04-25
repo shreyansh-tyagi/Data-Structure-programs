@@ -278,14 +278,14 @@ void insert_more_than_one(struct node *root,int n)
 
     }
     }
-    printf("\n\nsecond node: \n\n");
+    printf("\n\nSecond node: \n\n");
      while(linknode->link!=NULL)
     {
         printf("%d  ",linknode->data);
         linknode=linknode->link;
     }
     printf("%d",linknode->data);
-    printf("\nenter the position from where you want to insert the new node to existing node: ");
+    printf("\nEnter the position from where you want to insert the new node to existing node: ");
     scanf("%d",&pos);
     if((pos>1)&&(pos<=n))
     {
@@ -342,7 +342,7 @@ void insert_more_than_one(struct node *root,int n)
 void delete_at_begin(struct node *root,int n)
 {
      struct node *temp=NULL;
-  printf("\n\nafter deletion from first position:\n\n");
+  printf("\n\nAfter deletion from first position:\n\n");
   temp=root;
   root=temp->link;
    while(root->link!=NULL)
@@ -351,4 +351,21 @@ void delete_at_begin(struct node *root,int n)
         root=root->link;
     }
     printf("%d",root->data);
+}
+void delete_at_end(struct node *root,int n)
+{
+    printf("\n\nAfter deletion from last position\n\n");
+    while(root->link!=NULL)
+    {
+        printf("%d  ",root->data);
+        root=root->link;
+    }
+}
+void delete_both_begin_end(struct node *root,int n)
+{
+    struct node * temp=NULL,*q=NULL;
+    printf("\n\nAfter deletion from first and last position\n\n");
+    temp=root;
+    q=root;
+    
 }
