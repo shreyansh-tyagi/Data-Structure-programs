@@ -6,6 +6,7 @@ struct node {
     struct node *link;
 };
 void display(struct node *root ,int n);
+void search(struct node *root,int n);
 void main()
 {
     struct node *temp=NULL,*root=NULL,*p=NULL;
@@ -17,7 +18,7 @@ void main()
         temp=(struct node*)malloc(sizeof(struct node));
         printf("enter the %d data into the linked list: ",i);
         scanf("%d",&temp->data);
-       // temp->link=NULL;
+        temp->link=NULL;
         if(root==NULL)
         root=temp;
         else{
@@ -45,4 +46,26 @@ void display(struct node *root ,int n)
         temp=temp->link;
     }
     printf("%d",temp->data);
+    search(root,n);
+}
+void search(struct node *root,int n)
+{
+    struct node *temp=NULL;
+    temp=root;
+    int a,i,count=0;
+    printf("\nenter the number that you want to search: ");
+    scanf("%d",&a);
+    for(i=1;i<=n;i++)
+    {
+        if(a==temp->data)
+        {
+            printf("\n%d is present at %d position",a,i);
+            count++;
+            exit(1);
+        }
+        temp=temp->link;
+    }
+    if(count==0)
+    printf("\n%d is not present in linked list",a);
+
 }
