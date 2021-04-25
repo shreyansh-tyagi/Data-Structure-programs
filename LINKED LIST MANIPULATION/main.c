@@ -47,9 +47,9 @@ void main()
       }
 
   }
-  switchprint(root,n);
+  switch_print(root,n);
 }
-void switchprint(struct node *root,int n)
+void switch_print(struct node *root,int n)
 {
     int a;
     printf("\n\n------PLEASE CHOOSE FROM THE MENU--------\n\n ");
