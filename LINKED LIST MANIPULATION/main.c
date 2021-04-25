@@ -682,3 +682,4 @@ void searching(struct node *root,int n)
     }
     }
 }
+}
