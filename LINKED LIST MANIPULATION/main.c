@@ -120,6 +120,15 @@ void switch_print(struct node *root,int n)
                 delete_more_than_one(root,n);
                 break;
             }
+            case 11:
+            {
+                reverse(root,n);
+                break;
+            }
+            case 12:
+            {
+                sorting(root,n);
+            }
 
         }
     }
@@ -479,4 +488,117 @@ void delete_more_than_one(struct node *root,int n)
         }
         printf("%d",q->data);
     }    
+}
+
+void reverse(struct node *root,int n)
+{
+     struct node *temp=NULL,*p=NULL,*q=NULL;
+    int i,j,temp1,temp2,m;
+    printf("\nafter reversing the linked list is:\n\n");
+    m=n;
+    q=root;
+    for(i=1;i<=n;i++)
+    {
+        temp=root;
+         p=root;
+        for(j=1;j<m;j++)
+        {
+            temp1=temp->data;
+            p=p->link;
+            temp2=p->data;
+            temp->data=temp2;
+            p->data=temp1;
+            temp=temp->link;
+
+        }
+        m--;
+    }
+    while (q->link!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->link;
+    }
+    printf("%d",q->data);
+}
+void sorting(struct node *root,int n)
+{
+     struct node *temp=NULL,*p=NULL,*q=NULL;
+    int i,j,temp1,temp2,m,a;
+    printf("\n\nChoose from the menu:\n1. Ascending order sort, press '1'\n2. Descending order sort, press '2'\n3. To exit, press '0': ");
+    scanf("%d",&a);
+    q=root;
+    m=n;
+    switch(a)
+    {
+        case 1:
+        {
+        printf("\n\nAfter sorting in Ascending order:\n\n");
+        for(i=1;i<=n;i++)
+        {
+        temp=root;
+        p=root;
+        for(j=1;j<m;j++)
+        {
+            temp1=temp->data;
+            p=temp->link;
+            temp2=p->data; 
+            if(temp1>temp2)
+            {
+                temp->data=temp2;
+                p->data=temp1;
+            }
+            temp=temp->link;
+        }
+    }
+    while(q->link!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->link;
+    }
+    printf("%d",q->data);
+    break;
+
+        }
+
+    case 2:
+    {
+        printf("\n\nAfter sorting in Descending order:\n\n");
+    for(i=1;i<=n;i++)
+    {
+        temp=root;
+        p=root;
+        for(j=1;j<m;j++)
+        {
+            temp1=temp->data;
+            p=temp->link;
+            temp2=p->data; 
+            if(temp1<temp2)
+            {
+                temp->data=temp2;
+                p->data=temp1;
+            }
+            temp=temp->link;
+        }
+    }
+    while(q->link!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->link;
+    }
+    printf("%d",q->data);
+    break;
+    }  
+    case 0:
+    {
+        printf("\n\nthanks for giving your time ...goodbye!");
+        exit(1);
+    }
+    default:
+    {
+        printf("\n\nplease enter the valid number from the menu...");
+    }
+
+
+    }
+    
 }
