@@ -50,6 +50,16 @@ void display(struct node *root ,int n)
 }
 void search(struct node *root,int n)
 {
+    while(1) 
+    {
+    int b;
+    printf("To exit, press '0'");
+    scanf("%d",&b);   
+    switch(b)
+    {
+        case 0:
+        exit(1);
+    } 
     struct node *temp=NULL;
     temp=root;
     int a,i,count=0;
@@ -66,7 +76,10 @@ void search(struct node *root,int n)
         temp=temp->link;
     }
     if(count==0)
+    {
     printf("\n%d is not present in linked list",a);
     printf("\nplease try another number");
+    }
+    }
 
 }
