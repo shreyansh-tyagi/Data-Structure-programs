@@ -88,6 +88,25 @@ void switch_print(struct node *root,int n)
                 insert_at_random_position(root,n);
                 break;
             }
+            case 5:
+            {
+                insert_more_than_one(root,n);
+                break;
+            }
+            case 6:
+            {
+                delete_at_begin(root,n);
+                break;
+            }
+            case 7:
+            {
+                delete_at_end(root,n);
+                break;
+            }
+            case 8:
+            {
+                delete_both_begin_end(root,n);
+            }
         }
     }
 
@@ -230,3 +249,4 @@ void insert_at_random_position(struct node *root,int m)
 
     }
 }
+void insert_more_than_one
