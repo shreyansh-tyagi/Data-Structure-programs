@@ -409,7 +409,7 @@ void delete_at_random(struct node *root,int n)
     }
     p->link=q;
     printf("\n\nAfter deletion from %d position:\n\n",pos);
-    while(temp!=NULL)
+    while(temp->link!=NULL)
     {
         printf("%d  ",temp->data);
         temp=temp->link;
@@ -421,7 +421,7 @@ void delete_at_random(struct node *root,int n)
     {
         temp=temp->link;
         printf("\n\nAfter deletion from %d position:\n\n",pos);
-        while(temp!=NULL)
+        while(temp->link!=NULL)
         {
            printf("%d  ",temp->data);
            temp=temp->link;
