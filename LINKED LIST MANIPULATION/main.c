@@ -108,7 +108,18 @@ void switch_print(struct node *root,int n)
             case 8:
             {
                 delete_both_begin_end(root,n);
+                break;
             }
+            case 9:
+            {
+                delete_at_random(root,n);
+                break;
+            }
+            case 10:
+            {
+                delete_more_than_one(root,n);
+            }
+
         }
     }
 
@@ -373,5 +384,48 @@ void delete_both_begin_end(struct node *root,int n)
     {
         printf("%d  ",temp->data);
         temp=temp->link;
+    }
+}
+void delete_at_random(struct node *root,int n)
+{
+    int pos,i,m,loc;
+    struct node *temp=NULL,*p=NULL,*q=NULL;
+    temp=root;
+    p=root;
+    q=root;
+    printf("\n\nenter the position from where you want to delete the node: ");
+    scanf("%d",&pos);
+    if(pos>1){
+    m=pos;
+    loc=pos-1;
+    for(i=1;i<loc;i++)
+    {
+        p=p->link;
+    }
+    for(i=1;i<=m;i++)
+    {
+        q=q->link;
+    }
+    p->link=q;
+    printf("\n\nafter deletion from %d position:\n\n",pos);
+    while(temp!=NULL)
+    {
+        printf("%d  ",temp->data);
+        temp=temp->link;
+    }
+    printf("%d",temp->data);
+
+    }
+    else if(pos==1)
+    {
+        temp=temp->link;
+        printf("\n\nafter deletion from %d position:\n\n",pos);
+        while(temp!=NULL)
+        {
+           printf("%d  ",temp->data);
+           temp=temp->link;
+        }
+        printf("%d",temp->data);
+
     }
 }
