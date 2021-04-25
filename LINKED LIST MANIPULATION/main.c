@@ -137,7 +137,7 @@ void switch_print(struct node *root,int n)
             }
             default:
             {
-                printf("\n\n-----Please, SELECT  the number from the MENU-------\n\n");
+                printf("\n\n-----Please, SELECT the number from the MENU-------\n\n");
                 break;
 
             }
@@ -457,12 +457,12 @@ void delete_more_than_one(struct node *root,int n)
     struct node *temp=NULL,*p=NULL,*q=NULL;
     temp=root;
     q=root;
-    printf("\n\nenter the position from where you want to delete the node: ");
+    printf("\n\nEnter the position from where you want to delete the node: ");
     scanf("%d",&pos);
-    printf("\n\nenter the number of node you want to delete: ");
+    printf("\n\nEnter the number of node you want to delete: ");
     scanf("%d",&val);
     if(val>n){
-        printf("please enter valid number of node ----total node availabe are %d",n);
+        printf("Please enter valid number of node ----total node availabe are %d",n);
         exit(1);
     }
     if(pos>1)
@@ -506,7 +506,7 @@ void reverse(struct node *root,int n)
 {
      struct node *temp=NULL,*p=NULL,*q=NULL;
     int i,j,temp1,temp2,m;
-    printf("\nafter reversing the linked list is:\n\n");
+    printf("\nAfter reversing the linked list is:\n\n");
     m=n;
     q=root;
     for(i=1;i<=n;i++)
@@ -667,9 +667,18 @@ void searching(struct node *root,int n)
                 insert_at_random_position(root,n);
                 break;
             }
+            default:
+            {
+                printf("\n----Please SELECT from the menu----\n");
+                break;
+            }
         }
 
         }
+        case 'n':
+        printf("\nOKAY!!");
+        default:
+        printf("\nPlease entre the valid character 'y' or 'n'");
     }
     }
 }
