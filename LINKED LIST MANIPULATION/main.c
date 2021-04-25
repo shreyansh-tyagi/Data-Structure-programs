@@ -619,7 +619,7 @@ void searching(struct node *root,int n)
      while(1) 
     {
         char ch;
-    int b;
+    int b,c;
     printf("\n\nTO EXIT, Press '0', OTHERWISE Press any number to continue: ");
     scanf("%d",&b);   
     switch(b)
@@ -652,7 +652,24 @@ void searching(struct node *root,int n)
     switch (ch)
     {
         case 'y':
-        insert_at_random_position(root,n);
+        {
+        printf("\n\nChoose from the menu:\n1. Insert at begining.\n2. Insert at end or random position.");
+        scanf("%d",&c);
+        switch(c)
+        {
+            case 1:
+            {
+                insert_at_begin(root,n);
+                break;
+            }
+            case 2:
+            {
+                insert_at_random_position(root,n);
+                break;
+            }
+        }
+
+        }
     }
     }
 }
