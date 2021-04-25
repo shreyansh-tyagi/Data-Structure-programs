@@ -7,18 +7,18 @@ struct node{
 };
 void switch_print(struct node *,int);
 void display(struct node *,int);
-struct node * insert_at_begin(struct node *,int);
-struct node * insert_at_end(struct node *,int);
-struct node * insert_at_random_position(struct node *,int);
-struct node * insert_more_than_one(struct node *,int);
-struct node * delete_at_begin(struct node *,int);
-struct node * delete_at_end(struct node *,int);
-struct node * delete_both_begin_end(struct node *,int);
-struct node * delete_at_random(struct node *,int);
-struct node * delete_more_than_one(struct node *,int);
-struct node * reverse(struct node *,int);
-struct node * sorting(struct node *,int);
-struct node * searching(struct node *,int);
+void insert_at_begin(struct node *,int);
+void insert_at_end(struct node *,int);
+void insert_at_random_position(struct node *,int);
+void insert_more_than_one(struct node *,int);
+void delete_at_begin(struct node *,int);
+void delete_at_end(struct node *,int);
+void delete_both_begin_end(struct node *,int);
+void delete_at_random(struct node *,int);
+void delete_more_than_one(struct node *,int);
+void reverse(struct node *,int);
+void sorting(struct node *,int);
+void searching(struct node *,int);
 void main()
 {
     struct node *temp=NULL,*root=NULL,*p=NULL;
@@ -75,19 +75,18 @@ void switch_print(struct node *root,int n)
             }
             case 2:
             {
-                root=insert_at_begin(root,n);
-                n++;
+                insert_at_begin(root,n);
                 break;
             }
             case 3:
             {
-                root=insert_at_end(root,n);
-                n++;
+                insert_at_end(root,n);
                 break;
             }
             case 4:
             {
-                root=insert_at_random_position(root,n);
+                insert_at_random_position(root,n);
+                break;
             }
         }
     }
@@ -106,7 +105,7 @@ void display(struct node *root,int n)
     }
     printf("%d",temp->data);
 }
-struct node * insert_at_begin(struct node *root ,int n)
+void insert_at_begin(struct node *root ,int n)
 {
      struct node *temp;
     temp=(struct node*)malloc(sizeof(struct node));
@@ -121,10 +120,8 @@ struct node * insert_at_begin(struct node *root ,int n)
         root=root->link;
     }
     printf("%d",root->data);
-    return temp;
-
 }
-struct node * insert_at_end(struct node *root ,int n)
+void insert_at_end(struct node *root ,int n)
 {
     struct node *temp,*p;
     p=root;
@@ -143,13 +140,11 @@ struct node * insert_at_end(struct node *root ,int n)
         p=p->link;
     }
     printf("%d",p->data);
-
-return temp;
 }
-struct node * insert_more_than_one(struct node *root,int m)
+void insert_at_random_position(struct node *root,int m)
 {
      int n,i;
-    struct node *temp,*p,*print,*toreturn;
+    struct node *temp=NULL,*p=NULL,*print=NULL,*toreturn=NULL;
     p=root;
     print=root;
     toreturn=root;
@@ -181,11 +176,10 @@ struct node * insert_more_than_one(struct node *root,int m)
         print=print->link;
     }
     printf("%d",print->data);
-    return toreturn;
     }
     else if(n==1)
     {
-        temp->link=root;
+    temp->link=root;
     root=temp;
     printf("\n\nafter insertion:\n\n");
     while(root->link!=NULL)
@@ -194,7 +188,6 @@ struct node * insert_more_than_one(struct node *root,int m)
         root=root->link;
     }
     printf("%d",root->data);
-    return temp;
     }
     else if(n>m)
     {
@@ -210,8 +203,6 @@ struct node * insert_more_than_one(struct node *root,int m)
         p=p->link;
     }
     printf("%d",p->data);
-
-return temp;
     }
     else if(n==m)
     {
