@@ -210,7 +210,6 @@ void insert_at_random_position(struct node *root,int m)
         root=root->link;
     }
     printf("%d",root->data);
-    return temp;
     }
     else if(n>m)
     {
