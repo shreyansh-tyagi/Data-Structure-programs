@@ -249,4 +249,106 @@ void insert_at_random_position(struct node *root,int m)
 
     }
 }
-void insert_more_than_one
+void insert_more_than_one(struct node *root,int n)
+{
+     struct node *temp=NULL,*p=NULL,*ptr=NULL,*linknode=NULL,*temp1=NULL,*root1=NULL,*pt=NULL;
+    root1=root;
+    int m,i,pos;
+    printf("\n\nEnter the size of new node: ");
+    scanf("%d",&m);
+    for(i=1;i<=m;i++)
+    {
+    temp=(struct node*)malloc(sizeof(struct node));
+    printf("\nEnter the data into %d node of new linked list: ",i);
+    scanf("%d",&temp->data);
+    temp->link=NULL;
+    if(p==NULL)
+    {
+        p=temp;
+        linknode=temp;
+        pt=temp;
+    }
+    else{
+        ptr=p;
+        while(ptr->link!=NULL)
+        {
+            ptr=ptr->link;
+        }
+        ptr->link=temp;
+
+    }
+    }
+    printf("\n\nsecond node: \n\n");
+     while(linknode->link!=NULL)
+    {
+        printf("%d  ",linknode->data);
+        linknode=linknode->link;
+    }
+    printf("%d",linknode->data);
+    printf("\nenter the position from where you want to insert the new node to existing node: ");
+    scanf("%d",&pos);
+    if((pos>1)&&(pos<=n))
+    {
+    pos=pos-1;
+    for(i=1;i<pos;i++)
+    {
+        root1=root1->link;
+    }
+    temp1=root1->link;
+    root1->link=p;
+    while(p->link!=NULL)
+    {
+        p=p->link;
+    }
+    p->link=temp1;
+    printf("\n\nAfter insertion:\n\n");
+    while(root->link!=NULL)
+    {
+        printf("%d  ",root->data);
+        root=root->link;
+    }
+    printf("%d",root->data);
+    }
+    else if(pos==1)
+    {
+        while(p->link!=NULL)
+        {
+            p=p->link;
+        }
+        p->link=root1;
+        while(pt->link!=NULL)
+        {
+            printf("%d  ",pt->data);
+            pt=pt->link;
+        }
+        printf("%d",pt->data);
+        
+    }
+    else if(pos>n)
+    {
+        while(root1->link!=NULL)
+        {
+            root1=root1->link;
+        }
+        root1->link=p;
+        while(root->link!=NULL)
+        {
+            printf("%d  ",root->data);
+            root=root->link;
+        }
+        printf("%d",root->data);
+    }
+}
+void delete_at_begin(struct node *root,int n)
+{
+     struct node *temp=NULL;
+  printf("\n\nafter deletion from first position:\n\n");
+  temp=root;
+  root=temp->link;
+   while(root->link!=NULL)
+    {
+        printf("%d  ",root->data);
+        root=root->link;
+    }
+    printf("%d",root->data);
+}
