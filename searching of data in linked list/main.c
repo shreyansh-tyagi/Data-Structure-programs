@@ -53,7 +53,7 @@ void search(struct node *root,int n)
     while(1) 
     {
     int b;
-    printf("To exit, press '0'");
+    printf("\n\nTO EXIT, Press '0', OTHERWISE Press any number to continue: ");
     scanf("%d",&b);   
     switch(b)
     {
@@ -63,7 +63,7 @@ void search(struct node *root,int n)
     struct node *temp=NULL;
     temp=root;
     int a,i,count=0;
-    printf("\nenter the number that you want to search: ");
+    printf("\n\nenter the number that you want to search: ");
     scanf("%d",&a);
     for(i=1;i<=n;i++)
     {
@@ -71,7 +71,6 @@ void search(struct node *root,int n)
         {
             printf("\n%d is present at %d position",a,i);
             count++;
-            exit(1);
         }
         temp=temp->link;
     }
