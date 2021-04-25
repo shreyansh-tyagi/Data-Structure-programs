@@ -59,7 +59,7 @@ void switch_print(struct node *root,int n)
     
     while(1)
     {
-        printf("\n\nEnter the number from the menu: ");
+        printf("\n\nEnter the number from the menu to perform the task: ");
         scanf("%d",&a);
         switch(a)
         {
@@ -368,4 +368,5 @@ void delete_both_begin_end(struct node *root,int n)
     temp=root;
     q=root;
     
+
 }
