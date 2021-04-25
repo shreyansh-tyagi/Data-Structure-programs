@@ -16,8 +16,8 @@ void main()
     {
         temp=(struct node*)malloc(sizeof(struct node));
         printf("enter the %d data into the linked list: ",i);
-        scanf("%d",temp->data);
-        temp->link=NULL;
+        scanf("%d",&temp->data);
+       // temp->link=NULL;
         if(root==NULL)
         root=temp;
         else{
@@ -38,7 +38,7 @@ void display(struct node *root ,int n)
 {
     struct node *temp=NULL;
     temp=root;
-    printf("\n\noriginal linked list: ");
+    printf("\n\noriginal linked list:\n");
     while(temp->link!=NULL)
     {
         printf("%d  ",temp->data);
