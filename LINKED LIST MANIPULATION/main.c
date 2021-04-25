@@ -259,7 +259,7 @@ void insert_more_than_one(struct node *root,int n)
     for(i=1;i<=m;i++)
     {
     temp=(struct node*)malloc(sizeof(struct node));
-    printf("\nEnter the data into %d node of new linked list: ",i);
+    printf("Enter the data into %d node of new linked list: ",i);
     scanf("%d",&temp->data);
     temp->link=NULL;
     if(p==NULL)
@@ -363,10 +363,12 @@ void delete_at_end(struct node *root,int n)
 }
 void delete_both_begin_end(struct node *root,int n)
 {
-    struct node * temp=NULL,*q=NULL;
+    struct node * temp=NULL;
     printf("\n\nAfter deletion from first and last position\n\n");
-    temp=root;
-    q=root;
-    
-
+    temp=root->link;
+    while(temp->link!=NULL)
+    {
+        printf("%d  ",temp->data);
+        temp=temp->link;
+    }
 }
