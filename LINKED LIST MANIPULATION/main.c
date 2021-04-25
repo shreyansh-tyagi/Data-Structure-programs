@@ -7,9 +7,9 @@ struct node{
 };
 void switch_print(struct node *,int);
 void display(struct node *,int);
-void insert_at_begin(struct node *,int);
+struct node * insert_at_begin(struct node *,int);
 void insert_at_end(struct node *,int);
-void insert_at_random_position(struct node *,int);
+struct node * insert_at_random_position(struct node *,int);
 void insert_more_than_one(struct node *,int);
 void delete_at_begin(struct node *,int);
 void delete_at_end(struct node *,int);
@@ -75,17 +75,20 @@ void switch_print(struct node *root,int n)
             }
             case 2:
             {
-                insert_at_begin(root,n);
+               root=insert_at_begin(root,n);
+               n++;
                 break;
             }
             case 3:
             {
                 insert_at_end(root,n);
+                n++;
                 break;
             }
             case 4:
             {
-                insert_at_random_position(root,n);
+                root=insert_at_random_position(root,n);
+                n++;
                 break;
             }
             case 5:
@@ -124,7 +127,7 @@ void display(struct node *root,int n)
     }
     printf("%d",temp->data);
 }
-void insert_at_begin(struct node *root ,int n)
+struct node * insert_at_begin(struct node *root ,int n)
 {
      struct node *temp;
     temp=(struct node*)malloc(sizeof(struct node));
@@ -139,6 +142,7 @@ void insert_at_begin(struct node *root ,int n)
         root=root->link;
     }
     printf("%d",root->data);
+    return temp;
 }
 void insert_at_end(struct node *root ,int n)
 {
@@ -160,7 +164,7 @@ void insert_at_end(struct node *root ,int n)
     }
     printf("%d",p->data);
 }
-void insert_at_random_position(struct node *root,int m)
+struct node * insert_at_random_position(struct node *root,int m)
 {
      int n,i;
     struct node *temp=NULL,*p=NULL,*print=NULL,*toreturn=NULL;
@@ -207,6 +211,7 @@ void insert_at_random_position(struct node *root,int m)
         root=root->link;
     }
     printf("%d",root->data);
+    return temp;
     }
     else if(n>m)
     {
