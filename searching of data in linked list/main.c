@@ -67,5 +67,6 @@ void search(struct node *root,int n)
     }
     if(count==0)
     printf("\n%d is not present in linked list",a);
+    printf("\nplease try another number");
 
 }
