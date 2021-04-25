@@ -83,3 +83,33 @@ void switchprint(struct node *root,int n)
 
     
 }
+void display(struct node *root,int n)
+{
+    struct node *temp=NULL;
+    temp=root;
+     printf("\n\noriginal linked list:\n");
+    while(temp->link!=NULL)
+    {
+        printf("%d  ",temp->data);
+        temp=temp->link;
+    }
+    printf("%d",temp->data);
+}
+struct node * insert_at_begin(struct node *root ,int n)
+{
+     struct node *temp;
+    temp=(struct node*)malloc(sizeof(struct node));
+    printf("\n\nEnter the new element that you want to insert at the beginning of node: ");
+    scanf("%d",&temp->data);
+    temp->link=root;
+    root=temp;
+    printf("After insertion at begining: \n\n");
+    while(root->link!=NULL)
+    {
+        printf("%d  ",root->data);
+        root=root->link;
+    }
+    printf("%d",root->data);
+    return temp;
+
+}
