@@ -118,6 +118,7 @@ void switch_print(struct node *root,int n)
             case 10:
             {
                 delete_more_than_one(root,n);
+                break;
             }
 
         }
@@ -393,7 +394,7 @@ void delete_at_random(struct node *root,int n)
     temp=root;
     p=root;
     q=root;
-    printf("\n\nenter the position from where you want to delete the node: ");
+    printf("\n\nEnter the position from where you want to delete the node: ");
     scanf("%d",&pos);
     if(pos>1){
     m=pos;
@@ -407,7 +408,7 @@ void delete_at_random(struct node *root,int n)
         q=q->link;
     }
     p->link=q;
-    printf("\n\nafter deletion from %d position:\n\n",pos);
+    printf("\n\nAfter deletion from %d position:\n\n",pos);
     while(temp!=NULL)
     {
         printf("%d  ",temp->data);
@@ -419,7 +420,7 @@ void delete_at_random(struct node *root,int n)
     else if(pos==1)
     {
         temp=temp->link;
-        printf("\n\nafter deletion from %d position:\n\n",pos);
+        printf("\n\nAfter deletion from %d position:\n\n",pos);
         while(temp!=NULL)
         {
            printf("%d  ",temp->data);
@@ -428,4 +429,54 @@ void delete_at_random(struct node *root,int n)
         printf("%d",temp->data);
 
     }
+}
+void delete_more_than_one(struct node *root,int n)
+{
+    int pos,val,i,loc;
+    struct node *temp=NULL,*p=NULL,*q=NULL;
+    temp=root;
+    q=root;
+    printf("\n\nenter the position from where you want to delete the node: ");
+    scanf("%d",&pos);
+    printf("\n\nenter the number of node you want to delete: ");
+    scanf("%d",&val);
+    if(val>n){
+        printf("please enter valid number of node ----total node availabe are %d",n);
+        exit(1);
+    }
+    if(pos>1)
+    {   
+    loc=pos-1;
+    for(i=1;i<loc;i++)
+    {
+        temp=temp->link;
+
+    }
+    p=temp;
+    for(i=1;i<=val;i++)
+    {
+        p=p->link;
+    }
+    temp->link=p->link;
+    while(q->link!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->link;
+    }
+    printf("%d",q->data);
+    }
+    if(pos==1)
+    {
+        for(i=1;i<=val;i++)
+        {
+            temp=temp->link;
+        }
+        q=temp;
+        while(q->link!=NULL)
+        {
+            printf("%d  ",q->data);
+            q=q->link;
+        }
+        printf("%d",q->data);
+    }    
 }
