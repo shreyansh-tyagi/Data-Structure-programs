@@ -128,6 +128,18 @@ void switch_print(struct node *root,int n)
             case 12:
             {
                 sorting(root,n);
+                break;
+            }
+            case 13:
+            {
+                searching(root,n);
+                break;
+            }
+            default:
+            {
+                printf("\n\n-----Please, SELECT  the number from the MENU-------\n\n");
+                break;
+
             }
 
         }
@@ -590,15 +602,57 @@ void sorting(struct node *root,int n)
     }  
     case 0:
     {
-        printf("\n\nthanks for giving your time ...goodbye!");
+        printf("\n\nThanks for giving your time ...goodbye!");
         exit(1);
     }
     default:
     {
-        printf("\n\nplease enter the valid number from the menu...");
+        printf("\n\nPlease enter the valid number from the menu...");
     }
-
 
     }
     
+}
+
+void searching(struct node *root,int n)
+{
+     while(1) 
+    {
+        char ch;
+    int b;
+    printf("\n\nTO EXIT, Press '0', OTHERWISE Press any number to continue: ");
+    scanf("%d",&b);   
+    switch(b)
+    {
+        case 0:
+        {
+        printf("\n\nThanks for giving your time ...goodbye!");
+        exit(1);
+        }
+    } 
+    struct node *temp=NULL;
+    temp=root;
+    int a,i,count=0;
+    printf("\n\nenter the number that you want to search: ");
+    scanf("%d",&a);
+    for(i=1;i<=n;i++)
+    {
+        if(a==temp->data)
+        {
+            printf("\n%d is present at %d position",a,i);
+            count++;
+        }
+        temp=temp->link;
+    }
+    if(count==0)
+    {
+    printf("\n%d is not present in linked list",a);
+    printf("\nDo you want to insert %d into linked list?\nType 'y' or 'n'");
+    scanf("%c",ch);
+    switch (ch)
+    {
+        case 'y':
+        insert_at_random_position(root,n);
+    }
+    }
 }
