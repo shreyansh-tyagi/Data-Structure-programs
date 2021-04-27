@@ -618,8 +618,7 @@ void searching(struct node *root,int n)
 {
      while(1) 
     {
-        char ch;
-    int b,c;
+    int ch,b,c;
     printf("\n\nTO EXIT, Press '0', OTHERWISE Press any number to continue: ");
     scanf("%d",&b);   
     switch(b)
@@ -647,11 +646,11 @@ void searching(struct node *root,int n)
     if(count==0)
     {
     printf("\n%d is not present in linked list",a);
-    printf("\nDo you want to insert %d into linked list?\nType 'y' or 'n'");
-    scanf("%c",ch);
+    printf("\nDo you want to insert %d into linked list?\nType '1' or '0': ");
+    scanf("%d",ch);
     switch (ch)
     {
-        case 'y':
+        case 1:
         {
         printf("\n\nChoose from the menu:\n1. Insert at begining.\n2. Insert at end or random position.");
         scanf("%d",&c);
@@ -675,10 +674,10 @@ void searching(struct node *root,int n)
         }
 
         }
-        case 'n':
+        case 2:
         printf("\nOKAY!!");
         default:
-        printf("\nPlease entre the valid character 'y' or 'n'");
+        printf("\nPlease entre the valid number '1' or '0'");
     }
     }
 }
