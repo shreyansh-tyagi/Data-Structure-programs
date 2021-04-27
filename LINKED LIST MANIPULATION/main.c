@@ -92,7 +92,7 @@ void switch_print(struct node *root,int n)
             }
             case 5:
             {
-                insert_more_than_one(root,n);
+                n=insert_more_than_one(root,n);
                 break;
             }
             case 6:
@@ -322,7 +322,7 @@ int insert_more_than_one(struct node *root,int n)
         printf("%d  ",linknode->data);
         linknode=linknode->link;
     }
-    printf("%d",linknode->data);
+    printf("%d",linknode->data); 
     printf("\nEnter the position from where you want to insert the new node to existing node: ");
     scanf("%d",&pos);
     if((pos>1)&&(pos<=n))
@@ -346,6 +346,7 @@ int insert_more_than_one(struct node *root,int n)
         root=root->link;
     }
     printf("%d",root->data);
+    return (n+m);
     }
     else if(pos==1)
     {
@@ -375,6 +376,7 @@ int insert_more_than_one(struct node *root,int n)
             root=root->link;
         }
         printf("%d",root->data);
+        return(n+m);
     }
 }
 void delete_at_begin(struct node *root,int n)
