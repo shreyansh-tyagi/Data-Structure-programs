@@ -623,12 +623,13 @@ void sorting(struct node *root,int n)
 
 void searching(struct node *root,int n)
 {
+ 
      while(1) 
     {
         char ch;
     int b,c;
     printf("\n\nFOR CONTINUE, Searching press any number\nTO EXIT, Press '0': ");
-    scanf("%d",&b);   
+    scanf("%d",&b);  
     switch(b)
     {
         case 0:
