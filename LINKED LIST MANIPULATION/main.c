@@ -465,10 +465,6 @@ int delete_more_than_one(struct node *root,int n)
     scanf("%d",&pos);
     printf("\n\nEnter the number of node you want to delete: ");
     scanf("%d",&val);
-    if(val>n){
-        printf("Please enter valid number of node ----total node availabe are %d",n);
-        exit(1);
-    }
     if(pos>1)
     {   
     loc=pos-1;
