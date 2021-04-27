@@ -65,7 +65,7 @@ void switch_print(struct node *root,int n)
         {
             case 0:
             {
-                printf("\nThanks for giving your time...goodbye!");
+                printf("\nThanks for giving your time...goodbye!\n\n");
                 exit(1);
             }
             case 1:
@@ -224,7 +224,7 @@ int insert_at_random_position(struct node *root,int m)
         p=p->link;
 
     }
-    printf("\n\nafter insertion:\n\n");
+    printf("\n\nAfter Insertion:\n\n");
     while(print->link!=NULL)
     {
         printf("%d  ",print->data);
@@ -237,7 +237,7 @@ int insert_at_random_position(struct node *root,int m)
     {
     temp->link=root;
     root=temp;
-    printf("\n\nafter insertion:\n\n");
+    printf("\n\nAfter Insertion:\n\n");
     while(root->link!=NULL)
     {
         printf("%d  ",root->data);
@@ -252,7 +252,7 @@ int insert_at_random_position(struct node *root,int m)
         root=root->link;
     }
     root->link=temp;
-    printf("\n\nafter insertion:\n\n");
+    printf("\n\nAfter Insertion:\n\n");
     while(p->link!=NULL)
     {
         printf("%d  ",p->data);
@@ -607,12 +607,12 @@ void sorting(struct node *root,int n)
     }  
     case 0:
     {
-        printf("\n\nThanks for giving your time ...goodbye!");
+        printf("\n\nThanks for giving your time ...goodbye!\n\n");
         exit(1);
     }
     default:
     {
-        printf("\n\nPlease enter the valid number from the menu...");
+        printf("\n\nPlease enter the valid number from the menu...\n\n");
     }
 
     }
@@ -625,20 +625,20 @@ void searching(struct node *root,int n)
     {
         char ch;
     int b,c;
-    printf("\n\nTO EXIT, Press '0', OTHERWISE Press any number to continue: ");
+    printf("\n\nFOR CONTINUE, Searching press any number\nTO EXIT, Press '0': ");
     scanf("%d",&b);   
     switch(b)
     {
         case 0:
         {
-        printf("\n\nThanks for giving your time ...goodbye!");
+        printf("\n\nThanks for giving your time ...goodbye!\n\n");
         exit(1);
         }
     } 
     struct node *temp=NULL;
     temp=root;
     int a,i,count=0;
-    printf("\n\nenter the number that you want to search: ");
+    printf("\n\nEnter the number that you want to search: ");
     scanf("%d",&a);
     for(i=1;i<=n;i++)
     {
