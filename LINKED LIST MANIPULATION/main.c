@@ -19,6 +19,7 @@ int delete_more_than_one(struct node *,int);
 void reverse(struct node *,int);
 void sorting(struct node *,int);
 void searching(struct node *,int);
+void length(int);
 void main()
 {
     struct node *temp=NULL,*root=NULL,*p=NULL;
@@ -55,7 +56,7 @@ void switch_print(struct node *root,int n)
     printf("\n\n------PLEASE CHOOSE FROM THE MENU--------\n\n ");
     printf("\n0. TO EXIT, Press '0'.\n1. Display linked list.\n2. Insertion of node at the begining.\n3. Insertion of node at the end.\n4. Insertion of node at random position.\n5. Insertion of more than one node at random position.");
     printf("\n6. Deletion of node from the begining.\n7. Deletion of node from the end.\n8. Deletion of node from both begining and end.\n9. Deletion of node from random position.\n10. Deletion of more than one node from random position.");
-    printf("\n11. Reverse the linked list.\n12. Sorting of linked list.\n13. Searching the element in linked list.");
+    printf("\n11. Reverse the linked list.\n12. Sorting of linked list.\n13. Searching the element in linked list.\n14. Length of linked list.");
     
     while(1)
     {
@@ -133,6 +134,11 @@ void switch_print(struct node *root,int n)
             case 13:
             {
                 searching(root,n);
+                break;
+            }
+            case 14:
+            {
+                length(n);
                 break;
             }
             default:
@@ -690,4 +696,8 @@ void searching(struct node *root,int n)
     }
     }
 }
+}
+void length(int n)
+{
+    printf("Length of linked list: %d",n);
 }
