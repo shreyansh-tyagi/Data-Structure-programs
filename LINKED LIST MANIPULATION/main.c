@@ -14,8 +14,8 @@ int insert_more_than_one(struct node *,int);
 void delete_at_begin(struct node *,int);
 void delete_at_end(struct node *,int);
 void delete_both_begin_end(struct node *,int);
-void delete_at_random(struct node *,int);
-void delete_more_than_one(struct node *,int);
+int delete_at_random(struct node *,int);
+int delete_more_than_one(struct node *,int);
 void reverse(struct node *,int);
 void sorting(struct node *,int);
 void searching(struct node *,int);
@@ -112,12 +112,12 @@ void switch_print(struct node *root,int n)
             }
             case 9:
             {
-                delete_at_random(root,n);
+                n=delete_at_random(root,n);
                 break;
             }
             case 10:
             {
-                delete_more_than_one(root,n);
+                n=delete_more_than_one(root,n);
                 break;
             }
             case 11:
@@ -412,7 +412,7 @@ void delete_both_begin_end(struct node *root,int n)
         temp=temp->link;
     }
 }
-void delete_at_random(struct node *root,int n)
+int delete_at_random(struct node *root,int n)
 {
     int pos,i,m,loc;
     struct node *temp=NULL,*p=NULL,*q=NULL;
@@ -440,7 +440,7 @@ void delete_at_random(struct node *root,int n)
         temp=temp->link;
     }
     printf("%d",temp->data);
-
+    return(n-1);
     }
     else if(pos==1)
     {
@@ -455,7 +455,7 @@ void delete_at_random(struct node *root,int n)
 
     }
 }
-void delete_more_than_one(struct node *root,int n)
+int delete_more_than_one(struct node *root,int n)
 {
     int pos,val,i,loc;
     struct node *temp=NULL,*p=NULL,*q=NULL;
@@ -489,6 +489,7 @@ void delete_more_than_one(struct node *root,int n)
         q=q->link;
     }
     printf("%d",q->data);
+    return(n-val);
     }
     if(pos==1)
     {
