@@ -717,6 +717,10 @@ void largest_element(struct node * root ,int n)
     while(temp->link!=NULL)
     {
         p=temp->link;
-        if(temp->data)
+        if(large<p->data)
+        {
+            large=p->data;
+
+        }
     }
 }
