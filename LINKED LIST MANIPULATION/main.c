@@ -60,7 +60,7 @@ void switch_print(struct node *root,int n)
     printf("\n0. TO EXIT, Press '0'.\n1. Display linked list.\n2. Insertion of node at the begining.\n3. Insertion of node at the end.\n4. Insertion of node at random position.\n5. Insertion of more than one node at random position.");
     printf("\n6. Deletion of node from the begining.\n7. Deletion of node from the end.\n8. Deletion of node from both begining and end.\n9. Deletion of node from random position.\n10. Deletion of more than one node from random position.");
     printf("\n11. Reverse the linked list.\n12. Sorting of linked list.\n13. Searching the element in linked list.\n14. Length of linked list.\n15. Largest element from the linked list.\n16. Smallest element from the linked list.");
-    printf("\n17.Even and Odd element from the linked list.");
+    printf("\n17. Even and Odd element from the linked list.");
     
     while(1)
     {
