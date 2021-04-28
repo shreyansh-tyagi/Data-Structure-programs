@@ -20,6 +20,7 @@ void reverse(struct node *,int);
 void sorting(struct node *,int);
 void searching(struct node *,int);
 void length(int);
+void largest_element(struct node *,int);
 void main()
 {
     struct node *temp=NULL,*root=NULL,*p=NULL;
@@ -139,6 +140,11 @@ void switch_print(struct node *root,int n)
             case 14:
             {
                 length(n);
+                break;
+            }
+            case 15:
+            {
+                largest_element(root,n);
                 break;
             }
             default:
@@ -691,7 +697,7 @@ void searching(struct node *root,int n)
         }
         default:
         {
-        printf("\nPlease entre the valid number '1' or '0'");
+        printf("\nPlease entre the valid character 'y' or 'n'");
         break;
         }
     }
