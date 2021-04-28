@@ -757,3 +757,22 @@ void smallest_element(struct node * root ,int n)
     }
     printf("\n\nSmallest element from the linked list: %d",small);
 }
+void even_odd(struct node *root,int n)
+{
+    struct node *temp=NULL,*q=NULL;
+    temp=root;
+    q=root;
+    printf("\nEven number from the linked list:\n");
+    while(temp->link!=NULL)
+    {
+        if(temp->data%2==0)
+        {
+            printf("  %d",temp->data);
+        }
+        temp=temp->link;
+    }
+    if(temp->data%2==0)
+        {
+            printf("  %d",temp->data);
+        }
+}
