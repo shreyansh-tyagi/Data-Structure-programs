@@ -647,7 +647,7 @@ void searching(struct node *root,int n)
     {
         char ch;
     int b,c;
-    printf("\n\nFOR CONTINUE, Searching press any number\nTO EXIT, Press '0': ");
+    printf("\n\nFOR CONTINUE Searching, press any number\nTO EXIT, Press '0': ");
     scanf("%d",&b);  
     switch(b)
     {
@@ -762,7 +762,7 @@ void even_odd(struct node *root,int n)
     struct node *temp=NULL,*q=NULL;
     temp=root;
     q=root;
-    printf("\nEven number from the linked list:\n");
+    printf("\nEven number from the linked list:\n\n");
     while(temp->link!=NULL)
     {
         if(temp->data%2==0)
@@ -775,7 +775,7 @@ void even_odd(struct node *root,int n)
         {
             printf("%d",temp->data);
         }
-    printf("\nOdd number from the linked list:\n");    
+    printf("\n\nOdd number from the linked list:\n\n");    
     while(q->link!=NULL)
     {
         if(q->data%2!=0)
