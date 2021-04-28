@@ -767,12 +767,25 @@ void even_odd(struct node *root,int n)
     {
         if(temp->data%2==0)
         {
-            printf("  %d",temp->data);
+            printf("%d  ",temp->data);
         }
         temp=temp->link;
     }
     if(temp->data%2==0)
         {
-            printf("  %d",temp->data);
+            printf("%d",temp->data);
         }
+    printf("\nOdd number from the linked list:\n");    
+    while(q->link!=NULL)
+    {
+        if(q->data%2!=0)
+        {
+            printf("%d  ",q->data);
+        }
+        q=q->link;
+    }  
+     if(q->data%2!=0)
+        {
+            printf("%d",q->data);
+        }  
 }
