@@ -147,6 +147,8 @@ void switch_print(struct node *root,int n)
                 largest_element(root,n);
                 break;
             }
+            case 16:
+            
             default:
             {
                 printf("\n\n-----Please, SELECT the number from the MENU-------\n\n");
@@ -725,4 +727,22 @@ void largest_element(struct node * root ,int n)
         temp=temp->link;
     }
     printf("\n\nLargest element from the linked list: %d",large);
+}
+void smallest_element(struct node * root ,int n)
+{
+    struct node *temp=NULL,*p=NULL;
+    int small=0;
+    temp=root;
+    small=temp->data;
+    while(temp->link!=NULL)
+    {
+        p=temp->link;
+        if(small<p->data)
+        {
+            small=p->data;
+
+        }
+        temp=temp->link;
+    }
+    printf("\n\nLargest element from the linked list: %d",small);
 }
