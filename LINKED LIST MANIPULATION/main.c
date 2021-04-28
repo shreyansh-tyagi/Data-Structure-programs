@@ -722,5 +722,7 @@ void largest_element(struct node * root ,int n)
             large=p->data;
 
         }
+        temp=temp->link;
     }
+    printf("\n\nLargest element from the linked list: %d",large);
 }
