@@ -12,5 +12,5 @@ void main()
     struct node *temp=NULL,*root=NULL,*p=NULL;
     printf("\nenter the size of linked list: ");
     scanf("%d",&n);
-    
+    printf("\n\noriginal linked list:\n\n");
 }
