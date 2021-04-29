@@ -8,6 +8,9 @@ struct node{
 };
 void main()
 {
+    int n,i;
+    struct node *temp=NULL,*root=NULL,*p=NULL;
+    printf("\nenter the size of linked list: ");
+    scanf("%d",&n);
     
-    printf();
 }
