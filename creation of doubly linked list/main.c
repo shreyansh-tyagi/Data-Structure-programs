@@ -36,3 +36,7 @@ void main()
     }
     display(root,n);
 }
+void display(struct node *root,int n)
+{
+    
+}
