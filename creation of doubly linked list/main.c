@@ -15,6 +15,9 @@ void main()
     printf("\n\noriginal linked list:\n\n");
     for(i=1;i<=n;i++)
     {
-        
+        if(root==NULL)
+        {
+            
+        }
     }
 }
