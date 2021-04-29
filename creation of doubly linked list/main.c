@@ -13,4 +13,8 @@ void main()
     printf("\nenter the size of linked list: ");
     scanf("%d",&n);
     printf("\n\noriginal linked list:\n\n");
+    for(i=1;i<=n;i++)
+    {
+        
+    }
 }
