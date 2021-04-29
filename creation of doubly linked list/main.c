@@ -16,13 +16,13 @@ void main()
     for(i=1;i<=n;i++)
     {
         temp=(struct node *)malloc(sizeof(struct node));
-        printf("enter the %d element into linked list",i);
+        printf("enter the %d element into linked list: ",i);
         scanf("%d",&temp->data);
         temp->left=NULL;
         temp->right=NULL;
         if(root==NULL)
         {
-            root==temp;
+            root=temp;
         }
         else{
             p=root;
