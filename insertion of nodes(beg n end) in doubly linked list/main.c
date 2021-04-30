@@ -148,6 +148,7 @@ struct node * insert_at_random(struct node *root ,int n)
             q=q->right;
         }
         printf("%d",q->data);
+        return root;
     }
     else if(pos==1)
     {
@@ -178,6 +179,7 @@ struct node * insert_at_random(struct node *root ,int n)
         q=q->right;
     }
     printf("%d",q->data);
+    return root;
 }
 }
 void reverse(struct node *root ,int n)
