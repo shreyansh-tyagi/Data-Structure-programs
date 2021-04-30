@@ -176,6 +176,13 @@ struct node * insert_at_random(struct node *root ,int n)
         q=q->right;
     }
     printf("%d",q->data);
+    printf("\n\nReverse linked list:\n\n");
+    while(q->left!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->left;
+    }
+    printf("%d",q->data);
 
    }
 
