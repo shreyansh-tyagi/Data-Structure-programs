@@ -139,7 +139,12 @@ void insert_at_random(struct node *root ,int n)
         temp->left=p;
         p->right=temp;
         printf("\n\nAfter insertion at %d position:\n\n",pos);
-        while()
+        while(q->right!=NULL)
+        {
+            printf("%d  ",q->data);
+            q=q->right;
+        }
+        printf("%d",q->data);
 
     }
 
