@@ -120,7 +120,7 @@ int insert_at_end(struct node *root ,int n)
 }
 struct node * insert_at_random(struct node *root ,int n)
 {
-    struct node *temp=NULL,*p=NULL,*q=NULL;
+    struct node *temp=NULL,*p=NULL,*q=NULL,*r=NULL;
     int pos,i,loc=0;
     p=root;
     q=root;
@@ -141,6 +141,8 @@ struct node * insert_at_random(struct node *root ,int n)
         temp->right=p->right;
         temp->left=p;
         p->right=temp;
+        r=temp->right;
+        r->left=temp;
         printf("\n\nAfter insertion at %d position:\n\n",pos);
         while(q->right!=NULL)
         {
