@@ -105,6 +105,11 @@ void insert_at_end(struct node *root ,int n)
     }
     printf("%d",q->data);
     printf("\n\nbackward traversing After insertion at end:\n\n");
-    
+    while(q->left!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->left;
+    }
+    printf("%d",q->data);
 
 }
