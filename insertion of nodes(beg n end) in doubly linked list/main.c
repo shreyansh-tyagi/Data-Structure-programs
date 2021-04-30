@@ -120,8 +120,13 @@ void insert_at_random(struct node *root ,int n)
     struct node *temp=NULL,*p=NULL,*q=NULL;
     int m,i;
     p=root;
+    temp=(struct node *)malloc(sizeof(struct node));
     printf("\n\nenter the position at which you want to insert the element: ");
     scanf("%d",&m);
     printf("\nenter the element that you want to insert: ");
+    scanf("%d",&temp->data);
+    temp->left=NULL;
+    temp->right=NULL;
+    
 
 }
