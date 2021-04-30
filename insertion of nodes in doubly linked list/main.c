@@ -8,6 +8,7 @@ struct node {
 };
 void display(struct node *,int);
 struct node * insert_at_begin(struct node *,int);
+void insert_at_end(struct node *,int );
 void main()
 {
   int n,i;
@@ -57,6 +58,7 @@ void display(struct node *root,int n)
     }
     printf("%d",temp->data);
     root=insert_at_begin(root,n);
+    insert_at_end(root,n);
 }
 struct node * insert_at_begin(struct node *root,int n)
 {
@@ -70,7 +72,7 @@ struct node * insert_at_begin(struct node *root,int n)
     temp->right=p;
     p->left=temp;
     q=temp;
-    printf("\n\nAfter insertion:\n\n");
+    printf("\n\nAfter insertion at begin:\n\n");
     while(q->right!=NULL)
     {
         printf("%d  ",q->data);
@@ -78,4 +80,25 @@ struct node * insert_at_begin(struct node *root,int n)
     }
     printf("%d",q->data);
     return temp;
+}
+void insert_at_end(struct node *root ,int n)
+{
+    struct node *temp=NULL,*p=NULL,*q=NULL;
+    p=root;
+    q=root;
+    temp=(struct node *)malloc(sizeof(struct node));
+    printf("\n\nenter the element that you want to insert at the end of linked list: ");
+    scanf("%d",&temp->data);
+    temp->left=NULL;
+    temp->right=NULL;
+    while(p->right!=NULL)
+    {
+        p=p->right;
+    }
+    p->right=temp;
+    temp->left=p;
+    printf("\n\nAfter insertion at end:\n\n");
+
+    
+
 }
