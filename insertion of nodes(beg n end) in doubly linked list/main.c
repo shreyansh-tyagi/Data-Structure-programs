@@ -10,6 +10,7 @@ void display(struct node *,int);
 struct node * insert_at_begin(struct node *,int);
 int  insert_at_end(struct node *,int );
 struct node * insert_at_random(struct node *,int);
+void reverse(struct node *,int);
 void main()
 {
   int n,i;
@@ -61,6 +62,7 @@ void display(struct node *root,int n)
     root=insert_at_begin(root,n);
     n=insert_at_end(root,n);
     root=insert_at_random(root,n);
+    reverse(root,n);
 }
 struct node * insert_at_begin(struct node *root,int n)
 {
@@ -176,14 +178,22 @@ struct node * insert_at_random(struct node *root ,int n)
         q=q->right;
     }
     printf("%d",q->data);
-    printf("\n\nReverse linked list:\n\n");
+}
+}
+void reverse(struct node *root ,int n)
+{
+    struct node *q=NULL;
+    q=root;
+    while(q->right!=NULL)
+    {
+        q=q->right;
+    }
+     printf("\n\nReverse linked list:\n\n");
     while(q->left!=NULL)
     {
         printf("%d  ",q->data);
         q=q->left;
     }
     printf("%d",q->data);
-
-   }
 
 }
