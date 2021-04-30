@@ -118,15 +118,30 @@ void insert_at_end(struct node *root ,int n)
 void insert_at_random(struct node *root ,int n)
 {
     struct node *temp=NULL,*p=NULL,*q=NULL;
-    int m,i;
+    int pos,i,loc=0;
     p=root;
+    q=root;
     temp=(struct node *)malloc(sizeof(struct node));
     printf("\n\nenter the position at which you want to insert the element: ");
-    scanf("%d",&m);
+    scanf("%d",&pos);
     printf("\nenter the element that you want to insert: ");
     scanf("%d",&temp->data);
     temp->left=NULL;
     temp->right=NULL;
-    
+    if((pos>1)&&(pos<n))
+    {
+        loc=pos-1;
+        for(i=1;i<loc;i++)
+        {
+            p=p->right;
+        }
+        temp->right=p->right;
+        temp->left=p;
+        p->right=temp;
+        printf("\n\nAfter insertion at %d position:\n\n",pos);
+        while()
+
+    }
+
 
 }
