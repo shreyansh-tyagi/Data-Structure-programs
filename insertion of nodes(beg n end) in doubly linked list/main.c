@@ -9,7 +9,7 @@ struct node {
 void display(struct node *,int);
 struct node * insert_at_begin(struct node *,int);
 void insert_at_end(struct node *,int );
-void insert_at_random(struct node *,int);
+struct node * insert_at_random(struct node *,int);
 void main()
 {
   int n,i;
@@ -60,7 +60,7 @@ void display(struct node *root,int n)
     printf("%d",temp->data);
     root=insert_at_begin(root,n);
     insert_at_end(root,n);
-    insert_at_random(root,n);
+    root=insert_at_random(root,n);
 }
 struct node * insert_at_begin(struct node *root,int n)
 {
@@ -115,7 +115,7 @@ void insert_at_end(struct node *root ,int n)
     printf("%d",q->data);
 
 }
-void insert_at_random(struct node *root ,int n)
+struct node * insert_at_random(struct node *root ,int n)
 {
     struct node *temp=NULL,*p=NULL,*q=NULL;
     int pos,i,loc=0;
@@ -145,8 +145,37 @@ void insert_at_random(struct node *root ,int n)
             q=q->right;
         }
         printf("%d",q->data);
+    }
+    else if(pos==1)
+    {
+        temp->right=p;
+    p->left=temp;
+    q=temp;
+    printf("\n\nAfter insertion at %d position:\n\n",pos);
+    while(q->right!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->right;
+    }
+    printf("%d",q->data);
+    return temp;
 
     }
+   else if(pos>=n){
+        while(p->right!=NULL)
+    {
+        p=p->right;
+    }
+    p->right=temp;
+    temp->left=p;
+    printf("\n\nAfter insertion at %d position:\n\n",pos);
+    while(q->right!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->right;
+    }
+    printf("%d",q->data);
 
+   }
 
 }
