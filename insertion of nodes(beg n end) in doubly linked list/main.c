@@ -9,7 +9,7 @@ struct node {
 void display(struct node *,int);
 struct node * insert_at_begin(struct node *,int);
 int  insert_at_end(struct node *,int );
-void insert_at_random(struct node *,int);
+struct node * insert_at_random(struct node *,int);
 void reverse(struct node *,int);
 void main()
 {
@@ -61,7 +61,7 @@ void display(struct node *root,int n)
     printf("%d",temp->data);
     root=insert_at_begin(root,n);
     n=insert_at_end(root,n);
-    insert_at_random(root,n);
+    root=insert_at_random(root,n);
     reverse(root,n);
 }
 struct node * insert_at_begin(struct node *root,int n)
@@ -118,7 +118,7 @@ int insert_at_end(struct node *root ,int n)
     return n+2;
 
 }
-void insert_at_random(struct node *root ,int n)
+struct node * insert_at_random(struct node *root ,int n)
 {
     struct node *temp=NULL,*p=NULL,*q=NULL;
     int pos,i,loc=0;
@@ -148,6 +148,7 @@ void insert_at_random(struct node *root ,int n)
             q=q->right;
         }
         printf("%d",q->data);
+        return root;
     }
     else if(pos==1)
     {
@@ -161,7 +162,7 @@ void insert_at_random(struct node *root ,int n)
         q=q->right;
     }
     printf("%d",q->data);
-
+    return temp;
     }
    else if(pos>=n){
         while(p->right!=NULL)
@@ -177,6 +178,7 @@ void insert_at_random(struct node *root ,int n)
         q=q->right;
     }
     printf("%d",q->data);
+    return root;
 }
 }
 void reverse(struct node *root ,int n)
