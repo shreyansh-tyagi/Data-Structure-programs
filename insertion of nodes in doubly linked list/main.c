@@ -7,6 +7,7 @@ struct node {
     struct node *right;
 };
 void display(struct node *,int);
+struct node * insert_at_begin(struct node *,int);
 void main()
 {
   int n,i;
@@ -55,4 +56,9 @@ void display(struct node *root,int n)
         temp=temp->left;
     }
     printf("%d",temp->data);
+    root=insert_at_begin(root,n);
+}
+struct node * insert_at_begin(struct node *root,int n)
+{
+    
 }
