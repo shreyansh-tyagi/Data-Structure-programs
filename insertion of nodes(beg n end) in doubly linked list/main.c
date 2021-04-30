@@ -8,7 +8,7 @@ struct node {
 };
 void display(struct node *,int);
 struct node * insert_at_begin(struct node *,int);
-void insert_at_end(struct node *,int );
+int  insert_at_end(struct node *,int );
 struct node * insert_at_random(struct node *,int);
 void main()
 {
@@ -59,7 +59,7 @@ void display(struct node *root,int n)
     }
     printf("%d",temp->data);
     root=insert_at_begin(root,n);
-    insert_at_end(root,n);
+    n=insert_at_end(root,n);
     root=insert_at_random(root,n);
 }
 struct node * insert_at_begin(struct node *root,int n)
@@ -83,7 +83,7 @@ struct node * insert_at_begin(struct node *root,int n)
     printf("%d",q->data);
     return temp;
 }
-void insert_at_end(struct node *root ,int n)
+int insert_at_end(struct node *root ,int n)
 {
     struct node *temp=NULL,*p=NULL,*q=NULL;
     p=root;
@@ -113,6 +113,7 @@ void insert_at_end(struct node *root ,int n)
         q=q->left;
     }
     printf("%d",q->data);
+    return n+2;
 
 }
 struct node * insert_at_random(struct node *root ,int n)
