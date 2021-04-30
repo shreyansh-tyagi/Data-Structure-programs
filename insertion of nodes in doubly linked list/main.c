@@ -60,5 +60,22 @@ void display(struct node *root,int n)
 }
 struct node * insert_at_begin(struct node *root,int n)
 {
-    
+    struct node *temp=NULL,*p=NULL,*q=NULL;
+    temp=(struct node*)malloc(sizeof(struct node));
+    printf("\n\nenter the new element that you want to insert at the begining: ");
+    scanf("%d",&temp->data);
+    temp->left=NULL;
+    temp->right=NULL;
+    p=root;
+    temp->right=p;
+    p->left=temp;
+    q=temp;
+    printf("\n\nAfter insertion:\n\n");
+    while(q->right!=NULL)
+    {
+        printf("%d  ",q->data);
+        q=q->right;
+    }
+    printf("%d",q->data);
+    return temp;
 }
