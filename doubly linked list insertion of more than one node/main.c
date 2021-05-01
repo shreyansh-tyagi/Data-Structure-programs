@@ -158,6 +158,26 @@ struct node * insert_more_than_one(struct node *root ,int n)
     }
     else if(pos>=n)
     {
-        
+        r=root;
+        while(r->right!=NULL)
+        {
+            r=r->right;
+        }
+        r->right=root1;
+        root1->left=r;
+        printf("\n\nforward traversing After insertion:\n\n");
+        while(root->right!=NULL)
+        {
+            printf("%d  ",root->data);
+            root=root->right;
+        }
+        printf("%d",root->data);
+        printf("\n\nbackward traversing After insertion:\n\n");
+        while(root->left!=NULL)
+        {
+            printf("%d  ",root->data);
+            root=root->left;
+        }
+        printf("%d",root->data);
     }
 }
