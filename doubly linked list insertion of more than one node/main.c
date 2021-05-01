@@ -64,7 +64,8 @@ void display(struct node *root ,int n)
 struct node * insert_more_than_one(struct node *root ,int n)
 {
     int pos,loc,m,i;
-    struct node *temp=NULL,*p=NULL,*q=NULL,*root1=NULL;
+    struct node *temp=NULL,*p=NULL,*q=NULL,*root1=NULL,*temp1=NULL;
+    temp1=root;
     printf("\n\nenter the size of new linked list: ");
     scanf("%d",&m);
     printf("\n\nenter the position where you want to insert the new linked list: ");
@@ -98,4 +99,12 @@ struct node * insert_more_than_one(struct node *root ,int n)
         q=q->right;
     }
     printf("%d",q->data);
+    if((pos>1)&&(pos<n))
+    {
+        loc=pos-1;
+        for(i=1;i<loc;i++)
+        {
+            temp1=temp1->right;
+        }
+    }
 }
