@@ -140,10 +140,18 @@ struct node * insert_more_than_one(struct node *root ,int n)
         }
         temp1->right=root;
         root->left=temp1;
+        printf("\n\nforward traversing After insertion:\n\n");
         while(r->right!=NULL)
         {
             printf("%d  ",r->data);
             r=r->right;
+        }
+        printf("%d",r->data);
+        printf("backward traversing After insertion:\n\n");
+        while(r->left!=NULL)
+        {
+            printf("%d  ",r->data);
+            r=r->left;
         }
         printf("%d",r->data);
 
