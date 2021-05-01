@@ -43,11 +43,18 @@ void display(struct node *root ,int n)
 {
     struct node *temp=NULL;
     temp=root;
-    printf("\n\nlinked list:\n\n");
+    printf("\n\nforward traversing linked list:\n\n");
     while(temp->right!=NULL)
     {
         printf("%d  ",temp->data);
         temp=temp->right;
+    }
+    printf("%d",temp->data);
+    printf("\n\nbackward traversing linked list:\n\n");
+    while(temp->left!=NULL)
+    {
+        printf("%d  ",temp->data);
+        temp=temp->left;
     }
     printf("%d",temp->data);
 }
