@@ -147,7 +147,7 @@ struct node * insert_more_than_one(struct node *root ,int n)
             r=r->right;
         }
         printf("%d",r->data);
-        printf("backward traversing After insertion:\n\n");
+        printf("\n\nbackward traversing After insertion:\n\n");
         while(r->left!=NULL)
         {
             printf("%d  ",r->data);
@@ -155,5 +155,9 @@ struct node * insert_more_than_one(struct node *root ,int n)
         }
         printf("%d",r->data);
 
+    }
+    else if(pos>=n)
+    {
+        
     }
 }
