@@ -41,7 +41,8 @@ void main()
 }
 void display(struct node *root ,int n)
 {
-    struct node *temp=NULL;
+    
+    struct node *temp=NULL,*temp1=NULL;
     temp=root;
     printf("\n\nforward traversing linked list:\n\n");
     while(temp->right!=NULL)
@@ -57,4 +58,37 @@ void display(struct node *root ,int n)
         temp=temp->left;
     }
     printf("%d",temp->data);
+    
+   root =insert_more_than_one(root ,n);
+}
+struct node * insert_more_than_one(struct node *root ,int n)
+{
+    int pos,loc,m,i;
+    struct node *temp=NULL,*p=NULL,*q=NULL,root1=NULL;
+    printf("\n\nenter the position where you want to insert the new linked list: ");
+    scanf("%d",&pos);
+    printf("\n\nenter the size of new linked list: ");
+    scanf("%d",&m);
+    for(i=1;i<=m;i++)
+    {
+      temp=(struct node *)malloc(sizeof(struct node));
+      printf("enter the %d data in new linked list: ",i);
+      scanf("%d",&temp->data);
+      temp->left=NULL;
+      temp->right=NULL;
+      if(root1==NULL)
+      {
+          root1=temp;
+      }
+      else{
+          p=root1;
+          while(p->right!=NULL)
+          {
+              p=p->right;
+          }
+          p->right=temp;
+          temp->left=p;
+      }
+    }
+
 }
