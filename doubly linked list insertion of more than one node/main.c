@@ -27,8 +27,27 @@ void main()
             root=temp;
         }
         else{
-            
+            p=root;
+            while(p->right!=NULL)
+            {
+                p=p->right;
+
+            }
+            p->right=temp;
+            temp->left=p;
         }
     }
-
+    display(root,n);
+}
+void display(struct node *root ,int n)
+{
+    struct node *temp=NULL;
+    temp=root;
+    printf("\n\nlinked list:\n\n");
+    while(temp->right!=NULL)
+    {
+        printf("%d  ",temp->data);
+        temp=temp->right;
+    }
+    printf("%d",temp->data);
 }
