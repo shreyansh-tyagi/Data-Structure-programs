@@ -126,5 +126,26 @@ struct node * insert_more_than_one(struct node *root ,int n)
             root=root->left;
         }
         printf("%d",root->data);
+        return root;
+    }
+    else if(pos==1)
+    {
+        temp1=root1;
+        struct node *q=NULL;
+        q=root;
+        r=root1;
+        while(temp1->right!=NULL)
+        {
+            temp1=temp1->right;
+        }
+        temp1->right=root;
+        root->left=temp1;
+        while(r->right!=NULL)
+        {
+            printf("%d  ",r->data);
+            r=r->right;
+        }
+        printf("%d",r->data);
+
     }
 }
