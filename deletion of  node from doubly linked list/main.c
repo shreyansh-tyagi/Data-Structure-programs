@@ -74,12 +74,15 @@ struct node * delete_at_begin(struct node *root ,int n)
 }
 void delete_at_end(struct node *root,int n)
 {
+    struct node *temp=NULL;
     printf("\n\nAfter deletion from end:\n\n");
     while(root->right!=NULL)
     {
         printf("%d  ",root->data);
         root=root->right;
     }
+    temp=root->left;
+    temp->right=NULL;
 }
 void delete_at_both_begin_end(struct node *root,int n)
 {
@@ -89,5 +92,6 @@ void delete_at_both_begin_end(struct node *root,int n)
     while(temp->right!=NULL)
     {
         printf("%d  ",temp->data);
+        temp=temp->right;
     }
 }
