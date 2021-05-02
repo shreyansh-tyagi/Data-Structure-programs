@@ -7,6 +7,7 @@ struct node {
     struct node *right;
 };
 void display(struct node *,int );
+struct node * delete_at_random(struct node *,int );
 void main()
 {
     int n,i;
@@ -48,4 +49,23 @@ void display(struct node *root,int n)
         temp=temp->right;
     }
     printf("%d",temp->data);
+    root=delete_at_random(root,n);
+}
+struct node * delete_at_random(struct node *root ,int n)
+{
+    struct node *temp=NULL,*p=NULL,*q=NULL;
+    temp=root;
+    int pos,loc,i;
+    printf("\n\nenter the position from where you want to delete the node from linked list:");
+    scanf("%d",&pos);
+    if((pos>1)&&(pos<n))
+    {
+        loc=pos-1;
+        for(i=1;i<loc;i++)
+        {
+            temp=temp->right;
+        }
+        p=temp->right;
+        q=temp->left;
+    }
 }
