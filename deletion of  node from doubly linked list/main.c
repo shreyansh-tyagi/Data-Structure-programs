@@ -40,6 +40,7 @@ void main()
 void display(struct node *root,int n)
 {
     struct node *temp=NULL;
+    temp=root;
     printf("\n\noriginal linked list:\n\n");
     while(temp->right!=NULL)
     {
