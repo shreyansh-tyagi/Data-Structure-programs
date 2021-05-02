@@ -106,4 +106,31 @@ struct node * delete_at_random(struct node *root ,int n)
         printf("%d",r->data);
         return temp;
     }
+    else if(pos>=n)
+    {
+        p=temp;
+        while(p->right!=NULL)
+        {
+            p=p->right;
+        }
+        q=p->left;
+        q->right=NULL;
+        p->left=NULL;
+        printf("\n\nforward traversing After deletion from %d position:\n\n",pos);
+        while(r->right!=NULL)
+        {
+            printf("%d  ",r->data);
+            r=r->right;
+        }
+        printf("%d",r->data);
+        printf("\n\nbackward traversing After deletion from %d position:\n\n",pos);
+        while(r->left!=NULL)
+        {
+            printf("%d  ",r->data);
+            r=r->left;
+        }
+        printf("%d",r->data);
+        return root;
+
+    }
 }
