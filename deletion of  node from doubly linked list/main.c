@@ -59,7 +59,17 @@ struct node * delete_at_begin(struct node *root ,int n)
     printf("\n\nforward traversing After deletion:\n\n");
     while(temp->right!=NULL)
     {
-        printf("%d  ",int )
+        printf("%d  ",temp->data );
+        temp=temp->right;
 
     }
+    printf("%d",temp->data);
+    printf("\n\nbackward traversing After deletion:\n\n");
+    while(temp->left!=NULL)
+    {
+        printf("%d  ",temp->data);
+        temp=temp->left;
+
+    }
+    printf("%d",temp->data);
 }
