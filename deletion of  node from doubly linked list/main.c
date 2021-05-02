@@ -57,6 +57,7 @@ struct node * delete_at_begin(struct node *root ,int n)
     struct node *temp=NULL,*q=NULL;
     temp=root->right;
     q=root->right;
+    root->left=NULL;
     printf("\n\nforward traversing After deletion:\n\n");
     while(temp->right!=NULL)
     {
