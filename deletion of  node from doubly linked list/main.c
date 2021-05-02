@@ -7,6 +7,7 @@ struct node {
     struct node *right;
 };
 void display(struct node *,int);
+struct node * delete_at_begin(struct node *,int );
 void main()
 {
     int n,i;
@@ -48,5 +49,17 @@ void display(struct node *root,int n)
         temp=temp->right;
     }
     printf("%d",temp->data);
+    root=delete_at_begin(root,n);
 
+}
+struct node * delete_at_begin(struct node *root ,int n)
+{
+    struct node *temp=NULL;
+    temp=root->right;
+    printf("\n\nforward traversing After deletion:\n\n");
+    while(temp->right!=NULL)
+    {
+        printf("%d  ",int )
+
+    }
 }
