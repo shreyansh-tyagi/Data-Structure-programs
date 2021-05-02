@@ -6,6 +6,7 @@ struct node {
     struct node *left;
     struct node *right;
 };
+void display(struct node *,int );
 void main()
 {
     int n,i;
