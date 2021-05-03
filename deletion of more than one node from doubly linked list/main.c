@@ -255,6 +255,7 @@ void delete_more_than_one(struct node *root,int n)
     else if(pos==n)
     {
           p=temp;
+          r=root;
         while(p->right!=NULL)
         {
             p=p->right;
