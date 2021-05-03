@@ -155,7 +155,10 @@ void delete_more_than_one(struct node *root,int n)
         q=p;
         for(i=1;i<val;i++)
         {
-            
+            p=p->right;
         }
+        r=q->left;
+        s=p->right;
+        r->right=s;
     }
 }
