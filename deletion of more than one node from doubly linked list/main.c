@@ -278,6 +278,10 @@ void delete_more_than_one(struct node *root,int n)
         }
         printf("%d",r->data);
     }
+    else if(pos>n)
+    {
+        printf("\n\nPLEASE, enter the valid position.....total nodes are %d",n);
+    }
     
 }
 else{
