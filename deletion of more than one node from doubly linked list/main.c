@@ -166,7 +166,7 @@ void delete_more_than_one(struct node *root,int n)
     scanf("%d",&pos);
     printf("\n\nenter the number of node that you want to delete: ");
     scanf("%d",&val);
-    if(val<n)
+    if(val<=n)
     {
     if((pos>1)&&(pos<n)) 
     {
@@ -252,5 +252,8 @@ void delete_more_than_one(struct node *root,int n)
          printf("%d",q->data);
 
     }
+}
+else{
+    printf("\n\nPLEASE, enter valid number of node ..total nodes are %d",n);
 }
 }
