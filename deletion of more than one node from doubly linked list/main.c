@@ -204,6 +204,7 @@ void delete_more_than_one(struct node *root,int n)
             r=q->right;
             r->left=NULL;
             q->right=NULL;
+            q->left=NULL;
             
         printf("\n\nforward traversing After deletion of %d nodes from %d position:\n\n",val,pos);
         while(temp->right!=NULL)
