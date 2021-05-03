@@ -198,4 +198,31 @@ void delete_more_than_one(struct node *root,int n)
         printf("%d",temp->data);
 
     }
+    else if(pos==1)
+    {
+        p=temp;
+        for(i=1;i<val;i++)
+        {
+            p=p->right;
+        }
+        q=p->right;
+        q->left=NULL;
+        p->left=NULL;
+        p->right=NULL;
+         printf("\n\nforward traversing After deletion of %d nodes from %d position:\n\n",val,pos);
+         while(q->right!=NULL)
+         {
+             printf("%d  ",q->data);
+             q=q->right;
+         }
+         printf("%d",q->data);
+          printf("\n\nbackward traversing After deletion of %d nodes from %d position:\n\n",val,pos);
+           while(q->left!=NULL)
+         {
+             printf("%d  ",q->data);
+             q=q->left;
+         }
+         printf("%d",q->data);
+
+    }
 }
