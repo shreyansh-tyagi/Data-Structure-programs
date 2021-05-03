@@ -7,7 +7,7 @@ struct node {
     struct node *right;
 };
 void display(struct node *,int );
-struct node * delete_at_random(struct node *,int );
+void delete_at_random(struct node *,int );
 void delete_more_than_one(struct node *,int);
 void main()
 {
@@ -43,6 +43,7 @@ void display(struct node *root,int n)
 {
     struct node *temp=NULL;
     temp=root;
+    int a;
     printf("\n\noriginal linked list:\n\n");
     while(temp->right!=NULL)
     {
@@ -50,16 +51,40 @@ void display(struct node *root,int n)
         temp=temp->right;
     }
     printf("%d",temp->data);
-    root=delete_at_random(root,n);
-    delete_more_than_one(root,n);
+    printf("\n\nchoose from the menu:\n1.Do you want to delete one element press '1'\n2.Do you want to delete more than one elemnt press '2'\n3. press '0' to exit: ");
+    scanf("%d",&a);
+    switch(a)
+    {
+        case 1:
+        {
+            delete_at_random(root,n);
+            break;
+        }
+        case 2:
+        {
+            delete_more_than_one(root,n);
+            break;
+        }
+        case 0:
+        {
+            printf("thanks for giving your time...goodbye");
+            exit(1);
+        }
+        default:
+        {
+            printf("\nplease enter the valid number from the menu");
+            exit(1);
+        }
+
+    }
 }
-struct node * delete_at_random(struct node *root ,int n)
+void delete_at_random(struct node *root ,int n)
 {
     struct node *temp=NULL,*p=NULL,*q=NULL,*r=NULL;
     temp=root;
     r=root;
     int pos,i;
-    printf("\n\nenter the position from where you want to delete the node from linked list: ");
+    printf("\n\nenter the position from where you want to delete one node from linked list: ");
     scanf("%d",&pos);
     if((pos>1)&&(pos<n))
     {
@@ -85,7 +110,6 @@ struct node * delete_at_random(struct node *root ,int n)
             r=r->left;
         }
         printf("%d",r->data);
-        return root;
     }
     else if(pos==1)
     {
@@ -106,7 +130,6 @@ struct node * delete_at_random(struct node *root ,int n)
             r=r->left;
         }
         printf("%d",r->data);
-        return temp;
     }
     else if(pos>=n)
     {
@@ -132,8 +155,6 @@ struct node * delete_at_random(struct node *root ,int n)
             r=r->left;
         }
         printf("%d",r->data);
-        return root;
-
     }
 }
 void delete_more_than_one(struct node *root,int n)
@@ -141,7 +162,7 @@ void delete_more_than_one(struct node *root,int n)
     struct node *temp=NULL,*p=NULL,*q=NULL,*r=NULL,*s=NULL;
     temp=root;
     int pos,loc,i,val;
-    printf("\n\nenter the position from where you want to delete the node: ");
+    printf("\n\nenter the position from where you want to delete more than one node: ");
     scanf("%d",&pos);
     printf("\n\nenter the number of node that you want to delete: ");
     scanf("%d",&val);
@@ -161,14 +182,14 @@ void delete_more_than_one(struct node *root,int n)
         s=p->right;
         r->right=s;
         s->left=r;
-        printf("\n\n forward traversing After deletion of %d nodes from %d position:\n\n",val,pos);
+        printf("\n\nforward traversing After deletion of %d nodes from %d position:\n\n",val,pos);
         while(temp->right!=NULL)
         {
             printf("%d  ",temp->data);
             temp=temp->right;
         }
         printf("%d",temp->data);
-        printf("\n\n forward traversing After deletion of %d nodes from %d position:\n\n",val,pos);
+        printf("\n\nbackward traversing After deletion of %d nodes from %d position:\n\n",val,pos);
          while(temp->left!=NULL)
         {
             printf("%d  ",temp->data);
