@@ -138,13 +138,19 @@ struct node * delete_at_random(struct node *root ,int n)
 }
 void delete_more_than_one(struct node *root,int n)
 {
-    struct node *temp=NULL;
+    struct node *temp=NULL,*p=NULL,*q=NULL,*r=NULL,*s=NULL;
     temp=root;
-    int pos,loc,i;
+    int pos,loc,i,val;
     printf("\n\nenter the position from where you want to delete the node: ");
     scanf("%d",&pos);
+    printf("\n\nenter the number of node that you want to delete: ");
+    scanf("%d",&val);
     if((pos>1)&&(pos<n)) 
     {
-        
+        p=temp;
+        for(i=1;i<pos;i++)
+        {
+            p=p->right;
+        }
     }
 }
