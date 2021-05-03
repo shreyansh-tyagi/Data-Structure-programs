@@ -8,6 +8,7 @@ struct node {
 };
 void display(struct node *,int );
 struct node * delete_at_random(struct node *,int );
+void delete_more_than_one(struct node *,int);
 void main()
 {
     int n,i;
@@ -50,6 +51,7 @@ void display(struct node *root,int n)
     }
     printf("%d",temp->data);
     root=delete_at_random(root,n);
+    delete_more_than_one(root,n);
 }
 struct node * delete_at_random(struct node *root ,int n)
 {
@@ -132,5 +134,17 @@ struct node * delete_at_random(struct node *root ,int n)
         printf("%d",r->data);
         return root;
 
+    }
+}
+void delete_more_than_one(struct node *root,int n)
+{
+    struct node *temp=NULL;
+    temp=root;
+    int pos,loc,i;
+    printf("\n\nenter the position from where you want to delete the node: ");
+    scanf("%d",&pos);
+    if((pos>1)&&(pos<n)) 
+    {
+        
     }
 }
