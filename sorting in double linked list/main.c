@@ -8,6 +8,7 @@ struct node {
     struct node *right;
 };
 void display(struct node *,int);
+void sorting(struct node *,int);
 void main()
 {
     int n,i;
@@ -56,4 +57,9 @@ void display(struct node *root,int n)
         temp=temp->left;
     }
     printf("%d",temp->data);
+    sorting(root,n);
+}
+void sorting(struct node *root,int n)
+{
+    
 }
