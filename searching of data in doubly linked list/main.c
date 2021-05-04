@@ -7,6 +7,7 @@ struct node{
     struct node *right;
 };
 void display(struct node *,int);
+void search(struct node *,int);
 void main()
 {
     int n,i;
@@ -55,4 +56,39 @@ void display(struct node *root,int n)
         temp=temp->left;
     }
     printf("%d",temp->data);
+    search(root ,n);
+}
+void search(struct node *root,int n)
+{
+    while(1) 
+    {
+    int b;
+    printf("\n\nTO EXIT, Press '0', OTHERWISE Press any number to continue: ");
+    scanf("%d",&b);   
+    switch(b)
+    {
+        case 0:
+        exit(1);
+    } 
+    struct node *temp=NULL;
+    temp=root;
+    int a,i,count=0;
+    printf("\n\nenter the number that you want to search: ");
+    scanf("%d",&a);
+    for(i=1;i<=n;i++)
+    {
+        if(a==temp->data)
+        {
+            printf("\n%d is present at %d position",a,i);
+            count++;
+        }
+        temp=temp->link;
+    }
+    if(count==0)
+    {
+    printf("\n%d is not present in linked list",a);
+    printf("\nplease try another number");
+    }
+    }
+
 }
