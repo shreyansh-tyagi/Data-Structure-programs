@@ -82,7 +82,7 @@ void search(struct node *root,int n)
             printf("\n%d is present at %d position",a,i);
             count++;
         }
-        temp=temp->link;
+        temp=temp->right;
     }
     if(count==0)
     {
