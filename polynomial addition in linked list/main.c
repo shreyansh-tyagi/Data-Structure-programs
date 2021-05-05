@@ -17,7 +17,7 @@ void main()
   for(i=1;i<=n;i++)
   {
       temp=(struct node*)malloc(sizeof(struct node ));
-      printf("enter the %d coefficent and exponent into the node: ",i);
+      printf("enter the %d coefficent and %d exponent into the node: ",i,i);
       scanf("%d%d",&temp->coff,&temp->exp);
       temp->link=NULL;
       if(root==NULL)
