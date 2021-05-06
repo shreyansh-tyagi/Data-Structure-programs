@@ -47,4 +47,4 @@ void display(struct node *root,int n)
     }
     printf("%d X %d->  ",root->coff,root->exp);
 
-}
+}  
