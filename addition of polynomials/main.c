@@ -10,14 +10,14 @@ void main()
 {
     int n,i;
     struct node *root=NULL,*temp=NULL,*p=NULL;
-    printf("\n\nenter the size of linked list:");
+    printf("\n\nenter the size of linked list: ");
     scanf("%d",&n);
     for(i=1;i<=n;i++)
     {
         temp=(struct node *)malloc(sizeof(struct node ));
-        printf("\n\nenter the %d coefficient:",i);
+        printf("\nenter the %d coefficient: ",i);
         scanf("%d",&temp->cof);
-        printf("\nenter the %d exponent",i);
+        printf("enter the %d exponent: ",i);
         scanf("%d",&temp->exp);
         temp->link=NULL;
         if(root==NULL)
@@ -42,7 +42,7 @@ void display(struct node *root ,int n)
     printf("\n\nfirst polynomial equation:\n\n");
     while(temp->link!=NULL)
     {
-        printf("%dx^%d  ",temp->cof,temp->exp);
+        printf("%dx^%d + ",temp->cof,temp->exp);
         temp=temp->link;
     }
     printf("%dx^%d",temp->cof,temp->exp);
