@@ -25,7 +25,8 @@ void main()
             root=temp;
         }
         else{
-            p=
+            p=temp;
+            while()
         }
     }
 }
