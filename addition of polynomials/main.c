@@ -53,7 +53,7 @@ void main()
             {
                 p1=p1->link;
             }
-            p1->link=temp;
+            p1->link=temp1;
         }
     }
     display(root,root1);
