@@ -6,6 +6,7 @@ struct node {
     struct node *link;
 };
 void display(struct node *,struct node * );
+void addition(struct node *,struct node *,int ,int );
 void main()
 {
     int n,i,m;
@@ -57,6 +58,7 @@ void main()
         }
     }
     display(root,root1);
+    addition(root,root1,n,m);
 }
 void display(struct node *root ,struct node *root1)
 {
@@ -77,4 +79,8 @@ void display(struct node *root ,struct node *root1)
         temp1=temp1->link;
     }
     printf("%dx^%d",temp1->cof,temp1->exp);
+}
+void addition(struct node *root,struct node *root1,int n,int m)
+{
+    struct node *temp=NULL
 }
