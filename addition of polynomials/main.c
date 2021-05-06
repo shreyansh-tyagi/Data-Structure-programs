@@ -5,12 +5,12 @@ struct node {
     int cof,exp;
     struct node *link;
 };
-void display(struct node *,int );
+void display(struct node *,struct node * );
 void main()
 {
-    int n,i;
-    struct node *root=NULL,*temp=NULL,*p=NULL;
-    printf("\n\nenter the size of linked list: ");
+    int n,i,m;
+    struct node *root=NULL,*temp=NULL,*p=NULL,*root1=NULL,*temp1=NULL,*p1=NULL;
+    printf("\n\nenter the size of first polynomial equation: ");
     scanf("%d",&n);
     for(i=1;i<=n;i++)
     {
@@ -33,12 +33,36 @@ void main()
             p->link=temp;
         }
     }
-    display(root,n);
+     printf("\n\nenter the size of second polynomial equation: ");
+    scanf("%d",&m);
+    for(i=1;i<=m;i++)
+    {
+        temp1=(struct node *)malloc(sizeof(struct node ));
+        printf("\nenter the %d coefficient: ",i);
+        scanf("%d",&temp1->cof);
+        printf("enter the %d exponent: ",i);
+        scanf("%d",&temp1->exp);
+        temp1->link=NULL;
+        if(root1==NULL)
+        {
+            root1=temp1;
+        }
+        else{
+            p1=root1;
+            while(p1->link!=NULL)
+            {
+                p1=p1->link;
+            }
+            p1->link=temp;
+        }
+    }
+    display(root,root1);
 }
-void display(struct node *root ,int n)
+void display(struct node *root ,struct node *root1)
 {
-    struct node *temp=NULL;
+    struct node *temp=NULL,*temp1=NULL;
     temp=root;
+    temp1=root1;
     printf("\n\nfirst polynomial equation:\n\n");
     while(temp->link!=NULL)
     {
@@ -46,4 +70,11 @@ void display(struct node *root ,int n)
         temp=temp->link;
     }
     printf("%dx^%d",temp->cof,temp->exp);
+     printf("\n\nsecond polynomial equation:\n\n");
+    while(temp1->link!=NULL)
+    {
+        printf("%dx^%d + ",temp1->cof,temp1->exp);
+        temp1=temp1->link;
+    }
+    printf("%dx^%d",temp1->cof,temp1->exp);
 }
