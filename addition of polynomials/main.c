@@ -93,17 +93,18 @@ void addition(struct node *root,struct node *root1,int n,int m)
             root=root->link;
             printf("%dx^%d ",temp->cof,temp->exp);
         }
-        else if(root1->link>root->link)
+        else if(root1->exp>root->exp)
         {
             temp->cof=root1->cof;
             temp->exp=root1->exp;
             root1=root->link;
             printf("%dx^%d ",temp->cof,temp->exp);
         }
-        else if(root->link==root1->link)
+        else if(root->exp==root1->exp)
         {
             temp->cof=root->cof+root1->cof;
-            
+            temp->exp=root->exp;
+
         }
 
     }
