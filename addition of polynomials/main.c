@@ -100,6 +100,11 @@ void addition(struct node *root,struct node *root1,int n,int m)
             root1=root->link;
             printf("%dx^%d ",temp->cof,temp->exp);
         }
+        else if(root->link==root1->link)
+        {
+            temp->cof=root->cof+root1->cof;
+            
+        }
 
     }
     }
