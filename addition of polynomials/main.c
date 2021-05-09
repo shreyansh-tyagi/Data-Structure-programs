@@ -84,7 +84,9 @@ void addition(struct node *root,struct node *root1,int n,int m)
 {
     printf("\n\nAfter addition of two polynomial:\n\n");
     struct node *temp=NULL,*p=NULL,*q=NULL;
-    while((root->link)||(root1->link))
+    int i;
+   // while((root->link!=NULL)||(root1->link!=NULL))
+     for(i=1;i<n+m;i++)
     {
         temp=(struct node *)malloc(sizeof(struct node));
         if(root->exp>root1->exp)
