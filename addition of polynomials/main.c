@@ -83,14 +83,6 @@ void display(struct node *root ,struct node *root1)
 void addition(struct node *root,struct node *root1,int n,int m)
 {
     struct node *temp=NULL,*p=NULL,*q=NULL;
-    temp=(struct node *)malloc(sizeof(struct node));
-    temp->link=NULL;
-    if(p==NULL)
-    {
-        p=temp;
-    }
-    else{
-        q=p;
     while((root->link)||(root1->link))
     {
         temp=(struct node *)malloc(sizeof(struct node));
@@ -99,12 +91,14 @@ void addition(struct node *root,struct node *root1,int n,int m)
             temp->cof=root->cof;
             temp->exp=root->exp;
             root=root->link;
+            printf("%dx^%d ",temp->cof,temp->exp);
         }
         else if(root1->link>root->link)
         {
             temp->cof=root1->cof;
             temp->exp=root1->exp;
             root1=root->link;
+            printf("%dx^%d ",temp->cof,temp->exp);
         }
 
     }
