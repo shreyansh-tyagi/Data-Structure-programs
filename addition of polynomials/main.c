@@ -86,7 +86,6 @@ void addition(struct node *root,struct node *root1,int n,int m)
     struct node *temp=NULL,*p=NULL,*q=NULL;
     int i;
    while((root->link!=NULL)&&(root1->link!=NULL))
-    // for(i=1;i<n+m;i++)
     {
         if(root->exp>root1->exp)
         {
@@ -106,6 +105,8 @@ void addition(struct node *root,struct node *root1,int n,int m)
         }
 
     }
+    for(i=1;i<=2;i++)
+    {
     if(root->exp>root1->exp)
     {
     while(root->link!=NULL)
@@ -125,5 +126,6 @@ void addition(struct node *root,struct node *root1,int n,int m)
     }
     printf("%dx^%d ",root1->cof,root1->exp);
     }
+}
     
 }
