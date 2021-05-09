@@ -94,7 +94,6 @@ void addition(struct node *root,struct node *root1,int n,int m)
     while((root->link)||(root1->link))
     {
         temp=(struct node *)malloc(sizeof(struct node));
-        p=temp;
         if(root->exp>root1->exp)
         {
             temp->cof=root->cof;
