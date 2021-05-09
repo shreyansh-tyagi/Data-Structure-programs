@@ -89,21 +89,20 @@ void addition(struct node *root,struct node *root1,int n,int m)
     {
         if(root->exp>root1->exp)
         {
-            printf("%dx^%d ",root->cof,root->exp);
+            printf("%dx^%d",root->cof,root->exp);
             root=root->link;
         }
         else if(root1->exp>root->exp)
         {
-            printf("%dx^%d ",root1->cof,root1->exp); 
+            printf("%dx^%d",root1->cof,root1->exp); 
             root1=root1->link;
         }
         else
         {
-            printf("%dx^%d ",root->cof+root1->cof,root->exp);
+            printf("%dx^%d",root->cof+root1->cof,root->exp);
             root=root->link;
             root1=root1->link;
         }
-
     }
     while(root->link!=NULL)
     {
