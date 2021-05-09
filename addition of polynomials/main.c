@@ -82,10 +82,13 @@ void display(struct node *root ,struct node *root1)
 }
 void addition(struct node *root,struct node *root1,int n,int m)
 {
-    struct node *temp=NULL;
-    while((root->link!=NULL)||(root1->link!=NULL))
+    struct node *temp=NULL,*p=NULL,*q=NULL;
+
+    while((root->link)||(root1->link))
     {
+        q=p;
         temp=(struct node *)malloc(sizeof(struct node));
+        p=temp;
         if(root->exp>root1->exp)
         {
             temp->cof=root->cof;
