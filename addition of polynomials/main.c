@@ -104,17 +104,18 @@ void addition(struct node *root,struct node *root1,int n,int m)
             root1=root1->link;
         }
     }
-    while(root->link!=NULL)
-    {
-        printf("%dx^%d ",root->cof,root->exp);
-        root=root->link;
-    }
-    printf("%dx^%d ",root->cof,root->exp);
-    while(root1->link!=NULL)
+     while(root1->link!=NULL)
     {
         
         printf("%dx^%d ",root1->cof,root1->exp);
         root1=root1->link;
     }
     printf("%dx^%d ",root1->cof,root1->exp);
+    while(root->link!=NULL)
+    {
+        printf("%dx^%d ",root->cof,root->exp);
+        root=root->link;
+    }
+    printf("%dx^%d ",root->cof,root->exp);
+   
 }
