@@ -100,7 +100,7 @@ void addition(struct node *root,struct node *root1,int n,int m)
         {
             temp->cof=root1->cof;
             temp->exp=root1->exp;
-            root1=root->link;
+            root1=root1->link;
             printf("%dx^%d ",temp->cof,temp->exp);
         }
         else
