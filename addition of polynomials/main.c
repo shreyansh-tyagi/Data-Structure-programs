@@ -101,7 +101,7 @@ void addition(struct node *root,struct node *root1,int n,int m)
             root1=root->link;
             printf("%dx^%d ",temp->cof,temp->exp);
         }
-        else if(root->exp==root1->exp)
+        else
         {
             temp->cof=root->cof+root1->cof;
             temp->exp=root->exp;
@@ -110,6 +110,5 @@ void addition(struct node *root,struct node *root1,int n,int m)
             printf("%dx^%d ",temp->cof,temp->exp);
         }
 
-    }
     }
 }
