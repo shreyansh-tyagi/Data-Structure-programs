@@ -116,6 +116,6 @@ void addition(struct node *root,struct node *root1,int n,int m)
         printf("%dx^%d ",root->cof,root->exp);
         root=root->link;
     }
-    printf("%dx^%d ",root->cof,root->exp)
+    printf("%dx^%d ",root->cof,root->exp);
    
 }
