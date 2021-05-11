@@ -1,4 +1,5 @@
-n=int(input('enter size: '))
-a=list(map(int,input().split('enter element: ')))[:n]
-print(a)
+n=int(input())
+a=list(map(int,input().split()))[:n]
+for i in range(n):
+    print(a[i],end=' ')
 print(min(a))
