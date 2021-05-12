@@ -14,7 +14,7 @@ void main()
   printf("\nenter the size of nodes: ");  
   scanf("%d",&n);
   
-  for(i=1;i<=n;i++)
+  for(i=1;i<=n;i++
   {
       temp=(struct node *)malloc(sizeof(struct node));
       printf("enter the data into %d node: ",i);
