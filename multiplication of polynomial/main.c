@@ -133,6 +133,7 @@ void insertdisplay(struct node *root)
 {
     struct node *temp=NULL;
     temp=root;
+    printf("\n\n")
      while (temp!=NULL)
     {
         printf("%dx^%d ",temp->cof,temp->exp);
