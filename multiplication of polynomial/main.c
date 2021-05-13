@@ -10,7 +10,7 @@ void display(struct node *,struct node *,int,int);
 struct node * insert(int,int);
 void insertdisplay(struct node *);
 void mulpoly(struct node *,struct node *,int,int);
-void completemuladd(struct node *);
+void complete_mul_add(struct node *);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL,*temp1=NULL,*root1=NULL,*p1=NULL;  
@@ -129,6 +129,7 @@ void mulpoly(struct node *root,struct node *root1,int n ,int m)
         temp1=temp1->link;
     }
     insertdisplay(p);
+    complete_mul_add(p);
 }
 void insertdisplay(struct node *root)
 {
@@ -138,4 +139,8 @@ void insertdisplay(struct node *root)
         printf("%dx^%d ",root->cof,root->exp);
         root=root->link;
     }
+}
+void complete_mul_add(struct node *root)
+{
+    
 }
