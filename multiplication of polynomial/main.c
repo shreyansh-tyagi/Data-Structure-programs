@@ -88,7 +88,30 @@ void display(struct node *root,struct node *root1,int n,int m)
 }
 void insert(int a,int b)
 {
-    
+    struct node *temp=NULL,*root=NULL,*p=NULL;
+    temp=(struct node*)malloc(sizeof(struct node ));
+    temp->cof=a;
+    temp->exp=b;
+    temp->link=NULL;
+        if(root==NULL)
+        {
+            root=temp;
+        }
+        else{
+            p=root;
+            while(p->link!=NULL)
+            {
+                p=p->link;
+            }
+            p->link=temp;
+        }
+    printf("\n\ninsert polynomial:\n\n");
+    while (temp->link!=NULL)
+    {
+        printf("%dx^%d ",temp->cof,temp->exp);
+        temp=temp->link;
+    }
+    printf("%dx^%d",temp->cof,temp->exp);
 }
 void mulpoly(struct node *root,struct node *root1,int n ,int m)
 {
