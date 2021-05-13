@@ -10,6 +10,7 @@ void display(struct node *,struct node *,int,int);
 struct node * insert(int,int);
 void insertdisplay(struct node *);
 void mulpoly(struct node *,struct node *,int,int);
+void completemuladd(struct node *);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL,*temp1=NULL,*root1=NULL,*p1=NULL;  
