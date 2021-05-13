@@ -6,6 +6,8 @@ struct node {
     struct node *link;
 };
 void display(struct node *,struct node *,int,int);
+void insert(int,int);
+void mulpoly(struct node *,struct node *,int,int);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL,*temp1=NULL,*root1=NULL,*p1=NULL;  
@@ -61,6 +63,7 @@ void main()
         }
     }
     display(root,root1,n,m);
+    mulpoly(root,root1,n,m);
 }
 void display(struct node *root,struct node *root1,int n,int m)
 {
@@ -82,4 +85,17 @@ void display(struct node *root,struct node *root1,int n,int m)
         temp1=temp1->link;
     }
     printf("%dx^%d",temp1->cof,temp1->exp);
+}
+void mulpoly(struct node *root,struct node *root1,int n ,int m)
+{
+    struct node *temp=NULL,*temp1=NULL;
+    temp=root;
+    temp1=root1;
+    while(temp1->link!=NULL)
+    {
+        while(temp->link!=NULL)
+        {
+            
+        }
+    }
 }
