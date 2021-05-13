@@ -60,5 +60,22 @@ void main()
 }
 void display(struct node *root,struct node *root1,int n,int m)
 {
+    struct node *temp=NULL,*temp1=NULL;
+    temp=root;
+    temp1=root1;
+    printf("\n\nfirst polynomial:\n\n");
+    while (temp->link!=NULL)
+    {
+        printf("%dx^%d ",temp->cof,temp->exp);
+        temp=temp->link;
+    }
+    printf("%dx^%d",temp->cof,temp->exp);
     
+    printf("\n\nsecond polynomial:\n\n");
+    while (temp1->link!=NULL)
+    {
+        printf("%dx^%d ",temp1->cof,temp1->exp);
+        temp1=temp1->link;
+    }
+    printf("%dx^%d",temp1->cof,temp1->exp);
 }
