@@ -115,7 +115,7 @@ void insert(int a,int b)
 }
 void mulpoly(struct node *root,struct node *root1,int n ,int m)
 {
-    struct node *temp=NULL,*temp1=NULL;
+    struct node *temp=NULL,*temp1=NULL,*p=NULL,*q=NULL;
     int a,b;
     temp=root;
     temp1=root1;
@@ -128,5 +128,6 @@ void mulpoly(struct node *root,struct node *root1,int n ,int m)
             insert(a,b);
             temp=temp->link;
         }
+        temp1=temp1->link;
     }
 }
