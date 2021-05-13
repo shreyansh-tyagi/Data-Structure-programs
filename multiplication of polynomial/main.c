@@ -86,16 +86,24 @@ void display(struct node *root,struct node *root1,int n,int m)
     }
     printf("%dx^%d",temp1->cof,temp1->exp);
 }
+void insert(int a,int b)
+{
+    
+}
 void mulpoly(struct node *root,struct node *root1,int n ,int m)
 {
     struct node *temp=NULL,*temp1=NULL;
+    int a,b;
     temp=root;
     temp1=root1;
     while(temp1->link!=NULL)
     {
         while(temp->link!=NULL)
         {
-            
+            a=temp1->cof*temp->cof;
+            b=temp1->exp+temp->exp;
+            insert(a,b);
+            temp=temp->link;
         }
     }
 }
