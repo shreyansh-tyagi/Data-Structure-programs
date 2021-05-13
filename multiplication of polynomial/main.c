@@ -58,3 +58,7 @@ void main()
     }
     display(root,root1,n,m);
 }
+void display(struct node *root,struct node *root1,int n,int m)
+{
+    
+}
