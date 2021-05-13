@@ -131,12 +131,10 @@ void mulpoly(struct node *root,struct node *root1,int n ,int m)
 }
 void insertdisplay(struct node *root)
 {
-    struct node *temp=NULL;
-    temp=root;
-    printf("\n\n")
-     while (temp!=NULL)
+    printf("\n\nAfter multiplying two polynomial:\n\n");
+     while (root!=NULL)
     {
-        printf("%dx^%d ",temp->cof,temp->exp);
-        temp=temp->link;
+        printf("%dx^%d ",root->cof,root->exp);
+        root=root->link;
     }
 }
