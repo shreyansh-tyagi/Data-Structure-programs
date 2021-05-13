@@ -17,6 +17,19 @@ void main()
         printf("enter the %d coefficient into first linked list: ");
         scanf("%d",&temp->cof);
         printf("\nenter the %d exponent into first linked list: ");
-        scanf()
+        scanf("%d",&temp->exp);
+        temp->link=NULL;
+        if(root==NULL)
+        {
+            root=temp;
+        }
+        else{
+            p=root;
+            while(p->link!=NULL)
+            {
+                p=p->link;
+            }
+            p->link=temp;
+        }
     }
 }
