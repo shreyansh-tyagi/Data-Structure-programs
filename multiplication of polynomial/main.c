@@ -12,13 +12,15 @@ void main()
   int n,m,i;
     printf("\n\nenter the size of first polynomial: ");
     scanf("%d",&n);
+    printf("\n\n");
     for(i=1;i<=n;i++)
     {
         temp=(struct node*)malloc(sizeof(struct node ));
-        printf("enter the %d coefficient into first linked list: ");
+        printf("enter the %d coefficient into first linked list: ",i);
         scanf("%d",&temp->cof);
-        printf("\nenter the %d exponent into first linked list: ");
+        printf("enter the %d exponent into first linked list: ",i);
         scanf("%d",&temp->exp);
+        printf("\n");
         temp->link=NULL;
         if(root==NULL)
         {
@@ -35,13 +37,15 @@ void main()
     }
     printf("\n\nenter the size of second polynomial: ");
     scanf("%d",&m);
+    printf("\n\n");
     for(i=1;i<=m;i++)
     {
         temp1=(struct node*)malloc(sizeof(struct node ));
-        printf("enter the %d coefficient into first linked list: ");
+        printf("enter the %d coefficient into first linked list: ",i);
         scanf("%d",&temp1->cof);
-        printf("\nenter the %d exponent into first linked list: ");
+        printf("enter the %d exponent into first linked list: ",i);
         scanf("%d",&temp1->exp);
+        printf("\n");
         temp1->link=NULL;
         if(root1==NULL)
         {
