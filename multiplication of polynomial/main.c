@@ -104,8 +104,8 @@ void insert(int a,int b)
                 p=p->link;
             }
             p->link=temp;
-        }
-    printf("\n\ninsert polynomial:\n\n");
+        }   
+        printf("\n\ninsert polynomial:\n\n");
     while (temp->link!=NULL)
     {
         printf("%dx^%d ",temp->cof,temp->exp);
@@ -128,6 +128,7 @@ void mulpoly(struct node *root,struct node *root1,int n ,int m)
             insert(a,b);
             temp=temp->link;
         }
+        temp=root;
         temp1=temp1->link;
     }
 }
