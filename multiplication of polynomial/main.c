@@ -128,3 +128,13 @@ void mulpoly(struct node *root,struct node *root1,int n ,int m)
     }
     insertdisplay(p);
 }
+void insertdisplay(struct node *root)
+{
+    struct node *temp=NULL;
+    temp=root;
+     while (temp!=NULL)
+    {
+        printf("%dx^%d ",temp->cof,temp->exp);
+        temp=temp->link;
+    }
+}
