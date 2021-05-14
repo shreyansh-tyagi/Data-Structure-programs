@@ -147,7 +147,7 @@ struct node * complete_insert(int a,int b)
 }
 void complete_mul_add(struct node *root)
 {
-    struct node *p=NULL;
+    struct node *p=NULL,*q=NULL;
     int a,b;
     while(root!=NULL)
     {
@@ -160,7 +160,13 @@ void complete_mul_add(struct node *root)
                 a=p->cof+root->cof;
                 b=p->exp;
             }
+            else{
+                a=p->cof;
+                b=p->exp;
+            }
         }
+        q=complete_insert(a,b);
+        root=root->link;
 
     }
 }
