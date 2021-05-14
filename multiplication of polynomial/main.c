@@ -142,8 +142,14 @@ void insertdisplay(struct node *root)
 }
 void complete_mul_add(struct node *root)
 {
+    struct node *p=NULL;
+    
     while(root!=NULL)
     {
-        
+        while(root!=NULL)
+        {
+            if()
+        }
+
     }
 }
