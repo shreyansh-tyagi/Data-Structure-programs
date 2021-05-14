@@ -143,14 +143,17 @@ void insertdisplay(struct node *root)
 void complete_mul_add(struct node *root)
 {
     struct node *p=NULL;
-
+    int a;
     while(root!=NULL)
     {
         p=root;
         while(root!=NULL)
         {
             root=root->link;
-            if()
+            if(p->exp==root->exp)
+            {
+                a=p->cof+root->cof;
+            }
         }
 
     }
