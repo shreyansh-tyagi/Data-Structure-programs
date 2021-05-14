@@ -5,7 +5,7 @@ struct node {
     int cof,exp;
     struct node *link;
 };
-struct node *r=NULL;
+struct node *r=NULL,*r1=NULL;
 void display(struct node *,struct node *,int,int);
 struct node * insert(int,int);
 void insertdisplay(struct node *);
@@ -143,6 +143,24 @@ void insertdisplay(struct node *root)
 }
 struct node * complete_insert(int a,int b)
 {
+     struct node *temp=NULL,*p=NULL;
+    temp=(struct node*)malloc(sizeof(struct node ));
+    temp->cof=a;
+    temp->exp=b;
+    temp->link=NULL;
+        if(r1==NULL)
+        {
+            r1=temp;
+        }
+        else{
+            p=r1;
+            while(p->link!=NULL)
+            {
+                p=p->link;
+            }
+            p->link=temp;
+        }  
+        return r1; 
 
 }
 void complete_mul_add(struct node *root)
@@ -167,4 +185,5 @@ void complete_mul_add(struct node *root)
         q=root;
 
     }
+    
 }
