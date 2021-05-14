@@ -152,12 +152,12 @@ void complete_mul_add(struct node *root)
     while(root!=NULL)
     {
         p=root;
-        while(root!=NULL)
+        while(q!=NULL)
         {
-            root=root->link;
-            if(p->exp==root->exp)
+            q=q->link;
+            if(p->exp==q->exp)
             {
-                p->cof=p->cof+root->cof;
+                p->cof=p->cof+q->cof;
             }
             else{
                 p->cof=p->cof;
