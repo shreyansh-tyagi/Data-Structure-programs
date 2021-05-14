@@ -147,7 +147,7 @@ struct node * complete_insert(int a,int b)
 }
 void complete_mul_add(struct node *root)
 {
-    struct node *p=NULL,*q=NULL;
+    struct node *p=NULL,*q=NULL,*r=NULL;
     q=root;
     while(root!=NULL)
     {
