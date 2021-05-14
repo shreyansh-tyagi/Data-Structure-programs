@@ -12,6 +12,7 @@ void insertdisplay(struct node *);
 void mulpoly(struct node *,struct node *,int,int);
 struct node * complete_insert(int,int);
 void complete_mul_add(struct node *);
+void comdisplay(struct node *);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL,*temp1=NULL,*root1=NULL,*p1=NULL;  
@@ -165,7 +166,7 @@ struct node * complete_insert(int a,int b)
 }
 void complete_mul_add(struct node *root)
 {
-    struct node *p=NULL,*q=NULL,*r=NULL;
+    struct node *p=NULL,*q=NULL,*s=NULL;
     while(root!=NULL)
     {
         p=root;
@@ -180,10 +181,20 @@ void complete_mul_add(struct node *root)
                 p->cof=p->cof;
             }
         }
-        r=complete_insert(p->cof,p->exp);
+        s=complete_insert(p->cof,p->exp);
         root=root->link;
         q=root;
 
     }
-    
+    comdisplay(s);
+
+}
+void comdisplay(struct node *root)
+{
+    printf("\n\nfinal output After multiplying and addition two polynomial:\n\n");
+     while (root!=NULL)
+    {
+        printf("%dx^%d ",root->cof,root->exp);
+        root=root->link;
+    }
 }
