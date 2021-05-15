@@ -168,7 +168,8 @@ struct node * complete_insert(int a,int b)
 void complete_mul_add(struct node *root)
 {
     struct node *p=NULL,*q=NULL,*s=NULL;
-    q=root;
+    int a,b;
+    q=root->link;
     while(root!=NULL)
     {
         p=root;
@@ -178,16 +179,20 @@ void complete_mul_add(struct node *root)
             if(p->exp==q->exp)
             {
                 p->cof=p->cof+q->cof;
+                a=p->cof;
+                b=p->exp;
             }
             else{
                 p->cof=p->cof;
+                a=p->cof;
+                b=p->exp;
             }
             q=q->link;
         }
         
-        s=complete_insert(p->cof,p->exp);
+        s=complete_insert(a,b);
         root=root->link;
-        q=root;
+        q=root->link;
 
     }
     comdisplay(s);
@@ -195,10 +200,10 @@ void complete_mul_add(struct node *root)
 }
 void comdisplay(struct node *root)
 {
-    printf("\n\nfinal output After multiplying and addition two polynomial:\n\n");
-     while (root!=NULL)
+        printf("\n\nfinal output After multiplying and addition two polynomial:\n\n");
+     while (r1!=NULL)
     {
-        printf("%dx^%d ",root->cof,root->exp);
-        root=root->link;
+        printf("%dx^%d ",r1->cof,r1->exp);
+        r1=r1->link;
     }
 }
