@@ -161,6 +161,12 @@ struct node * complete_insert(int a,int b)
             }
             p->link=temp;
         }
+          printf("\n\nfinal output After multiplying and addition two polynomial:\n\n");
+     while (r1!=NULL)
+    {
+        printf("%dx^%d ",r1->cof,r1->exp);
+        r1=r1->link;
+    }
       
         return r1; 
 
