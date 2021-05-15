@@ -184,6 +184,7 @@ void complete_mul_add(struct node *root)
             }
             q=q->link;
         }
+        
         s=complete_insert(p->cof,p->exp);
         root=root->link;
         q=root;
