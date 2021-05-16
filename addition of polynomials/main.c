@@ -9,7 +9,7 @@ struct node *r=NULL;
 void display(struct node *,struct node * );
 struct node * insert(int,int);
 void insertdisplay(struct node *);
-void addition(struct node *,struct node *,int ,int );
+void addition(struct node *,struct node *);
 void main()
 {
     int n,i,m;
@@ -61,7 +61,7 @@ void main()
         }
     }
     display(root,root1);
-    addition(root,root1,n,m);
+    addition(root,root1);
 }
 void display(struct node *root ,struct node *root1)
 {
@@ -104,27 +104,32 @@ struct node * insert(int a,int b)
         }  
         return r;   
 }
-void addition(struct node *root,struct node *root1,int n,int m)
+void addition(struct node *root,struct node *root1)
 {
     
-    struct node *temp=NULL,*p=NULL,*q=NULL,*s=NULL;
-    int i;
+    struct node *s=NULL;
+    int a,b;
    while((root!=NULL)||(root1!=NULL))
     {
         if(root->exp>root1->exp)
         {
-            s=insert(root->cof,root->exp);
+            a=root->cof;
+            b=root->exp;
+            s=insert(a,b);
             root=root->link;
         }
         else if(root1->exp>root->exp)
         {
-            s=insert(root1->cof,root1->exp);
+            a=root1->cof;
+            b=root1->exp;
+            s=insert(a,b);
             root1=root1->link;
         }
         else
         {
-            int a=root->cof+root1->cof;
-            s=insert(a,root->exp);
+            a=root->cof+root1->cof;
+            b=root->exp;
+            s=insert(a,b);
             root=root->link;
             root1=root1->link;
         }
