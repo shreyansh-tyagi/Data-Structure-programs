@@ -106,49 +106,27 @@ struct node * insert(int a,int b)
 }
 void addition(struct node *root,struct node *root1)
 {
-    
     struct node *s=NULL;
-    int a,b;
-   while((root!=NULL)||(root1!=NULL))
+   while((root!=NULL)&&(root1!=NULL))
     {
         if(root->exp>root1->exp)
         {
-            a=root->cof;
-            b=root->exp;
-            s=insert(a,b);
+            s=insert(root->cof,root->exp);
             root=root->link;
         }
         else if(root1->exp>root->exp)
         {
-            a=root1->cof;
-            b=root1->exp;
-            s=insert(a,b);
+            s=insert(root1->cof,root1->exp);
             root1=root1->link;
         }
         else
         {
-            a=root->cof+root1->cof;
-            b=root->exp;
-            s=insert(a,b);
+            s=insert(root->cof+root1->cof,root->exp);
             root=root->link;
             root1=root1->link;
         }
     }
     insertdisplay(s);
-     /*while(root1->link!=NULL)
-    {
-        
-        printf("%dx^%d ",root1->cof,root1->exp);
-        root1=root1->link;
-    }
-    printf("%dx^%d ",root1->cof,root1->exp);
-    while(root->link!=NULL)
-    {
-        printf("%dx^%d ",root->cof,root->exp);
-        root=root->link;
-    }
-    printf("%dx^%d ",root->cof,root->exp); */
-   
 }
 void insertdisplay(struct node *root)
 {
