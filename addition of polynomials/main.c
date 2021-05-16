@@ -6,6 +6,7 @@ struct node {
     struct node *link;
 };
 void display(struct node *,struct node * );
+struct node * insert(int,int);
 void addition(struct node *,struct node *,int ,int );
 void main()
 {
@@ -80,12 +81,33 @@ void display(struct node *root ,struct node *root1)
     }
     printf("%dx^%d",temp1->cof,temp1->exp);
 }
+struct node * insert(int a,int b)
+{
+    struct node *temp=NULL,*p=NULL;
+    temp=(struct node*)malloc(sizeof(struct node ));
+    temp->cof=a;
+    temp->exp=b;
+    temp->link=NULL;
+        if(r==NULL)
+        {
+            r=temp;
+        }
+        else{
+            p=r;
+            while(p->link!=NULL)
+            {
+                p=p->link;
+            }
+            p->link=temp;
+        }  
+        return r;   
+}
 void addition(struct node *root,struct node *root1,int n,int m)
 {
     printf("\n\nAfter addition of two polynomial:\n\n");
     struct node *temp=NULL,*p=NULL,*q=NULL;
     int i;
-   while((root!=NULL)&&(root1!=NULL))
+   while((root!=NULL)||(root1!=NULL))
     {
         if(root->exp>root1->exp)
         {
