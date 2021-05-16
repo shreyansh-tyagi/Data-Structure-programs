@@ -168,7 +168,7 @@ struct node * complete_insert(int a,int b)
         r1=r1->link;
     }
       
-        return r1; 
+        return r1
 
 }
 void complete_mul_add(struct node *root)
