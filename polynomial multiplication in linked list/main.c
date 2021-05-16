@@ -10,6 +10,7 @@ void display(struct node *,struct node *,int,int);
 struct node * insert(int,int);
 void insertdisplay(struct node *);
 void mulpoly(struct node *,struct node *,int,int);
+struct node * insertion(int ,int );
 void complete_mul(struct node *,struct node *,int,int);
 void main()
 {
@@ -140,9 +141,30 @@ void insertdisplay(struct node *root)
         root=root->link;
     }
 }
+struct node * insertion(int a,int b)
+{
+    struct node *temp=NULL,*p=NULL;
+    temp=(struct node*)malloc(sizeof(struct node ));
+    temp->cof=a;
+    temp->exp=b;
+    temp->link=NULL;
+        if(r1==NULL)
+        {
+            r1=temp;
+        }
+        else{
+            p=r1;
+            while(p->link!=NULL)
+            {
+                p=p->link;
+            }
+            p->link=temp;
+        }  
+        return r1;   
+}
 void complete_mul(struct node *root,struct node *root1,int n ,int m)
 {
-    struct node *temp=NULL,*temp1=NULL,*p=NULL;
+    struct node *temp=NULL,*temp1=NULL,*p=NULL,*sop=NULL;
     int a,b;
     temp=root;
     temp1=root1;

@@ -85,7 +85,7 @@ void addition(struct node *root,struct node *root1,int n,int m)
     printf("\n\nAfter addition of two polynomial:\n\n");
     struct node *temp=NULL,*p=NULL,*q=NULL;
     int i;
-   while((root->link!=NULL)&&(root1->link!=NULL))
+   while((root!=NULL)&&(root1!=NULL))
     {
         if(root->exp>root1->exp)
         {
@@ -104,7 +104,7 @@ void addition(struct node *root,struct node *root1,int n,int m)
             root1=root1->link;
         }
     }
-     while(root1->link!=NULL)
+     /*while(root1->link!=NULL)
     {
         
         printf("%dx^%d ",root1->cof,root1->exp);
@@ -116,6 +116,6 @@ void addition(struct node *root,struct node *root1,int n,int m)
         printf("%dx^%d ",root->cof,root->exp);
         root=root->link;
     }
-    printf("%dx^%d ",root->cof,root->exp);
+    printf("%dx^%d ",root->cof,root->exp); */
    
 }
