@@ -5,8 +5,10 @@ struct node {
     int cof,exp;
     struct node *link;
 };
+struct node *r=NULL;
 void display(struct node *,struct node * );
 struct node * insert(int,int);
+void insertdisplay(struct node *);
 void addition(struct node *,struct node *,int ,int );
 void main()
 {
@@ -105,27 +107,29 @@ struct node * insert(int a,int b)
 void addition(struct node *root,struct node *root1,int n,int m)
 {
     printf("\n\nAfter addition of two polynomial:\n\n");
-    struct node *temp=NULL,*p=NULL,*q=NULL;
+    struct node *temp=NULL,*p=NULL,*q=NULL,*s=NULL;
     int i;
    while((root!=NULL)||(root1!=NULL))
     {
         if(root->exp>root1->exp)
         {
-            printf("%dx^%d ",root->cof,root->exp);
+            s=insert(root->cof,root->exp);
             root=root->link;
         }
         else if(root1->exp>root->exp)
         {
-            printf("%dx^%d ",root1->cof,root1->exp); 
+            s=insert(root1->cof,root1->exp);
             root1=root1->link;
         }
         else
         {
-            printf("%dx^%d ",root->cof+root1->cof,root->exp);
+            int a=root->cof+root1->cof;
+            s=insert(a,root->exp);
             root=root->link;
             root1=root1->link;
         }
     }
+    insertdisplay(s);
      /*while(root1->link!=NULL)
     {
         
@@ -140,4 +144,13 @@ void addition(struct node *root,struct node *root1,int n,int m)
     }
     printf("%dx^%d ",root->cof,root->exp); */
    
+}
+void insertdisplay(struct node *root)
+{
+    printf("\n\nAfter multiplying two polynomial:\n\n");
+     while (root!=NULL)
+    {
+        printf("%dx^%d ",root->cof,root->exp);
+        root=root->link;
+    }
 }
