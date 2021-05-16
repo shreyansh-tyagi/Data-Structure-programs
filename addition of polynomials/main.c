@@ -106,7 +106,7 @@ struct node * insert(int a,int b)
 }
 void addition(struct node *root,struct node *root1,int n,int m)
 {
-    printf("\n\nAfter addition of two polynomial:\n\n");
+    
     struct node *temp=NULL,*p=NULL,*q=NULL,*s=NULL;
     int i;
    while((root!=NULL)||(root1!=NULL))
@@ -147,7 +147,7 @@ void addition(struct node *root,struct node *root1,int n,int m)
 }
 void insertdisplay(struct node *root)
 {
-    printf("\n\nAfter multiplying two polynomial:\n\n");
+    printf("\n\nAfter addition of two polynomial:\n\n");
      while (root!=NULL)
     {
         printf("%dx^%d ",root->cof,root->exp);
