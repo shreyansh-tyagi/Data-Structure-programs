@@ -11,7 +11,10 @@ struct node * insert(int,int);
 void insertdisplay(struct node *);
 void mulpoly(struct node *,struct node *);
 struct node * insertion(int ,int );
-void complete_mul(struct node *,struct node *);
+void sort(struct node *,struct node *);
+void addition(struct node *,struct node *);
+void insertdd(struct node *);
+void complete_mul(struct node *,struct node *,int,int);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL,*temp1=NULL,*root1=NULL,*p1=NULL;  
@@ -68,7 +71,7 @@ void main()
     }
     display(root,root1);
     mulpoly(root,root1);
-    complete_mul(root,root1);
+    complete_mul(root,root1,n,m);
 }
 void display(struct node *root,struct node *root1)
 {
@@ -162,12 +165,114 @@ struct node * insertion(int a,int b)
         }  
         return r1;   
 }
-void complete_mul(struct node *root,struct node *root1)
+
+void sort(struct node *root,struct node *root1)
+{
+    struct node *temp=NULL,*p=NULL,*q=NULL;
+    int i,j,temp1,temp11,temp2,temp22;
+    p=root;
+    q=root;
+        printf("\n\nAfter sorting in descending order first polynomial is:\n\n");
+        while(p!=NULL)
+        {
+        temp=p;
+        while(temp!=NULL)
+        {
+            temp1=p->exp;
+            temp2=temp->exp; 
+            if(temp1<temp2)
+            {
+                temp11=p->cof;
+                p->cof=temp->cof;
+                temp->cof=temp11;
+                temp->exp=temp1;
+                p->exp=temp2;
+            }
+            temp=temp->link;
+        }
+        p=p->link;
+    }
+    while(q!=NULL)
+    {
+        printf("%dx^%d  ",q->cof,q->exp);
+        q=q->link;
+    }
+    p=root1;
+    q=root1;
+        printf("\n\nAfter sorting in descending order first polynomial is:\n\n");
+        while(p!=NULL)
+        {
+        temp=p;
+        while(temp!=NULL)
+        {
+            temp1=p->exp;
+            temp2=temp->exp; 
+            if(temp1<temp2)
+            {
+                temp11=p->cof;
+                p->cof=temp->cof;
+                temp->cof=temp11;
+                temp->exp=temp1;
+                p->exp=temp2;
+            }
+            temp=temp->link;
+        }
+        p=p->link;
+    }
+    while(q!=NULL)
+    {
+        printf("%dx^%d  ",q->cof,q->exp);
+        q=q->link;
+    }  
+}
+
+void addition(struct node *root,struct node *root1)
+{
+    struct node *s=NULL;
+   while((root!=NULL)&&(root1!=NULL))
+    {
+        if(root->exp>root1->exp)
+        {
+            s=insert(root->cof,root->exp);
+            root=root->link;
+        }
+        else if(root1->exp>root->exp)
+        {
+            s=insert(root1->cof,root1->exp);
+            root1=root1->link;
+        }
+        else
+        {
+            s=insert(root->cof+root1->cof,root->exp);
+            root=root->link;
+            root1=root1->link;
+        }
+    }
+    while(root!=NULL){
+    insert(root->cof,root->exp);
+    root=root->link;
+    }
+    while(root1!=NULL){
+          insert(root1->cof,root1->exp);
+          root1=root1->link;
+    }
+    insertdisplay(s);
+    
+}
+
+void complete_mul(struct node *root,struct node *root1,int n,int m)
 {
     struct node *temp=NULL,*temp1=NULL,*p=NULL,*sop=NULL;
     int a,b;
+    if(m<=n)
+    {
     temp=root;
     temp1=root1;
+    }
+    else{
+        temp=root1;
+        temp1=root;
+    }
     while(temp1!=NULL)
     {
         while(temp!=NULL)
@@ -180,5 +285,15 @@ void complete_mul(struct node *root,struct node *root1)
         temp=root;
         temp1=temp1->link;
     }
-    insertdisplay(p);
+    insertadd(p);
+}
+void insertdd(struct node *root)
+{
+    printf("\n\nAfter addition of two polynomial:\n\n");
+     while (root!=NULL)
+    {
+        printf("%dx^%d  ",root->cof,root->exp);
+        root=root->link;
+    }
+    printf("\n\n");
 }
