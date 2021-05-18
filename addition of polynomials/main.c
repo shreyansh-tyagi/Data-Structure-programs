@@ -126,11 +126,11 @@ void addition(struct node *root,struct node *root1)
             root1=root1->link;
         }
     }
-    if(root!=NULL){
+    while(root!=NULL){
     insert(root->cof,root->exp);
     root=root->link;
     }
-    else{
+    while(root1!=NULL){
           insert(root1->cof,root1->exp);
           root1=root1->link;
     }
