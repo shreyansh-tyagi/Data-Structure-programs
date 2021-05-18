@@ -93,19 +93,22 @@ void sort(struct node *root,struct node *root1)
         printf("\n\nAfter sorting in descending order first polynomial is:\n\n");
         while(p!=NULL)
         {
-        temp=root;
+        temp=p;
         while(temp!=NULL)
         {
             temp1=p->exp;
-            temp=temp->link;
             temp2=temp->exp; 
-            if(temp1>temp2)
+            if(temp1<temp2)
             {
-                temp->exp=temp2;
-                p->exp=temp1;
+                temp11=p->cof;
+                p->cof=temp->cof;
+                temp->cof=temp11;
+                temp->exp=temp1;
+                p->exp=temp2;
             }
             temp=temp->link;
         }
+        p=p->link;
     }
     while(q->link!=NULL)
     {
@@ -199,10 +202,11 @@ void addition(struct node *root,struct node *root1)
 }
 void insertdisplay(struct node *root)
 {
-    printf("\n\nAfter addition of two polynomial:\n\n");
+    printf("\n\nAfter addition of two polynomial:\n");
      while (root!=NULL)
     {
         printf("%dx^%d ",root->cof,root->exp);
         root=root->link;
     }
+    printf("\n\n");
 }
