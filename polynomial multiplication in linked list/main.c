@@ -7,11 +7,12 @@ struct node {
 };
 struct node *r=NULL,*r1=NULL;
 void display(struct node *,struct node *);
-struct node * insert(int,int);
+struct node * insert1(int,int);
 void insertdisplay(struct node *);
 void mulpoly(struct node *,struct node *);
 struct node * insertion(int ,int );
 void sort(struct node *,struct node *);
+struct node * insert(int ,int );
 void addition(struct node *,struct node *);
 void insertdd(struct node *);
 void complete_mul(struct node *,struct node *,int,int);
@@ -94,7 +95,7 @@ void display(struct node *root,struct node *root1)
     }
     printf("%dx^%d",temp1->cof,temp1->exp);
 }
-struct node * insert(int a,int b)
+struct node * insert1(int a,int b)
 {
     struct node *temp=NULL,*p=NULL;
     temp=(struct node*)malloc(sizeof(struct node ));
@@ -127,7 +128,7 @@ void mulpoly(struct node *root,struct node *root1)
         {
             a=temp1->cof*temp->cof;
             b=temp1->exp+temp->exp;
-            p=insert(a,b);
+            p=insert1(a,b);
             temp=temp->link;
         }
         temp=root;
@@ -225,7 +226,27 @@ void sort(struct node *root,struct node *root1)
         q=q->link;
     }  
 }
-
+struct node * insert(int a,int b)
+{
+    struct node *temp=NULL,*p=NULL;
+    temp=(struct node*)malloc(sizeof(struct node ));
+    temp->cof=a;
+    temp->exp=b;
+    temp->link=NULL;
+        if(r==NULL)
+        {
+            r=temp;
+        }
+        else{
+            p=r;
+            while(p->link!=NULL)
+            {
+                p=p->link;
+            }
+            p->link=temp;
+        }  
+        return r;   
+}
 void addition(struct node *root,struct node *root1)
 {
     struct node *s=NULL;
