@@ -90,6 +90,7 @@ void sort(struct node *root,struct node *root1)
     struct node *temp=NULL,*p=NULL,*q=NULL;
     int i,j,temp1,temp11,temp2,temp22;
     p=root;
+    q=root;
         printf("\n\nAfter sorting in descending order first polynomial is:\n\n");
         while(p!=NULL)
         {
@@ -110,12 +111,11 @@ void sort(struct node *root,struct node *root1)
         }
         p=p->link;
     }
-    while(q->link!=NULL)
+    while(q!=NULL)
     {
-        printf("%d  ",q->data);
+        printf("%dx^%d  ",q->cof,q->exp);
         q=q->link;
     }
-    printf("%d",q->data);
 
 
 
