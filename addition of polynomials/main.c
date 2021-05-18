@@ -126,7 +126,7 @@ void addition(struct node *root,struct node *root1)
             root1=root1->link;
         }
     }
-    if(root->link==NULL){
+    if(root!=NULL){
     insert(root->cof,root->exp);
     }
     else{
