@@ -6,12 +6,12 @@ struct node {
     struct node *link;
 };
 struct node *r=NULL,*r1=NULL;
-void display(struct node *,struct node *,int,int);
+void display(struct node *,struct node *);
 struct node * insert(int,int);
 void insertdisplay(struct node *);
-void mulpoly(struct node *,struct node *,int,int);
+void mulpoly(struct node *,struct node *);
 struct node * insertion(int ,int );
-void complete_mul(struct node *,struct node *,int,int);
+void complete_mul(struct node *,struct node *);
 void main()
 {
   struct node *temp=NULL,*root=NULL,*p=NULL,*temp1=NULL,*root1=NULL,*p1=NULL;  
@@ -66,11 +66,11 @@ void main()
             p1->link=temp1;
         }
     }
-    display(root,root1,n,m);
-    mulpoly(root,root1,n,m);
-    complete_mul(root,root1,n,m);
+    display(root,root1);
+    mulpoly(root,root1);
+    complete_mul(root,root1);
 }
-void display(struct node *root,struct node *root1,int n,int m)
+void display(struct node *root,struct node *root1)
 {
     struct node *temp=NULL,*temp1=NULL;
     temp=root;
@@ -99,7 +99,7 @@ struct node * insert(int a,int b)
     temp->exp=b;
     temp->link=NULL;
         if(r==NULL)
-        {
+        { 
             r=temp;
         }
         else{
@@ -112,7 +112,7 @@ struct node * insert(int a,int b)
         }  
         return r;   
 }
-void mulpoly(struct node *root,struct node *root1,int n ,int m)
+void mulpoly(struct node *root,struct node *root1)
 {
     struct node *temp=NULL,*temp1=NULL,*p=NULL;
     int a,b;
@@ -162,7 +162,7 @@ struct node * insertion(int a,int b)
         }  
         return r1;   
 }
-void complete_mul(struct node *root,struct node *root1,int n ,int m)
+void complete_mul(struct node *root,struct node *root1)
 {
     struct node *temp=NULL,*temp1=NULL,*p=NULL,*sop=NULL;
     int a,b;
