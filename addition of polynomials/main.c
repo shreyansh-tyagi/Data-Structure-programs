@@ -127,6 +127,7 @@ void addition(struct node *root,struct node *root1)
         }
     }
     insertdisplay(s);
+    
 }
 void insertdisplay(struct node *root)
 {
