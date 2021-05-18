@@ -85,32 +85,24 @@ void display(struct node *root ,struct node *root1)
     printf("%dx^%d",temp1->cof,temp1->exp);
     sort(root,root1);
 }
-void sort(struct node *root,int n)
+void sort(struct node *root,struct node *root1)
 {
     struct node *temp=NULL,*p=NULL,*q=NULL;
-    int i,j,temp1,temp2,m,a;
-    printf("\n\nChoose from the menu:\n1. Ascending order sort, press '1'\n2. Descending order sort, press '2'\n3. To exit, press '0': ");
-    scanf("%d",&a);
-    q=root;
-    m=n;
-    switch(a)
-    {
-        case 1:
-        {
-        printf("\n\nAfter sorting in Ascending order:\n\n");
-        for(i=1;i<=n;i++)
+    int i,j,temp1,temp11,temp2,temp22;
+    p=root;
+        printf("\n\nAfter sorting in descending order first polynomial is:\n\n");
+        while(p!=NULL)
         {
         temp=root;
-        p=root;
-        for(j=1;j<m;j++)
+        while(temp!=NULL)
         {
-            temp1=temp->data;
-            p=temp->link;
-            temp2=p->data; 
+            temp1=p->exp;
+            temp=temp->link;
+            temp2=temp->exp; 
             if(temp1>temp2)
             {
-                temp->data=temp2;
-                p->data=temp1;
+                temp->exp=temp2;
+                p->exp=temp1;
             }
             temp=temp->link;
         }
@@ -121,13 +113,10 @@ void sort(struct node *root,int n)
         q=q->link;
     }
     printf("%d",q->data);
-    break;
 
-        }
 
-    case 2:
-    {
-        printf("\n\nAfter sorting in Descending order:\n\n");
+
+        printf("\n\nAfter sorting in Descending order second polynomial is:\n\n");
     for(i=1;i<=n;i++)
     {
         temp=root;
@@ -150,22 +139,7 @@ void sort(struct node *root,int n)
         printf("%d  ",q->data);
         q=q->link;
     }
-    printf("%d",q->data);
-    break;
-    }  
-    case 0:
-    {
-        printf("\n\nthanks for giving your time ...goodbye!");
-        exit(1);
-    }
-    default:
-    {
-        printf("\n\nplease enter the valid number from the menu...");
-    }
-
-
-    }
-    
+    printf("%d",q->data);   
 }
 
 
