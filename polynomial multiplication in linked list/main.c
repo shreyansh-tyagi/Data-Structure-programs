@@ -13,7 +13,7 @@ void mulpoly(struct node *,struct node *);
 struct node * insertion(int ,int );
 void sort(struct node *);
 struct node * insert(int ,int );
-void addition(struct node *,struct node *);
+struct node * addition(struct node *,struct node *);
 void insertdd(struct node *);
 void complete_mul(struct node *,struct node *,int,int);
 void main()
@@ -221,7 +221,7 @@ struct node * insert(int a,int b)
         }  
         return r;   
 }
-void addition(struct node *root,struct node *root1)
+struct node* addition(struct node *root,struct node *root1)
 {
     struct node *s=NULL;
    while((root!=NULL)&&(root1!=NULL))
@@ -278,6 +278,7 @@ void complete_mul(struct node *root,struct node *root1,int n,int m)
             temp=temp->link;
         }
         sort(p);
+        sop=addition(p,sop);
         temp=root;
         temp1=temp1->link;
     }
