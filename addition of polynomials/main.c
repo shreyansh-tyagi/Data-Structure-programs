@@ -126,6 +126,12 @@ void addition(struct node *root,struct node *root1)
             root1=root1->link;
         }
     }
+    if(root->link==NULL){
+    insert(root->cof,root->exp);
+    }
+    else{
+          insert(root1->cof,root1->exp);
+    }
     insertdisplay(s);
     
 }
