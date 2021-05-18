@@ -14,7 +14,7 @@ struct node * insertion(int ,int );
 void sort(struct node *);
 struct node * insert(int ,int );
 struct node * addition(struct node *,struct node *);
-void insertdd(struct node *);
+void insertadd(struct node *);
 void complete_mul(struct node *,struct node *,int,int);
 void main()
 {
@@ -173,7 +173,6 @@ void sort(struct node *root)
     int i,j,temp1,temp11,temp2,temp22;
     p=root;
     q=root;
-        printf("\n\nAfter sorting in descending order first polynomial is:\n\n");
         while(p!=NULL)
         {
         temp=p;
@@ -192,13 +191,7 @@ void sort(struct node *root)
             temp=temp->link;
         }
         p=p->link;
-    }
-    while(q!=NULL)
-    {
-        printf("%dx^%d  ",q->cof,q->exp);
-        q=q->link;
-    }
-     
+    } 
 }
 struct node * insert(int a,int b)
 {
@@ -304,7 +297,7 @@ void complete_mul(struct node *root,struct node *root1,int n,int m)
     }
    
 }
-void insertdd(struct node *root)
+void insertadd(struct node *root)
 {
     printf("\n\nAfter addition of two polynomial:\n\n");
      while (root!=NULL)
