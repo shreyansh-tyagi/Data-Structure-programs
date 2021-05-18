@@ -10,6 +10,7 @@ void display(struct node *,struct node * );
 struct node * insert(int,int);
 void insertdisplay(struct node *);
 void addition(struct node *,struct node *);
+void sort(struct node *,struct node *);
 void main()
 {
     int n,i,m;
@@ -82,6 +83,7 @@ void display(struct node *root ,struct node *root1)
         temp1=temp1->link;
     }
     printf("%dx^%d",temp1->cof,temp1->exp);
+    sort(root,root1);
 }
 void sort(struct node *root,int n)
 {
