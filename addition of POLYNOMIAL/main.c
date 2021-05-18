@@ -116,33 +116,33 @@ void sort(struct node *root,struct node *root1)
         printf("%dx^%d  ",q->cof,q->exp);
         q=q->link;
     }
-
-
-
-        printf("\n\nAfter sorting in Descending order second polynomial is:\n\n");
-    for(i=1;i<=n;i++)
-    {
-        temp=root;
-        p=root;
-        for(j=1;j<m;j++)
+    p=root1;
+    q=root1;
+        printf("\n\nAfter sorting in descending order first polynomial is:\n\n");
+        while(p!=NULL)
         {
-            temp1=temp->data;
-            p=temp->link;
-            temp2=p->data; 
+        temp=p;
+        while(temp!=NULL)
+        {
+            temp1=p->exp;
+            temp2=temp->exp; 
             if(temp1<temp2)
             {
-                temp->data=temp2;
-                p->data=temp1;
+                temp11=p->cof;
+                p->cof=temp->cof;
+                temp->cof=temp11;
+                temp->exp=temp1;
+                p->exp=temp2;
             }
             temp=temp->link;
         }
+        p=p->link;
     }
-    while(q->link!=NULL)
+    while(q!=NULL)
     {
-        printf("%d  ",q->data);
+        printf("%dx^%d  ",q->cof,q->exp);
         q=q->link;
-    }
-    printf("%d",q->data);   
+    }  
 }
 
 
