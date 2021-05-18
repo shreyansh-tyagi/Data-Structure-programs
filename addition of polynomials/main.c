@@ -128,9 +128,11 @@ void addition(struct node *root,struct node *root1)
     }
     if(root!=NULL){
     insert(root->cof,root->exp);
+    root=root->link;
     }
     else{
           insert(root1->cof,root1->exp);
+          root1=root1->link;
     }
     insertdisplay(s);
     
