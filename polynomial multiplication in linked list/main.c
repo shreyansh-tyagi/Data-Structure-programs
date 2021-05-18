@@ -244,15 +244,15 @@ struct node* addition(struct node *root,struct node *root1)
         }
     }
     while(root!=NULL){
-    insert(root->cof,root->exp);
+    s=insert(root->cof,root->exp);
     root=root->link;
     }
     while(root1!=NULL){
-          insert(root1->cof,root1->exp);
+         s= insert(root1->cof,root1->exp);
           root1=root1->link;
     }
-    insertdisplay(s);
     
+    return s;
 }
 
 void complete_mul(struct node *root,struct node *root1,int n,int m)
@@ -274,11 +274,11 @@ void complete_mul(struct node *root,struct node *root1,int n,int m)
         {
             a=temp1->cof*temp->cof;
             b=temp1->exp+temp->exp;
-            p=insert(a,b);
+            p=insertion(a,b);
             temp=temp->link;
         }
         sort(p);
-        sop=addition(p,sop);
+        sop=addition(sop,p);
         temp=root;
         temp1=temp1->link;
     }
