@@ -299,7 +299,7 @@ void complete_mul(struct node *root,struct node *root1,int n,int m)
 }
 void insertadd(struct node *root)
 {
-    printf("\n\nAfter addition of two polynomial:\n\n");
+    printf("\n\nTHE COMPLETE RESULT: after multiply and addition of two polynomial:\n\n");
      while (root!=NULL)
     {
         printf("%dx^%d  ",root->cof,root->exp);
