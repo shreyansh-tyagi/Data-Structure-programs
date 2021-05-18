@@ -279,7 +279,7 @@ void complete_mul(struct node *root,struct node *root1,int n,int m)
         temp=root;
         temp1=temp1->link;
     }
-    insertadd(p);
+    insertadd(sop);
     }
     else{
         temp=root1;
@@ -300,7 +300,7 @@ void complete_mul(struct node *root,struct node *root1,int n,int m)
         temp=root1;
         temp1=temp1->link;
     }
-    insertadd(p);
+    insertadd(sop);
     }
    
 }
