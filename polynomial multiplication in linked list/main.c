@@ -5,13 +5,13 @@ struct node {
     int cof,exp;
     struct node *link;
 };
-struct node *r=NULL,*r1=NULL;
+struct node *r=NULL,*r1=NULL,*r2=NULL;
 void display(struct node *,struct node *);
 struct node * insert1(int,int);
 void insertdisplay(struct node *);
 void mulpoly(struct node *,struct node *);
 struct node * insertion(int ,int );
-void sort(struct node *,struct node *);
+void sort(struct node *);
 struct node * insert(int ,int );
 void addition(struct node *,struct node *);
 void insertdd(struct node *);
@@ -102,19 +102,19 @@ struct node * insert1(int a,int b)
     temp->cof=a;
     temp->exp=b;
     temp->link=NULL;
-        if(r==NULL)
+        if(r2==NULL)
         { 
-            r=temp;
+            r2=temp;
         }
         else{
-            p=r;
+            p=r2;
             while(p->link!=NULL)
             {
                 p=p->link;
             }
             p->link=temp;
         }  
-        return r;   
+        return r2;   
 }
 void mulpoly(struct node *root,struct node *root1)
 {
@@ -167,7 +167,7 @@ struct node * insertion(int a,int b)
         return r1;   
 }
 
-void sort(struct node *root,struct node *root1)
+void sort(struct node *root)
 {
     struct node *temp=NULL,*p=NULL,*q=NULL;
     int i,j,temp1,temp11,temp2,temp22;
@@ -198,33 +198,7 @@ void sort(struct node *root,struct node *root1)
         printf("%dx^%d  ",q->cof,q->exp);
         q=q->link;
     }
-    p=root1;
-    q=root1;
-        printf("\n\nAfter sorting in descending order first polynomial is:\n\n");
-        while(p!=NULL)
-        {
-        temp=p;
-        while(temp!=NULL)
-        {
-            temp1=p->exp;
-            temp2=temp->exp; 
-            if(temp1<temp2)
-            {
-                temp11=p->cof;
-                p->cof=temp->cof;
-                temp->cof=temp11;
-                temp->exp=temp1;
-                p->exp=temp2;
-            }
-            temp=temp->link;
-        }
-        p=p->link;
-    }
-    while(q!=NULL)
-    {
-        printf("%dx^%d  ",q->cof,q->exp);
-        q=q->link;
-    }  
+     
 }
 struct node * insert(int a,int b)
 {
@@ -303,6 +277,7 @@ void complete_mul(struct node *root,struct node *root1,int n,int m)
             p=insert(a,b);
             temp=temp->link;
         }
+        sort(p);
         temp=root;
         temp1=temp1->link;
     }
