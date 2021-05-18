@@ -201,10 +201,10 @@ void addition(struct node *root,struct node *root1)
 }
 void insertdisplay(struct node *root)
 {
-    printf("\n\nAfter addition of two polynomial:\n");
+    printf("\n\nAfter addition of two polynomial:\n\n");
      while (root!=NULL)
     {
-        printf("%dx^%d ",root->cof,root->exp);
+        printf("%dx^%d  ",root->cof,root->exp);
         root=root->link;
     }
     printf("\n\n");
