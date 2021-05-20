@@ -20,6 +20,7 @@ void main()
         printf("%d  ",a[i]);
     }
     selection_sort(a,n);
+    bubble_sort(a,n);
 }
 void selection_sort(int a[],int n)
 {
@@ -38,7 +39,8 @@ void selection_sort(int a[],int n)
     a[i]=a[min];
     a[min]=temp;
     }
-    for(i=0;i<=n;i++)
+    printf("\n\nsorting after selection sort:\n\n");
+    for(i=0;i<n;i++)
     {
         printf(" %d",a[i]);
     }
@@ -59,7 +61,8 @@ void bubble_sort(int a[],int n)
         }
 
     }
-    for(i=0;i<=n;i++)
+    printf("\n\nsorting after bubble sort:\n\n");
+    for(i=0;i<n;i++)
     {
         printf(" %d",a[i]);
     }
