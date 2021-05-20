@@ -38,5 +38,30 @@ void selection_sort(int a[],int n)
     a[i]=a[min];
     a[min]=temp;
     }
-    
+    for(i=0;i<=n;i++)
+    {
+        printf(" %d",a[i]);
+    }
+}
+void bubble_sort(int a[],int n)
+{
+    int i,j,temp;
+    for(i=0;i<=n;i++)
+    {
+        for(j=0;j<=n;j++)
+        {
+            if(a[i]>a[j])
+            {
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+
+    }
+    for(i=0;i<=n;i++)
+    {
+        printf(" %d",a[i]);
+    }
+
 }
