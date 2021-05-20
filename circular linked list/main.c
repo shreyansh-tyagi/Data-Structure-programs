@@ -41,6 +41,7 @@ void main()
 }
 void display(struct node *root)
 {
+    // 1st way of displaying the circular list item
     struct node *temp=NULL;
     temp=root->link;
     printf("\n\nlinked list is:\n\n");
@@ -50,5 +51,7 @@ void display(struct node *root)
         printf("%d  ",temp->data);
         temp=temp->link;
     }
-
+    // 2nd way of displaying the circular list item
+    // here from above temp come back to root after completion of travesing
+     
 }
