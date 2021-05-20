@@ -7,7 +7,7 @@ void main()
 {
     int a[50],n;
     
-    printf("\n\nenter the size of array:");
+    printf("\n\nenter the size of array: ");
     scanf("%d",&n);
     for(int i=0;i<n;i++)
     {
@@ -28,7 +28,7 @@ void selection_sort(int a[],int n)
     for(i=0;i<n;i++)
     {
     min=i;
-    for(j=0;j<n;j++)
+    for(j=i;j<n;j++)
     {
         if(a[j]<a[min])
         {
@@ -42,7 +42,7 @@ void selection_sort(int a[],int n)
     printf("\n\nsorting after selection sort:\n\n");
     for(i=0;i<n;i++)
     {
-        printf(" %d",a[i]);
+        printf("%d  ",a[i]);
     }
 }
 void bubble_sort(int a[],int n)
@@ -64,7 +64,7 @@ void bubble_sort(int a[],int n)
     printf("\n\nsorting after bubble sort:\n\n");
     for(i=0;i<n;i++)
     {
-        printf(" %d",a[i]);
+        printf("%d  ",a[i]);
     }
 
 }
