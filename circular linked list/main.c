@@ -20,7 +20,15 @@ void main()
         temp->link=NULL;
         if(root==NULL)
         {
-            
+            root=temp;
+        }
+        else{
+            p=root;
+            while(p->link!=NULL)
+            {
+                p=p->link;
+            }
+            p->link=temp;
         }
     }
 }
