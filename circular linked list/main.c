@@ -8,7 +8,7 @@ struct node {
 void display(struct node *);
 void main()
 {
-    struct node *temp=NULL,*root=NULL,*p=NULL;
+    struct node *temp=NULL,*root=NULL,*p=NULL,*q=NULL;
     int n,i;
     printf("\n\nenter the size of linked list: ");
     scanf("%d",&n);
@@ -31,14 +31,23 @@ void main()
             p->link=temp;
         }
     }
+    q=root;
+    while(q->link!=NULL)
+            {
+                q=q->link;
+            }
+            q->link=root;
     display(root);
 }
 void display(struct node *root)
 {
+    struct node *temp=NULL;
+    temp=root;
     printf("\n\nlinked list is:\n\n");
-    while(root!=NULL)
+    while(temp!=NULL)
     {
-        printf("%d  ",root->data);
-        root=root->link;
+        printf("%d  ",temp->data);
+        temp=temp->link;
     }
+
 }
