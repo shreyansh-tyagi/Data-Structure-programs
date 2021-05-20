@@ -31,4 +31,13 @@ void main()
             p->link=temp;
         }
     }
+    display(root);
+}
+void display(struct node *root)
+{
+    printf("\n\nlinked list is :");
+    while(root!=NULL)
+    {
+        printf("%d  ",root->data);
+    }
 }
