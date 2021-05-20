@@ -42,8 +42,9 @@ void main()
 void display(struct node *root)
 {
     struct node *temp=NULL;
-    temp=root;
+    temp=root->link;
     printf("\n\nlinked list is:\n\n");
+    printf("%d  ",root->data);
     while(temp!=root)
     {
         printf("%d  ",temp->data);
