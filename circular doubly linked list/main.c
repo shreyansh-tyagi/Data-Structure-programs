@@ -15,8 +15,8 @@ void main()
     for(i=1;i<=n;i++)
     {
         temp=(struct node*)malloc(sizeof(struct node ));
-        printf("enter the %d element into linked list: ");
-        scanf("%d",temp->data);
+        printf("enter the %d element into linked list: ",i);
+        scanf("%d",&temp->data);
         temp->left=NULL;
         temp->right=NULL;
         if(root==NULL)
@@ -46,7 +46,7 @@ void display(struct node *root)
         temp=temp->right;
     }
     printf("%d",temp->data);
-    print
+    printf("\n\nbackward travesing:\n\n");
     while (temp->left!=NULL)
     {
         printf("%d  ",temp->data);
