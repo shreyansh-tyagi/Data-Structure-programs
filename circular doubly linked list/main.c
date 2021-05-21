@@ -21,7 +21,17 @@ void main()
         temp->right=NULL;
         if(root==NULL)
         {
-            
+            root=temp;
+        }
+        else{
+            p=root;
+            while(p->right!=NULL)
+            {
+                p=p->right;
+            }
+            p->right=temp;
+            temp->left=p;
         }
     }
+    disp
 }
