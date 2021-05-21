@@ -33,6 +33,12 @@ void main()
             temp->left=p;
         }
     }
+    q=root;
+    while(q->right!=NULL)
+    {
+        q=q->right;
+    }
+    q->right=root;
     display(root);
 }
 void display(struct node *root)
