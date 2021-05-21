@@ -46,7 +46,7 @@ void display(struct node *root)
     struct node *temp=NULL;
     temp=root;
     printf("\n\nforward travesing of linked list:\n\n");
-    while(temp->right!=NULL)
+    while(temp->right!=root)
     {
         printf("%d  ",temp->data);
         temp=temp->right;
