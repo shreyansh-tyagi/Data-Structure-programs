@@ -12,8 +12,16 @@ void main()
     int i,n;
     printf("\n\nenter the size of linked list: ");
     scanf("%d",&n);
-    for(i=1,i<=n;i++)
+    for(i=1;i<=n;i++)
     {
-        
+        temp=(struct node*)malloc(sizeof(struct node ));
+        printf("enter the %d element into linked list: ");
+        scanf("%d",temp->data);
+        temp->left=NULL;
+        temp->right=NULL;
+        if(root==NULL)
+        {
+            
+        }
     }
 }
