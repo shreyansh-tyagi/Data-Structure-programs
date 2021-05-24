@@ -5,6 +5,7 @@
 int stack[CAPACITY],top=-1;
 void push(int);
 void display();
+int pop();
 int isfull();
 void main()
 {
@@ -28,9 +29,16 @@ void main()
          push(ele);
          break;
         }
-        case 2: pop();
+        case 2:
         {
-
+           ele= pop();
+           if(ele==0)
+           {
+               printf("\nstack is underflow\n");
+           }
+           else{
+               printf("popped item is: %d",ele);
+           }
         }
         case 3:
         { 
@@ -78,8 +86,11 @@ void display()
 }
 int pop()
 {
-    if(isemply())
+    if(isempty())
     {
-        printf("\nstack is underflow\n");
+        return 0;
+    }
+    else{
+         return stack[top--];
     }
 }
