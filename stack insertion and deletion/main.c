@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 int  push(int,int,int);
+int isfull()
 void main()
 {
     int i,n,ele,top=-1;
@@ -18,6 +19,9 @@ void main()
 int push(int n,int ele,int top)
 {
     int stack[50];
-    
+    if(isfull())
+    {
+
+    }
 
 }
