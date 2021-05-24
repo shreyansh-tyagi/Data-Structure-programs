@@ -6,6 +6,7 @@ int stack[CAPACITY],top=-1;
 void push(int);
 void display();
 int pop();
+void peek();
 int isfull();
 void main()
 {
@@ -15,9 +16,10 @@ void main()
         printf("\n--------CHOOSE FROM THE MENU-----------\n");
     printf("\n\n1. push\n");
     printf("2. pop\n");
-    printf("3. display\n");
-    printf("4. traverse\n");
-    printf("5. exit\n");
+    printf("3. peek\n");
+    printf("4. display\n");
+    printf("5. traverse\n");
+    printf("6. exit\n");
     printf("\nEnter your choice from the menu:\n\n");
     scanf("%d",&ch);
     switch(ch)
@@ -41,11 +43,16 @@ void main()
            }
         }
         case 3:
+        {
+            peek();
+            break;
+        }
+        case 4:
         { 
         display();
         break;
         }
-        case 4: traverse();
+        
         case 5:{
             printf("\nThanks for giving your time...goodbye!\n\n");
             exit(1);
@@ -92,5 +99,22 @@ int pop()
     }
     else{
          return stack[top--];
+    }
+}
+int isempty()
+{
+    if(top==-1)
+    return 1;
+    else
+    return 0;
+}
+void peek()
+{
+    if(isempty())
+    {
+        printf("\nstack is empty\n");
+    }
+    else{
+        printf("peek eleement: %d\n",stack[top]);
     }
 }
