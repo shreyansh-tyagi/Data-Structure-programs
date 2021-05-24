@@ -8,6 +8,7 @@ void display();
 int pop();
 void peek();
 int isfull();
+int isempty();
 void main()
 {
     int ch,ele;
