@@ -39,8 +39,9 @@ void main()
                printf("\nstack is underflow\n");
            }
            else{
-               printf("popped item is: %d",ele);
+               printf("\npopped item is: %d\n",ele);
            }
+           break;
         }
         case 3:
         {
@@ -121,6 +122,6 @@ void peek()
         printf("\nstack is empty\n");
     }
     else{
-        printf("peek eleement: %d\n",stack[top]);
+        printf("\npeek eleement: %d\n",stack[top]);
     }
 }
