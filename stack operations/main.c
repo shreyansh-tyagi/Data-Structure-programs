@@ -13,10 +13,10 @@ void main()
     {
         printf("\n--------CHOOSE FROM THE MENU-----------\n");
     printf("\n\n1. push\n");
-    printf("\n2. pop\n");
-    printf("\n3. display\n");
-    printf("\n4. traverse\n");
-    printf("\n5. exit\n");
+    printf("2. pop\n");
+    printf("3. display\n");
+    printf("4. traverse\n");
+    printf("5. exit\n");
     printf("\nEnter your choice from the menu:\n\n");
     scanf("%d",&ch);
     switch(ch)
@@ -28,10 +28,21 @@ void main()
          push(ele);
          break;
         }
-        //case 2: pop();
-        case 2: display();
-        //case 4: traverse();
-        //case 5: quit();
+        case 2: pop();
+        {
+
+        }
+        case 3:
+        { 
+        display();
+        break;
+        }
+        case 4: traverse();
+        case 5:{
+            printf("\nThanks for giving your time...goodbye!\n\n");
+            exit(1);
+        }
+         
         default: printf("\nInvalid input\n\n");
 
     }
@@ -63,5 +74,12 @@ void display()
     for(int i=0;i<CAPACITY;i++)
     {
         printf("%d  ",stack[i]);
+    }
+}
+int pop()
+{
+    if(isemply())
+    {
+        printf("\nstack is underflow\n");
     }
 }
