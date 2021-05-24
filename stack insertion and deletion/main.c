@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-int  push(int);
+int  push(int,int,int);
 void main()
 {
     int i,n,ele,top=-1;
@@ -11,7 +11,13 @@ void main()
     {
         printf("enter the %d value into stack: ");
         scanf("%d",&ele);
-        push(ele);
+        top=push(n,ele,top);
     }
+
+}
+int push(int n,int ele,int top)
+{
+    int stack[50];
+    
 
 }
