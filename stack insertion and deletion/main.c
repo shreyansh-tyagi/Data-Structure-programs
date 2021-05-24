@@ -28,6 +28,7 @@ int push(int n,int ele,int top)
     int stack[50];
     if(isfull(top,n))
     {
+        printf("\nstack is full\n");
         
     }
     else{
