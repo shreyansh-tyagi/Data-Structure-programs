@@ -8,9 +8,9 @@ void main()
     int i,n,ele,top=-1;
     printf("\n\nenter the size of stack: ");
     scanf("%d",&n);
-    for(i=1;i<=n;i++)
+    for(i=0;i<n;i++)
     {
-        printf("enter the %d value into stack: ");
+        printf("enter the %d value into stack: ",i);
         scanf("%d",&ele);
         top=push(n,ele,top);
     }
@@ -34,8 +34,9 @@ int push(int n,int ele,int top)
     else{
         top++;
         stack[top]=ele;
-        printf("\n inserted: stack[%d]= %d",top,ele);
+        printf("\ninserted: stack[%d]= %d\n\n",top,ele);
 
     }
+    return top;
 
 }
