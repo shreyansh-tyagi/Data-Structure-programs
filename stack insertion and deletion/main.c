@@ -2,7 +2,8 @@
 #include<stdlib.h>
 #include<string.h>
 int  push(int,int,int);
-int pop()
+int display(int,int);
+int pop(int,int);
 int isfull(int,int);
 void main()
 {
@@ -36,9 +37,9 @@ int push(int n,int ele,int top)
     else{
         top++;
         stack[top]=ele;
-        printf("\ninserted: stack[%d]= %d\n\n",top,ele);
-
+          printf("inserted: stack[%d]= %d",top,ele);
     }
+  
     return top;
 
 }
