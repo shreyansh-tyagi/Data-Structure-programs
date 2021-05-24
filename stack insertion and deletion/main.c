@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 int  push(int,int,int);
-int isfull()
+int isfull(int,int);
 void main()
 {
     int i,n,ele,top=-1;
@@ -16,11 +16,24 @@ void main()
     }
 
 }
+int isfull(int top,int n)
+{
+    if(top==n-1)
+    return 1;
+    else
+    return 0;
+}
 int push(int n,int ele,int top)
 {
     int stack[50];
-    if(isfull())
+    if(isfull(top,n))
     {
+        
+    }
+    else{
+        top++;
+        stack[top]=ele;
+        printf("\n inserted: stack[%d]= %d",top,ele);
 
     }
 
