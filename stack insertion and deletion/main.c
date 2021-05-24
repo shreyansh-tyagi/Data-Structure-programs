@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 int  push(int,int,int);
+int pop()
 int isfull(int,int);
 void main()
 {
@@ -14,6 +15,7 @@ void main()
         scanf("%d",&ele);
         top=push(n,ele,top);
     }
+    
 
 }
 int isfull(int top,int n)
