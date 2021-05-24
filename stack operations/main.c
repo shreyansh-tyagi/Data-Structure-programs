@@ -19,8 +19,7 @@ void main()
     printf("2. pop\n");
     printf("3. peek\n");
     printf("4. display\n");
-    printf("5. traverse\n");
-    printf("6. exit\n");
+    printf("5. exit\n");
     printf("\nEnter your choice from the menu:\n\n");
     scanf("%d",&ch);
     switch(ch)
@@ -92,7 +91,7 @@ void display()
     }
     else{
     printf("\n\nstack is :\n\n");
-    for(int i=0;i<top;i++)
+    for(int i=0;i<=top;i++)
     {
         printf("%d  ",stack[i]);
     }
