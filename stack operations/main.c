@@ -4,7 +4,7 @@
 #define CAPACITY 5
 int stack[CAPACITY],top=-1;
 void push(int);
-int isfull(int,int);
+int isfull();
 void main()
 {
     int ch,ele;
@@ -36,19 +36,18 @@ void main()
     }
     }
 }
-int isfull(int top,int n)
-{
-    if(top==n-1)
+int isfull()
+{   
+    if(top==CAPACITY-1)
     return 1;
     else
     return 0;
 }
 void push(int ele)
 {
-     int stack[50];
-    if(isfull(top,n))
+    if(isfull())
     {
-        printf("\nstack is full\n");
+        printf("\nstack is overflow\n");
         
     }
     else{
@@ -56,6 +55,12 @@ void push(int ele)
         stack[top]=ele;
           printf("\n\ninserted: stack[%d]= %d\n\n",top,ele);
     }
-
-
+}
+void display()
+{
+    printf("\n\nstack is :\n\n");
+    for(int i=0;i<CAPACITY;i++)
+    {
+        printf("%d  ",stack[i]);
+    }
 }
