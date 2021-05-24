@@ -4,6 +4,7 @@
 #define CAPACITY 5
 int stack[CAPACITY],top=-1;
 void push(int);
+void display();
 int isfull();
 void main()
 {
@@ -27,10 +28,10 @@ void main()
          push(ele);
          break;
         }
-        case 2: pop();
-        case 3: display();
-        case 4: traverse();
-        case 5: quit();
+        //case 2: pop();
+        case 2: display();
+        //case 4: traverse();
+        //case 5: quit();
         default: printf("\nInvalid input\n\n");
 
     }
