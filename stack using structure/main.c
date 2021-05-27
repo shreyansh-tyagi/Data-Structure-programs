@@ -2,18 +2,22 @@
 #include<stdlib.h>
 #include<string.h>
 #define CAPACITY 5
+
 struct stack{
-    int top=-1;
+    int top;
     int data[CAPACITY];
-}*s;
-void push(int);
-int pop();
-void peek();
-int isfull();
-int isempty();
+}s;
+
 void main()
 {
+
+ void push(struct stack *,int);
+int pop(struct stack *);
+void peek(struct stack *);
+int isfull(struct stack *);
+int isempty(struct stack *);
     int ch,ele;
+    s.top=-1;
     while(1)
     {
         printf("\n--------CHOOSE FROM THE MENU-----------\n");
@@ -29,12 +33,12 @@ void main()
         {
             printf("\nenter the element: ");
             scanf("%d",&ele);
-         push(ele);
+         push(&s,ele);
          break;
         }
         case 2:
         {
-           ele= pop();
+           ele= pop(&s);
            if(ele==0)
            {
                printf("\nstack is underflow\n");
@@ -46,7 +50,7 @@ void main()
         }
         case 3:
         {
-            peek();
+            peek(&s);
             break;
         }
         
@@ -60,16 +64,16 @@ void main()
     }
     }
 }
-int isfull()
+int isfull(struct stack *s)
 {   
     if(s->top==CAPACITY-1)
     return 1;
     else
     return 0;
 }
-void push(int ele)
+void push(struct stack *s,int ele)
 {
-    if(isfull())
+    if(isfull(&s))
     {
         printf("\nstack is overflow\n");
         
@@ -81,9 +85,9 @@ void push(int ele)
     }
 }
 
-int pop()
+int pop(struct stack *s)
 {
-    if(isempty())
+    if(isempty(&s))
     {
         return 0;
     }
@@ -91,16 +95,16 @@ int pop()
          return s->data[s->top--];
     }
 }
-int isempty()
+int isempty(struct stack *s)
 {
     if(s->top==-1)
     return 1;
     else
     return 0;
 }
-void peek()
+void peek(struct stack *s)
 {
-    if(isempty())
+    if(isempty(&s))
     {
         printf("\nstack is empty\n");
     }
