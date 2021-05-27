@@ -2,20 +2,19 @@
 #include<stdlib.h>
 #include<string.h>
 #define CAPACITY 5
-
 struct stack{
     int top;
     int data[CAPACITY];
 }s;
-
+void push(int);
+int pop();
+void peek();
+int isfull();
+int isempty();
 void main()
 {
 
- void push(struct stack *,int);
-int pop(struct stack *);
-void peek(struct stack *);
-int isfull(struct stack *);
-int isempty(struct stack *);
+ 
     int ch,ele;
     s.top=-1;
     while(1)
@@ -33,12 +32,12 @@ int isempty(struct stack *);
         {
             printf("\nenter the element: ");
             scanf("%d",&ele);
-         push(&s,ele);
+         push(ele);
          break;
         }
         case 2:
         {
-           ele= pop(&s);
+           ele= pop();
            if(ele==0)
            {
                printf("\nstack is underflow\n");
@@ -50,7 +49,7 @@ int isempty(struct stack *);
         }
         case 3:
         {
-            peek(&s);
+            peek();
             break;
         }
         
@@ -64,14 +63,14 @@ int isempty(struct stack *);
     }
     }
 }
-int isfull(struct stack *s)
+int isfull()
 {   
-    if(s->top==CAPACITY-1)
+    if(s.top==CAPACITY-1)
     return 1;
     else
     return 0;
 }
-void push(struct stack *s,int ele)
+void push(int ele)
 {
     if(isfull(&s))
     {
@@ -79,36 +78,36 @@ void push(struct stack *s,int ele)
         
     }
     else{
-        s->top++;
-        s->data[s->top]=ele;
-          printf("\n\ninserted: stack[%d]= %d\n\n",s->top,ele);
+        s.top++;
+        s.data[s.top]=ele;
+          printf("\n\ninserted: stack[%d]= %d\n\n",s.top,ele);
     }
 }
 
-int pop(struct stack *s)
+int pop()
 {
-    if(isempty(&s))
+    if(isempty())
     {
         return 0;
     }
     else{
-         return s->data[s->top--];
+         return s.data[s.top--];
     }
 }
-int isempty(struct stack *s)
+int isempty()
 {
-    if(s->top==-1)
+    if(s.top==-1)
     return 1;
     else
     return 0;
 }
-void peek(struct stack *s)
+void peek()
 {
-    if(isempty(&s))
+    if(isempty())
     {
         printf("\nstack is empty\n");
     }
     else{
-        printf("\npeek eleement: %d\n",s->data[s->top]);
+        printf("\npeek eleement: %d\n",s.data[s.top]);
     }
 }
