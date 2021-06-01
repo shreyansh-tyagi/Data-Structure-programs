@@ -68,7 +68,7 @@ int main(){
     scanf("%d",&n);
     for(int i=0;i<n;i++)
     {
-    printf("enter the element to push");
+    printf("enter the element to push: ");
     scanf("%d",&a);
     top = push(top, a);
     }
@@ -76,7 +76,7 @@ int main(){
     // linkedListTraversal(top);
 
     int element = pop(top); 
-    printf("Popped element is %d\n", element);
+    printf("Popped element from the top of the stack is: %d\n", element);
     linkedListTraversal(top);
     return 0;
 }
