@@ -14,6 +14,6 @@ for i in range(f):
 for j in range(f,len(d)):
     e.append(d[j])
 g,h=round(statistics.median(c),1),round(statistics.median(e),1)
-print(round((h-g),1))
+#print(round((h-g),1))
         
     
