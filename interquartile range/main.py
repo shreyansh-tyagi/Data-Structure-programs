@@ -6,7 +6,8 @@ d=[]
 for i in range(n):
     for j in range(b[i]):
         d.append(a[i])
-d.sort()       
+d.sort()
+print(d)       
 c,e=[],[]
 f=len(d)//2
 for i in range(f):
