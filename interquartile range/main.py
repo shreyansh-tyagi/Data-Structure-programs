@@ -25,6 +25,7 @@ else:
         e.append(d[j])
     g,h=round(statistics.median(c),1),round(statistics.median(e),1)
     print(round(float(h-g),1))   
+    print(h,g)
 
     
     
