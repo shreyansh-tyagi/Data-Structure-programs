@@ -48,5 +48,12 @@ void push(){
 }
 void pop()
 {
-
+    struct node *temp=NULL;
+    if(top==NULL)
+    {
+        printf("\nstack underflow");
+    }
+    else{
+        
+    }
 }
