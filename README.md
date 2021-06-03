@@ -8,5 +8,6 @@
       * *creation of doubly linked list*
       * *creation of circular linked list*
       * *insertion to singly linked list*
-      * *insertion to singly linked list* 
+      * *insertion to doubly linked list* 
+      * *insertion to circular linked list*
 3. *Stack*
