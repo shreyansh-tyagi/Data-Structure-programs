@@ -14,7 +14,7 @@ void main()
     while(1)
     {
     printf("\n----choose from the menu---- \n");
-    printf("\n1. push the element into stack\n2. pop the element from the stack");
+    printf("\n1. push the element into stack\n2. pop the element from the stack\n3. exit from the program");
     printf("\nenter your choice: ");
     scanf("%d",&n);
     switch(n)
@@ -27,6 +27,8 @@ void main()
         case 2:{
             pop();
         }
+        case 3:
+        exit(1);
 
     }
     }
