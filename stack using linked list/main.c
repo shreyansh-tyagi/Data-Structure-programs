@@ -64,7 +64,7 @@ int pop(struct Node* tp){
 
 int main(){
     int a,n;
-    printf("enter the size of linked list: ");
+    printf("enter the size of linked list: ")
     scanf("%d",&n);
     for(int i=0;i<n;i++)
     {
