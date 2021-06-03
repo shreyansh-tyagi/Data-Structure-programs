@@ -4,5 +4,6 @@
       * *Array insert,delete,reverse,sort*
 2. *Linked List :-*
       * *creation of linked list*
-      * 
+      * *creation of singly linked list*
+      * *creation of doubly linked list*
 3. *Stack*
