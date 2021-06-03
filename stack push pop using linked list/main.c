@@ -11,8 +11,11 @@ void pop();
 void main()
 {
     int ele,n;
+    while(1)
+    {
     printf("\n----choose from the choice from the menu---- \n");
     printf("\n1. push the element into stack\n2. pop the element from the stack");
+    printf("\nenter your choice");
     scanf("%d",&n);
     switch(n)
     {
@@ -26,6 +29,7 @@ void main()
         }
 
     }
+    }
 
 }
 void push(int a){
@@ -35,4 +39,8 @@ void push(int a){
     scanf("%d",&temp->data);
    temp->link=top;
    top=temp;
+}
+void pop()
+{
+
 }
