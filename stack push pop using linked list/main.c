@@ -30,7 +30,7 @@ void main()
         case 3:
         exit(1);
         default:
-        printf("\nplease enter the valid value\n")
+        printf("\nplease enter the valid value\n");
 
     }
     }
@@ -43,6 +43,8 @@ void push(){
     scanf("%d",&temp->data);
    temp->link=top;
    top=temp;
+   printf("\nelement inserted into stack: %d",top->data);
+   
 }
 void pop()
 {
