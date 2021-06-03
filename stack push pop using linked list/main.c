@@ -73,4 +73,13 @@ void traverse()
     struct node *temp=NULL;
     if(top==NULL)
     printf("\n\nstack is empty\n\n");
+    else{
+        temp=top;
+        printf("\nstack is:\n");
+        while(temp!=NULL)
+        {
+            printf("%d  ",temp->data);
+            temp=temp->link;
+        }
+    }
 }
