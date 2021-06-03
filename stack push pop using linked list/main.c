@@ -5,6 +5,7 @@ struct node{
     int data ;
     struct node *link;
 };
+struct node *top=NULL;
 void push(int);
 void pop();
 void main()
@@ -26,4 +27,7 @@ void main()
 
     }
 
+}
+void push(int a){
+    struct node 
 }
