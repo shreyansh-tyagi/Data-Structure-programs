@@ -10,4 +10,7 @@
       * *insertion to singly linked list*
       * *insertion to doubly linked list* 
       * *insertion to circular linked list*
+      * *deletion from singly linked list*
+      * *deletion from doubly linked list*
+      
 3. *Stack*
