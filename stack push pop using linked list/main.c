@@ -29,6 +29,8 @@ void main()
         }
         case 3:
         exit(1);
+        default:
+        printf("\nplease enter the valid value\n")
 
     }
     }
