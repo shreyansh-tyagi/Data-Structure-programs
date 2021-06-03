@@ -29,5 +29,12 @@ void main()
 
 }
 void push(int a){
-    struct node 
+    struct node *temp=NULL;
+    temp=(struct node *)malloc(sizeof(struct node ));
+    printf("\nenter the element to push into stack: ");
+    scanf("%d",&temp->data);
+    temp->link=NULL;
+    top=temp;
+    
+
 }
