@@ -26,6 +26,7 @@ void main()
         }
         case 2:{
             pop();
+            break;
         }
         case 3:
         exit(1);
@@ -43,7 +44,7 @@ void push(){
     scanf("%d",&temp->data);
    temp->link=top;
    top=temp;
-   printf("\nelement inserted into stack: %d",top->data);
+   printf("\nelement inserted into stack: %d\n\n",top->data);
    
 }
 void pop()
@@ -51,11 +52,11 @@ void pop()
     struct node *temp=NULL;
     if(top==NULL)
     {
-        printf("\nstack underflow");
+        printf("\nstack underflow\n\n");
     }
     else{
         temp=top;
-        printf("\npopped element is: %d",temp->data);
+        printf("\npopped element is: %d\n\n",temp->data);
         top=top->link;
         temp->link=NULL;
         free(temp);
