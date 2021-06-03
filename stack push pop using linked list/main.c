@@ -8,6 +8,7 @@ struct node{
 struct node *top=NULL;
 void push();
 void pop();
+void traverse();
 void main()
 {
     int ele,n;
@@ -66,4 +67,10 @@ void pop()
         temp->link=NULL;
         free(temp);
     }
+}
+void traverse()
+{
+    struct node *temp=NULL;
+    if(top==NULL)
+    printf("\n\nstack is empty\n\n");
 }
