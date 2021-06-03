@@ -54,6 +54,9 @@ void pop()
         printf("\nstack underflow");
     }
     else{
-        
+        temp=top;
+        printf("\npopped element is: %d",temp->data);
+        top=top->link;
+        temp->link=NULL;
     }
 }
