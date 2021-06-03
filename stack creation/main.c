@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 int  push(int,int,int);
-int display(int,int);
+int display(int,int);                   //stack is last in first out 
 int pop(int,int);
 int isfull(int,int);
 void main()
