@@ -16,7 +16,7 @@ void main()
     {
     printf("\n----choose from the menu---- \n");
     printf("\n1. push the element into stack\n2. pop the element from the stack\n3. traverse the stack\n4. exit from the program");
-    printf("\nenter your choice: ");
+    printf("\n\n enter your choice: ");
     scanf("%d",&n);
     switch(n)
     {
