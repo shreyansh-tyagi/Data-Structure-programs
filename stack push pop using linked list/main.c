@@ -6,22 +6,22 @@ struct node{
     struct node *link;
 };
 struct node *top=NULL;
-void push(int);
+void push();
 void pop();
 void main()
 {
     int ele,n;
     while(1)
     {
-    printf("\n----choose from the choice from the menu---- \n");
+    printf("\n----choose from the menu---- \n");
     printf("\n1. push the element into stack\n2. pop the element from the stack");
-    printf("\nenter your choice");
+    printf("\nenter your choice: ");
     scanf("%d",&n);
     switch(n)
     {
         case 1:
         {
-            push(ele);
+            push();
             break;
         }
         case 2:{
@@ -32,7 +32,7 @@ void main()
     }
 
 }
-void push(int a){
+void push(){
     struct node *temp=NULL;
     temp=(struct node *)malloc(sizeof(struct node ));
     printf("\nenter the element to push into stack: ");
