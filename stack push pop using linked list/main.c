@@ -6,7 +6,7 @@ struct node{
     struct node *link;
 };
 void push(int);
-void pop(int);
+void pop();
 void main()
 {
     int ele,n;
@@ -19,6 +19,9 @@ void main()
         {
             push(ele);
             break;
+        }
+        case 2:{
+            pop();
         }
 
     }
