@@ -58,5 +58,6 @@ void pop()
         printf("\npopped element is: %d",temp->data);
         top=top->link;
         temp->link=NULL;
+        free(temp);
     }
 }
