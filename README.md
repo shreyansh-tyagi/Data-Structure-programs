@@ -6,4 +6,7 @@
       * *creation of linked list*
       * *creation of singly linked list*
       * *creation of doubly linked list*
+      * *creation of circular linked list*
+      * *insertion to singly linked list*
+      * *insertion to singly linked list* 
 3. *Stack*
