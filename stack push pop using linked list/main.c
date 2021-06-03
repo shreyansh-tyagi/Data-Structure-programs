@@ -9,7 +9,13 @@ void push(int);
 void pop(int);
 void main()
 {
-    int ele;
-    printf("\nenter the choice from the menu: \n");
+    int ele,n;
+    printf("\n----choose from the choice from the menu---- \n");
+    scanf("%d",&n);
+    switch(n)
+    {
+        case
+
+    }
 
 }
