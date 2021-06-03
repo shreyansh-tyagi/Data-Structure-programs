@@ -2,5 +2,7 @@
 1. *Array :-*
       * *Array manipulation*
       * *Array insert,delete,reverse,sort*
-2. *Linked List* 
+2. *Linked List :-*
+      * *creation of linked list*
+      * 
 3. *Stack*
