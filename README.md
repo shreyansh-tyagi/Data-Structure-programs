@@ -1,3 +1,3 @@
 ## *Some concept based data structure program from start to end*
-2. *Array*
-1. *Linked List* 
+1. *Array*
+2. *Linked List* 
