@@ -7,10 +7,11 @@
       * *creation of singly linked list*
       * *creation of doubly linked list*
       * *creation of circular linked list*
+      * *creation of polynomial*
       * *insertion to singly linked list*
       * *insertion to doubly linked list* 
       * *insertion to circular linked list*
       * *deletion from singly linked list*
       * *deletion from doubly linked list*
-      
+      * **
 3. *Stack*
