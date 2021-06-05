@@ -21,5 +21,5 @@
       * *insertion of another linked list into existing linked list*
       * *deletion at begining of linked list*
       * *deletion from end of linked list*
-      * **
+      * *deletion from both begining and end from linked list*
 3. *Stack*
