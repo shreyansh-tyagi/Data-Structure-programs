@@ -24,5 +24,6 @@
       * *deletion from both begining and end from linked list*
       * *deletion from random position of linked list*
       * *deletion of more than one element from linked list*
-      
+      * *reverse the linked list*
+      * *sorting the linked list*
 3. *Stack*
