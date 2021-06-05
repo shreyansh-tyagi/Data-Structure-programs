@@ -26,4 +26,7 @@
       * *deletion of more than one element from linked list*
       * *reverse the linked list*
       * *sorting the linked list*
+      * *searching the element from linked list*
+      * *SINGLE LINKED LIST MANIPULATION* 
 3. *Stack*
+
