@@ -34,4 +34,7 @@
       * *stack creation*
       * *stack implementation*
       * *stack operation using array*
+      * *stack push pop using linked list*
+      * *stack using structure with array*
+      * *stack operation using linked list*
 
