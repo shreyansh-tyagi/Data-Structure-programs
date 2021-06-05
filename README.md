@@ -30,5 +30,8 @@
       * [*SINGLE LINKED LIST MANIPULATION*](https://github.com/shreyansh-tyagi/Data-Structure-programs/blob/master/SINGLE%20LINKED%20LIST%20MANIPULATION/main.c) 
       * [*POLYNOMIAL ADDITION*](https://github.com/shreyansh-tyagi/Data-Structure-programs/blob/master/addition%20of%20POLYNOMIAL/main.c)
       * [*POLYNOMIAL MULTIPLICATION*](https://github.com/shreyansh-tyagi/Data-Structure-programs/blob/master/POLYNOMIAL%20MULTIPLICATION/main.c)
-3. *Stack*
+3. *Stack :-*
+      * *stack creation*
+      * *stack implementation*
+      * *stack operation using array*
 
