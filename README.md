@@ -15,5 +15,7 @@
       * *deletion from singly linked list*
       * *deletion from doubly linked list*
       * *insertion at begining in linked list*
-      * **
+      * *insertion at end of linked list*
+      * *insertion at middel of linked list*
+      
 3. *Stack*
