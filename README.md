@@ -11,6 +11,7 @@
       * *insertion to singly linked list*
       * *insertion to doubly linked list* 
       * *insertion to circular linked list*
+      * *insertion to polynomial equation*
       * *deletion from singly linked list*
       * *deletion from doubly linked list*
       * **
