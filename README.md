@@ -29,5 +29,6 @@
       * *searching the element from linked list*
       * [*SINGLE LINKED LIST MANIPULATION*](https://github.com/shreyansh-tyagi/Data-Structure-programs/blob/master/SINGLE%20LINKED%20LIST%20MANIPULATION/main.c) 
       * [*POLYNOMIAL ADDITION*](https://github.com/shreyansh-tyagi/Data-Structure-programs/blob/master/addition%20of%20POLYNOMIAL/main.c)
+      * [*POLYNOMIAL MULTIPLICATION*](https://github.com/shreyansh-tyagi/Data-Structure-programs/blob/master/polynomial%20multiplication%20in%20linked%20list/main.c)
 3. *Stack*
 
