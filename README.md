@@ -22,4 +22,7 @@
       * *deletion at begining of linked list*
       * *deletion from end of linked list*
       * *deletion from both begining and end from linked list*
+      * *deletion from random position of linked list*
+      * *deletion of more than one element from linked list*
+      
 3. *Stack*
