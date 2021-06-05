@@ -14,5 +14,6 @@
       * *insertion to polynomial equation*
       * *deletion from singly linked list*
       * *deletion from doubly linked list*
+      * *insertion at begining in linked list*
       * **
 3. *Stack*
