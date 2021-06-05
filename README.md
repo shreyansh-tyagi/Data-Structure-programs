@@ -27,6 +27,6 @@
       * *reverse the linked list*
       * *sorting the linked list*
       * *searching the element from linked list*
-      * *SINGLE LINKED LIST MANIPULATION* 
+      * [*SINGLE LINKED LIST MANIPULATION*](https://github.com/shreyansh-tyagi/Data-Structure-programs/tree/master/SINGLE%20LINKED%20LIST%20MANIPULATION) 
 3. *Stack*
 
