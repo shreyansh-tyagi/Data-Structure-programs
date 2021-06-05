@@ -18,4 +18,7 @@
       * *insertion at end of linked list*
       * *insertion at middel of linked list*
       * *insertion at random position of linked list*
+      * *deletion at begining of linked list*
+      * *deletion from end of linked list*
+      * **
 3. *Stack*
