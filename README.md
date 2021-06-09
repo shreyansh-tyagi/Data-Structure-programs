@@ -36,5 +36,5 @@
       * *stack operation using array*
       * *stack push pop using linked list*
       * *stack using structure with array*
-      * *stack operation using linked list*
+      * *stack operation using linked list
 
